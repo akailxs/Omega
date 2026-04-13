@@ -1,0 +1,3577 @@
+{
+  "nodes": [
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Analyse de conjoncture.md",
+      "label": "Analyse de la conjoncture : Le tableau de bord macroéconomique",
+      "group": "03. Scolaire",
+      "size": 8,
+      "weight": 1,
+      "path": "03. Scolaire/Analyse de Conjoncture/Analyse de conjoncture.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "label": "Antifragile",
+      "group": "02. Bibliothèque",
+      "size": 46,
+      "weight": 20,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Carré magique de Kaldor.md",
+      "label": "Carré magique de Kaldor",
+      "group": "03. Scolaire",
+      "size": 8,
+      "weight": 1,
+      "path": "03. Scolaire/Analyse de Conjoncture/Carré magique de Kaldor.md",
+      "tags": []
+    },
+    {
+      "id": "CLAUDE.md",
+      "label": "CLAUDE.md — Vault Omega",
+      "group": "Root",
+      "size": 6,
+      "weight": 0,
+      "path": "CLAUDE.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Néoclassique.md",
+      "label": "Conceptions de l'intervention de l'État : Le paradigme (Néo)Classique",
+      "group": "03. Scolaire",
+      "size": 10,
+      "weight": 2,
+      "path": "03. Scolaire/Analyse de Conjoncture/Néoclassique.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Keynésienne.md",
+      "label": "Conceptions de l'intervention de l'État : Le paradigme Keynésien",
+      "group": "03. Scolaire",
+      "size": 10,
+      "weight": 2,
+      "path": "03. Scolaire/Analyse de Conjoncture/Keynésienne.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Monétarisme.md",
+      "label": "Conceptions de l'intervention de l'État : Le paradigme Monétariste",
+      "group": "03. Scolaire",
+      "size": 10,
+      "weight": 2,
+      "path": "03. Scolaire/Analyse de Conjoncture/Monétarisme.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "label": "Cygnes Noirs",
+      "group": "02. Bibliothèque",
+      "size": 46,
+      "weight": 20,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "tags": []
+    },
+    {
+      "id": "00. Agents/DA_METAKAIHOS.md",
+      "label": "DA_METAKAIHOS",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/DA_METAKAIHOS.md",
+      "tags": [
+        "#060606",
+        "#080808",
+        "#0A0A0A",
+        "#0D0D0D",
+        "#121212",
+        "#181818",
+        "#5A5652",
+        "#B8B4AE",
+        "#C41E3A",
+        "#C8C4BE",
+        "#D42040",
+        "#F5F1EB"
+      ]
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "label": "Extrêmistan (et son opposé, le Médiocristan)",
+      "group": "02. Bibliothèque",
+      "size": 32,
+      "weight": 13,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Guerrilla de la psychologie.md",
+      "label": "Guerrilla de la psychologie",
+      "group": "02. Bibliothèque",
+      "size": 6,
+      "weight": 0,
+      "path": "02. Bibliothèque/Guerrilla de la psychologie.md",
+      "tags": []
+    },
+    {
+      "id": "00. Agents/tasks/video-ideas-cluster1.md",
+      "label": "Idées Vidéos Reels/TikTok — Cluster 1 · Physique",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/tasks/video-ideas-cluster1.md",
+      "tags": [
+        "#4A4845",
+        "#C41E3A",
+        "#F2EEE8"
+      ]
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md",
+      "label": "L'Effet Lindy par la [[Via Negativa]] : Prédir par la soustraction",
+      "group": "02. Bibliothèque",
+      "size": 20,
+      "weight": 7,
+      "path": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md",
+      "label": "L'Hormèse : La mécanique du gain par le petit stress",
+      "group": "02. Bibliothèque",
+      "size": 22,
+      "weight": 8,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md",
+      "label": "La Convexité et l'Asymétrie des Gains (La \"Pierre Philosophale\")",
+      "group": "02. Bibliothèque",
+      "size": 28,
+      "weight": 11,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md",
+      "tags": [
+        "#Antifragilité",
+        "#Asymétrie",
+        "#Convexité",
+        "#Heuristique",
+        "#InégalitéDeJensen",
+        "#Optionalité"
+      ]
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Affectation - Musgrave.md",
+      "label": "La fonction d'Affectation : L'État producteur dans le modèle de Musgrave",
+      "group": "03. Scolaire",
+      "size": 8,
+      "weight": 1,
+      "path": "03. Scolaire/Analyse de Conjoncture/Affectation - Musgrave.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Redistribution - Musgrave.md",
+      "label": "La Fonction de Redistribution : Justice sociale et correction du marché (Musgrave)",
+      "group": "03. Scolaire",
+      "size": 8,
+      "weight": 1,
+      "path": "03. Scolaire/Analyse de Conjoncture/Redistribution - Musgrave.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "label": "La Pensée Bayésienne",
+      "group": "01. Mental Models and Wisdom",
+      "size": 40,
+      "weight": 17,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "label": "La Stratégie des Haltères (Barbell) : La Domestication de l'Incertitude",
+      "group": "02. Bibliothèque",
+      "size": 34,
+      "weight": 14,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Modèle Coweb.md",
+      "label": "Le Modèle de Cobweb : Causalité et retards d'ajustement",
+      "group": "03. Scolaire",
+      "size": 10,
+      "weight": 2,
+      "path": "03. Scolaire/Analyse de Conjoncture/Modèle Coweb.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Régulation - Musgrave.md",
+      "label": "Les 3 fonctions de l'État : Focus sur la Régulation (L'État stabilisateur)",
+      "group": "03. Scolaire",
+      "size": 12,
+      "weight": 3,
+      "path": "03. Scolaire/Analyse de Conjoncture/Régulation - Musgrave.md",
+      "tags": []
+    },
+    {
+      "id": "00. Agents/tasks/lessons.md",
+      "label": "Lessons — Vault Omega",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/tasks/lessons.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md",
+      "label": "Loi 09 — Le Refoulement : Affronter sa part d'ombre",
+      "group": "02. Bibliothèque",
+      "size": 30,
+      "weight": 12,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md",
+      "label": "Loi 10 — L'Envie : Reconnaître et désamorcer la jalousie",
+      "group": "02. Bibliothèque",
+      "size": 20,
+      "weight": 7,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md",
+      "label": "Loi 11 — La Grandiosité : Connaître ses limites réelles",
+      "group": "02. Bibliothèque",
+      "size": 30,
+      "weight": 12,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md",
+      "label": "Loi 12 — La Rigidité de Genre : Réconcilier les polarités intérieures",
+      "group": "02. Bibliothèque",
+      "size": 16,
+      "weight": 5,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md",
+      "label": "Loi 13 — L'Absence de But : Avancer avec un sens de la mission",
+      "group": "02. Bibliothèque",
+      "size": 22,
+      "weight": 8,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md",
+      "label": "Loi 14 — Le Conformisme : Résister à la pression du groupe",
+      "group": "02. Bibliothèque",
+      "size": 28,
+      "weight": 11,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md",
+      "label": "Loi 15 — La Volubilité : Comprendre pourquoi les foules se retournent",
+      "group": "02. Bibliothèque",
+      "size": 22,
+      "weight": 8,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md",
+      "label": "Loi 16 — L'Agressivité : Voir l'hostilité derrière les façades aimables",
+      "group": "02. Bibliothèque",
+      "size": 20,
+      "weight": 7,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md",
+      "label": "Loi 17 — La Myopie Générationnelle : Saisir le moment historique",
+      "group": "02. Bibliothèque",
+      "size": 20,
+      "weight": 7,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "label": "Loi 18 — Le Déni de la Mort : Méditer sur la finitude pour vivre pleinement",
+      "group": "02. Bibliothèque",
+      "size": 22,
+      "weight": 8,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/La Courbe de Philips.md",
+      "label": "Lois et Arbitrages : La Courbe de Phillips (Inflation vs Chômage)",
+      "group": "03. Scolaire",
+      "size": 8,
+      "weight": 1,
+      "path": "03. Scolaire/Analyse de Conjoncture/La Courbe de Philips.md",
+      "tags": []
+    },
+    {
+      "id": "03. Scolaire/Analyse de Conjoncture/Loi d'Okun.md",
+      "label": "Lois et Arbitrages : La Loi d'Okun (Croissance vs Chômage)",
+      "group": "03. Scolaire",
+      "size": 10,
+      "weight": 2,
+      "path": "03. Scolaire/Analyse de Conjoncture/Loi d'Okun.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/La Règle de Tinbergen.md",
+      "label": "Lois et Arbitrages : La Règle de Tinbergen et le casse-tête du pilote",
+      "group": "01. Mental Models and Wisdom",
+      "size": 12,
+      "weight": 3,
+      "path": "01. Mental Models and Wisdom/La Règle de Tinbergen.md",
+      "tags": []
+    },
+    {
+      "id": "00. Modèles/META-PROMPT-SOLVER.md",
+      "label": "META-PROMPT · OMEGA PROBLEM SOLVER",
+      "group": "00. Modèles",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Modèles/META-PROMPT-SOLVER.md",
+      "tags": []
+    },
+    {
+      "id": "00. Agents/meta-cluster2.md",
+      "label": "Métadonnées Cluster 2 — Le vivant & l'adaptation",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/meta-cluster2.md",
+      "tags": [
+        "#alliage",
+        "#antifragile",
+        "#autopreservation",
+        "#biaiscognitif",
+        "#biologie",
+        "#chimie",
+        "#competition",
+        "#complexite",
+        "#darwin",
+        "#ecosysteme",
+        "#ego",
+        "#emergence",
+        "#evolution",
+        "#hormese",
+        "#interdisciplinaire",
+        "#mentalmodels",
+        "#modelesmentaux",
+        "#munger",
+        "#psychologie",
+        "#reinerouge",
+        "#resilience",
+        "#strategie",
+        "#systemsthinking",
+        "#taleb"
+      ]
+    },
+    {
+      "id": "00. Agents/tasks/content-planning.md",
+      "label": "Planning Contenu — Modèles Mentaux",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/tasks/content-planning.md",
+      "tags": [
+        "#1",
+        "#2",
+        "#3",
+        "#adaptation",
+        "#alliage",
+        "#amazon",
+        "#anglesmorts",
+        "#annieduke",
+        "#antifragile",
+        "#apprentissage",
+        "#argyris",
+        "#aristotle",
+        "#asymetrie",
+        "#authenticite",
+        "#autopreservation",
+        "#avantagecomparatif",
+        "#barbell",
+        "#barrieredechesterton",
+        "#bastiat",
+        "#bayesien",
+        "#bernoulli",
+        "#biais",
+        "#biaiscognitif",
+        "#biaisconfirmation",
+        "#biaisdeconfirmation",
+        "#biaisdesurvie",
+        "#biaissurvie",
+        "#bibliographie",
+        "#biologie",
+        "#blackswan",
+        "#bouclederetroaction",
+        "#buffett",
+        "#businessmodel",
+        "#carriere",
+        "#catalyseur",
+        "#cerclecompetence",
+        "#cercledecompetence",
+        "#changement",
+        "#charliemunger",
+        "#checklist",
+        "#chesterton",
+        "#chimie",
+        "#cialdini",
+        "#classiques",
+        "#cognition",
+        "#collaboration",
+        "#communication",
+        "#competences",
+        "#competition",
+        "#complexite",
+        "#comportement",
+        "#conflits",
+        "#connexions",
+        "#conseils",
+        "#contenu",
+        "#convexite",
+        "#cooperation",
+        "#coutdopportunite",
+        "#coutopportunite",
+        "#croissance",
+        "#croyances",
+        "#culture",
+        "#cygnenoir",
+        "#darwin",
+        "#decisions",
+        "#defaults",
+        "#delegation",
+        "#design",
+        "#desiremimetique",
+        "#dilemmeprisonnier",
+        "#dissonancecognitive",
+        "#doubleloop",
+        "#doublelooplearning",
+        "#dunbar",
+        "#durabilite",
+        "#economie",
+        "#ecosysteme",
+        "#effetdelevier",
+        "#effetlindy",
+        "#effetpygmalion",
+        "#effort",
+        "#ego",
+        "#egodefault",
+        "#emergence",
+        "#emotiondefault",
+        "#energiedactivation",
+        "#entrepreneuriat",
+        "#entropie",
+        "#epistemologie",
+        "#equipe",
+        "#estimation",
+        "#estimationfermi",
+        "#evolution",
+        "#expertise",
+        "#extremistan",
+        "#falsifiabilite",
+        "#farnamstreet",
+        "#feedback",
+        "#fermi",
+        "#festinger",
+        "#fin",
+        "#firstprinciples",
+        "#flywheel",
+        "#framework",
+        "#frameworks",
+        "#friction",
+        "#friedman",
+        "#galton",
+        "#gardefous",
+        "#girard",
+        "#gladwell",
+        "#gouvernance",
+        "#habitudes",
+        "#halterestrategie",
+        "#hardin",
+        "#heuristique",
+        "#hormese",
+        "#humilite",
+        "#iatrogenese",
+        "#incertitude",
+        "#inertie",
+        "#inertiedefault",
+        "#influence",
+        "#interdisciplinaire",
+        "#inversion",
+        "#investissement",
+        "#kahneman",
+        "#keynes",
+        "#latticework",
+        "#leadership",
+        "#lecture",
+        "#leverage",
+        "#levier",
+        "#lindy",
+        "#livres",
+        "#logique",
+        "#loide",
+        "#loidesgrandsnombres",
+        "#loigrandsnombres",
+        "#loipuissance",
+        "#macroeconomie",
+        "#management",
+        "#manipulation",
+        "#matricededecision",
+        "#medecine",
+        "#mediocristanextremistan",
+        "#mentalmodels",
+        "#mentorat",
+        "#minimalisme",
+        "#modelesmentaux",
+        "#munger",
+        "#musgrave",
+        "#musk",
+        "#nash",
+        "#naval",
+        "#neomanie",
+        "#networking",
+        "#neurosciences",
+        "#newton",
+        "#nombredunbar",
+        "#nonlineaire",
+        "#nouveaute",
+        "#objectifs",
+        "#ockham",
+        "#optionalite",
+        "#organisation",
+        "#ostrom",
+        "#pareto",
+        "#parsimonie",
+        "#pensee",
+        "#philosophie",
+        "#physique",
+        "#pointdebascule",
+        "#pointsdebascule",
+        "#poker",
+        "#politique",
+        "#popper",
+        "#powerlaw",
+        "#pratique",
+        "#premierprinciipe",
+        "#probabilite",
+        "#procrastination",
+        "#productivite",
+        "#produit",
+        "#psychologie",
+        "#pygmalion",
+        "#raisonnement",
+        "#rasoirdehanlon",
+        "#rasoirhanlon",
+        "#rasoirockham",
+        "#rationalite",
+        "#reciprocite",
+        "#redqueen",
+        "#reforme",
+        "#regressionmoyenne",
+        "#regressionversamoyenne",
+        "#reinerouge",
+        "#relations",
+        "#relativite",
+        "#rendementsdecroissants",
+        "#reseau",
+        "#reseaux",
+        "#resilience",
+        "#responsabilite",
+        "#retrospective",
+        "#rh",
+        "#ricardo",
+        "#risque",
+        "#rosenthal",
+        "#scalabilite",
+        "#science",
+        "#sidproject",
+        "#skininthegame",
+        "#socialdefault",
+        "#soustraction",
+        "#specialisation",
+        "#statistiques",
+        "#statusquo",
+        "#strategie",
+        "#strategiedecision",
+        "#stress",
+        "#survivorship",
+        "#synthese",
+        "#systemes",
+        "#systemsthinking",
+        "#taleb",
+        "#tauxdebase",
+        "#temps",
+        "#theoriedesjeux",
+        "#thinking",
+        "#tinbergen",
+        "#tippingpoint",
+        "#tragediecommuns",
+        "#tragediedescommuns",
+        "#travail",
+        "#uxdesign",
+        "#vault",
+        "#vianegativa",
+        "#vie",
+        "#wason"
+      ]
+    },
+    {
+      "id": "00. Agents/posts-semaine1.md",
+      "label": "POSTS INSTAGRAM — SEMAINE 1",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/posts-semaine1.md",
+      "tags": [
+        "#apprentissage",
+        "#biaiscognitif",
+        "#charliemunger",
+        "#cialdini",
+        "#design",
+        "#effetdelevier",
+        "#entrepreneuriat",
+        "#entropie",
+        "#farnamstreet",
+        "#friction",
+        "#habitudes",
+        "#inertie",
+        "#influence",
+        "#inversion",
+        "#kahneman",
+        "#leadership",
+        "#leverage",
+        "#mentalmodels",
+        "#modelesmentaux",
+        "#naval",
+        "#newton",
+        "#physique",
+        "#procrastination",
+        "#productivite",
+        "#psychologie",
+        "#reciprocite",
+        "#relativite",
+        "#reseaux",
+        "#strategie",
+        "#strategiedecision",
+        "#systemsthinking",
+        "#thinking",
+        "#uxdesign"
+      ]
+    },
+    {
+      "id": "00. Modèles/Prompt NoteBookLM.md",
+      "label": "Prompt NoteBookLM",
+      "group": "00. Modèles",
+      "size": 8,
+      "weight": 1,
+      "path": "00. Modèles/Prompt NoteBookLM.md",
+      "tags": []
+    },
+    {
+      "id": "00. Agents/remotion_video_setup.md",
+      "label": "Remotion Video Setup",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/remotion_video_setup.md",
+      "tags": [
+        "#0D0D1A",
+        "#10B981",
+        "#1A0A2E",
+        "#1E1E2E",
+        "#313244",
+        "#8B5CF6",
+        "#94A3B8",
+        "#A78BFA",
+        "#D97706",
+        "#EF4444",
+        "#F59E0B",
+        "#F8FAFC"
+      ]
+    },
+    {
+      "id": "00. Modèles/Script Prompt.md",
+      "label": "Script Prompt",
+      "group": "00. Modèles",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Modèles/Script Prompt.md",
+      "tags": []
+    },
+    {
+      "id": "00. Agents/tasks/scripts-video-cluster1.md",
+      "label": "SCRIPTS VIDÉO — CLUSTER 1 · PHYSIQUE",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/tasks/scripts-video-cluster1.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md",
+      "label": "Skin in the Game (Avoir sa Peau en Jeu) : L'Éthique de l'Antifragilité",
+      "group": "02. Bibliothèque",
+      "size": 32,
+      "weight": 13,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Stratégie de l'équilibre.md",
+      "label": "Stratégie de l'équilibre",
+      "group": "02. Bibliothèque",
+      "size": 6,
+      "weight": 0,
+      "path": "02. Bibliothèque/Stratégie de l'équilibre.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Stratégie de la polarité.md",
+      "label": "Stratégie de la polarité",
+      "group": "02. Bibliothèque",
+      "size": 6,
+      "weight": 0,
+      "path": "02. Bibliothèque/Stratégie de la polarité.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Stratégie du dernier carré.md",
+      "label": "Stratégie du dernier carré",
+      "group": "02. Bibliothèque",
+      "size": 10,
+      "weight": 2,
+      "path": "02. Bibliothèque/Stratégie du dernier carré.md",
+      "tags": []
+    },
+    {
+      "id": "Test_cortex.md",
+      "label": "Test_cortex",
+      "group": "Root",
+      "size": 6,
+      "weight": 0,
+      "path": "Test_cortex.md",
+      "tags": [
+        "#greene"
+      ]
+    },
+    {
+      "id": "00. Agents/tasks/todo.md",
+      "label": "TODO — Vault Omega",
+      "group": "00. Agents",
+      "size": 6,
+      "weight": 0,
+      "path": "00. Agents/tasks/todo.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "label": "⚖️ Les 18 Lois de la Nature Humaine — Robert Greene",
+      "group": "02. Bibliothèque",
+      "size": 52,
+      "weight": 23,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "label": "⚖️ Modèle Mental : Le Coût d'Opportunité",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "label": "⚗️ Modèles Mentaux : L'Écosystème de la Chimie",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "label": "⚙️ Modèle Mental : L'Effet de Levier (Leverage)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 28,
+      "weight": 11,
+      "path": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/L'inertie.md",
+      "label": "⚙️ Modèle Mental : L'Inertie (La Première Loi de Newton)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 38,
+      "weight": 16,
+      "path": "01. Mental Models and Wisdom/Physique/L'inertie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md",
+      "label": "⚙️ Modèles Mentaux : Friction et Viscosité (La Mécanique de la Résistance)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "label": "⚡ Modèle Mental : L'Énergie d'Activation",
+      "group": "01. Mental Models and Wisdom",
+      "size": 36,
+      "weight": 15,
+      "path": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "label": "⚡ Modèle Mental : La Dissonance Cognitive",
+      "group": "01. Mental Models and Wisdom",
+      "size": 44,
+      "weight": 19,
+      "path": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "label": "⚡ Modèle Mental : Loi de Puissance et Pareto",
+      "group": "01. Mental Models and Wisdom",
+      "size": 18,
+      "weight": 6,
+      "path": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "label": "🌊 Modèle Mental : Points de Bascule",
+      "group": "01. Mental Models and Wisdom",
+      "size": 20,
+      "weight": 7,
+      "path": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "label": "🌌 Modèles Mentaux : L'Écosystème de la Physique",
+      "group": "01. Mental Models and Wisdom",
+      "size": 50,
+      "weight": 22,
+      "path": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "label": "🌟 Le Concept d'Émergence (Propriétés Émergentes)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 30,
+      "weight": 12,
+      "path": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/Thermodynamique.md",
+      "label": "🌡️ Modèle Mental : La Thermodynamique (L'Énergie et l'[[Entropie]])",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Physique/Thermodynamique.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "label": "🌪️ Modèle Mental : L'Entropie (La Deuxième Loi de la [[Thermodynamique]])",
+      "group": "01. Mental Models and Wisdom",
+      "size": 38,
+      "weight": 16,
+      "path": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md",
+      "label": "🌪️ Modèle Mental : Le Défaut Émotionnel (L'Illusion du Moment Présent)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 18,
+      "weight": 6,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "label": "🌾 Modèle Mental : La Tragédie des Communs",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md",
+      "label": "🎭 Modèle Mental : L'Effet Pygmalion (La Prophétie Autoréalisatrice)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 18,
+      "weight": 6,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md",
+      "label": "🎯 Le Processus vers la Rationalité",
+      "group": "02. Bibliothèque",
+      "size": 26,
+      "weight": 10,
+      "path": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "label": "🎯 Modèle Mental : Le Cercle de Compétence",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md",
+      "label": "🎲 Modèle Mental : Loi des Grands Nombres",
+      "group": "01. Mental Models and Wisdom",
+      "size": 16,
+      "weight": 5,
+      "path": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md",
+      "tags": []
+    },
+    {
+      "id": "MOC — Économie.md",
+      "label": "🏛️ MOC — Économie (Vault Omega)",
+      "group": "Root",
+      "size": 52,
+      "weight": 23,
+      "path": "MOC — Économie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md",
+      "label": "🐑 Modèle Mental : Le Défaut Social (The Social Default)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 36,
+      "weight": 15,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md",
+      "label": "👑 Modèle Mental : L'Effet de la Reine Rouge (L'Adaptation Continue)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "label": "💀 Modèle Mental : Biais de Survie",
+      "group": "01. Mental Models and Wisdom",
+      "size": 20,
+      "weight": 7,
+      "path": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "label": "📉 Modèle Mental : Les Rendements Décroissants",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "label": "📉 Modèle Mental : Régression vers la Moyenne",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md",
+      "label": "📉 Via Negativa : Le pouvoir de la soustraction",
+      "group": "02. Bibliothèque",
+      "size": 34,
+      "weight": 14,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Les Taux de Base.md",
+      "label": "📊 Modèle Mental : Le Taux de Base et la Pensée Probabiliste",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Les Taux de Base.md",
+      "tags": []
+    },
+    {
+      "id": "MOC — Antifragile (Taleb).md",
+      "label": "📖 MOC — Antifragile · Nassim Nicholas Taleb",
+      "group": "Root",
+      "size": 50,
+      "weight": 22,
+      "path": "MOC — Antifragile (Taleb).md",
+      "tags": []
+    },
+    {
+      "id": "MOC — Nature Humaine (Greene).md",
+      "label": "📖 MOC — Nature Humaine · Robert Greene",
+      "group": "Root",
+      "size": 72,
+      "weight": 33,
+      "path": "MOC — Nature Humaine (Greene).md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md",
+      "label": "📚 Les Objectifs d'Apprentissage selon Greene",
+      "group": "02. Bibliothèque",
+      "size": 18,
+      "weight": 6,
+      "path": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "label": "🔄 Modèle Mental : Boucles de Rétroaction",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "label": "🔄 Modèle Mental : L'Avantage Comparatif",
+      "group": "01. Mental Models and Wisdom",
+      "size": 26,
+      "weight": 10,
+      "path": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "label": "🔄 Modèle Mental : L'Inversion",
+      "group": "01. Mental Models and Wisdom",
+      "size": 34,
+      "weight": 14,
+      "path": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/Réciprocité.md",
+      "label": "🔄 Modèle Mental : La Réciprocité (Le principe d'action-réaction)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Physique/Réciprocité.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "label": "🔍 Modèle Mental : Le Biais de Confirmation",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "label": "🔒 Modèle Mental : Le Dilemme du Prisonnier",
+      "group": "01. Mental Models and Wisdom",
+      "size": 22,
+      "weight": 8,
+      "path": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Chimie/L'Alliage.md",
+      "label": "🔗 Modèle Mental : L'Alliage (Alloying)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 14,
+      "weight": 4,
+      "path": "01. Mental Models and Wisdom/Chimie/L'Alliage.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md",
+      "label": "🔥 Les Origines des Émotions : Excitation, Communication, Survie",
+      "group": "02. Bibliothèque",
+      "size": 24,
+      "weight": 9,
+      "path": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "label": "🔬 Modèle Mental : La Falsifiabilité",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md",
+      "label": "🔭 Modèle Mental : Estimation de Fermi",
+      "group": "01. Mental Models and Wisdom",
+      "size": 16,
+      "weight": 5,
+      "path": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "label": "🔭 Modèle Mental : La Relativité (Le Référentiel, l'Empathie et la Perception)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 28,
+      "weight": 11,
+      "path": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md",
+      "label": "🔲 Modèle Mental : La Matrice de Décision (Vitesse vs Conséquences)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 26,
+      "weight": 10,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "label": "🕸️ Modèle Mental : Les Écosystèmes (L'Interconnexion et la Niche)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "tags": []
+    },
+    {
+      "id": "MOC — Modèles Mentaux.md",
+      "label": "🗺️ MOC — Modèles Mentaux (Vault Omega)",
+      "group": "Root",
+      "size": 130,
+      "weight": 62,
+      "path": "MOC — Modèles Mentaux.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md",
+      "label": "😵‍💫La Néomanie : L'illusion de la nouveauté face à l'épreuve du temps",
+      "group": "02. Bibliothèque",
+      "size": 26,
+      "weight": 10,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md",
+      "label": "🚧 Modèle Mental : La Barrière de Chesterton (La Pensée de Second Ordre)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md",
+      "label": "🛑 Modèle Mental : Le Défaut d'Inertie (La Force du Statu Quo)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 32,
+      "weight": 13,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "label": "🛡️ Modèle Mental : L'Auto-préservation (L'Instinct de Survie)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "label": "🛡️ Modèle Mental : Les Garde-fous et Règles Algorithmiques (Safeguards)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 26,
+      "weight": 10,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md",
+      "label": "🧠 Les Trois Cerveaux : Reptilien, Limbique, Néocortex",
+      "group": "02. Bibliothèque",
+      "size": 24,
+      "weight": 9,
+      "path": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "label": "🧠 Loi 01 — L'Irrationalité",
+      "group": "02. Bibliothèque",
+      "size": 28,
+      "weight": 11,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "label": "🧠 Loi 02 — Le Narcissisme",
+      "group": "02. Bibliothèque",
+      "size": 30,
+      "weight": 12,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "label": "🧠 Loi 03 — Le Jeu de Rôles",
+      "group": "02. Bibliothèque",
+      "size": 26,
+      "weight": 10,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "label": "🧠 Loi 04 — Le Comportement Compulsif",
+      "group": "02. Bibliothèque",
+      "size": 22,
+      "weight": 8,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "label": "🧠 Loi 05 — La Convoitise",
+      "group": "02. Bibliothèque",
+      "size": 24,
+      "weight": 9,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "label": "🧠 Loi 06 — La Myopie",
+      "group": "02. Bibliothèque",
+      "size": 24,
+      "weight": 9,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md",
+      "label": "🧠 Loi 07 — La Défensivité",
+      "group": "02. Bibliothèque",
+      "size": 24,
+      "weight": 9,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "label": "🧠 Loi 08 — L'Auto-sabotage",
+      "group": "02. Bibliothèque",
+      "size": 22,
+      "weight": 8,
+      "path": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "label": "🧠 Modèle Mental : L'Apprentissage en Double Boucle (et l'Écosystème Social)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 32,
+      "weight": 13,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md",
+      "label": "🧠 Modèle Mental : Le Nombre de Dunbar (Les limites cognitives de la sociabilité)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 26,
+      "weight": 10,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "label": "🧠 Modèles Mentaux : L'Écosystème Socio-Cognitif",
+      "group": "01. Mental Models and Wisdom",
+      "size": 28,
+      "weight": 11,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md",
+      "label": "🧪 Modèle Mental : Les Catalyseurs (Le Raccourci Chimique)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 16,
+      "weight": 5,
+      "path": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "label": "🧬 Modèle Mental : L'Évolution (Adaptation et Sélection Naturelle)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 40,
+      "weight": 17,
+      "path": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Biologie/Biologie.md",
+      "label": "🧬 Modèles Mentaux : L'Écosystème de la Biologie",
+      "group": "01. Mental Models and Wisdom",
+      "size": 46,
+      "weight": 20,
+      "path": "01. Mental Models and Wisdom/Biologie/Biologie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "label": "🧱 Modèle Mental : La Pensée de Premier Principe",
+      "group": "01. Mental Models and Wisdom",
+      "size": 24,
+      "weight": 9,
+      "path": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md",
+      "label": "🩻 Iatrogénie : La logique causale des dommages créés par ceux qui tentent d'aider",
+      "group": "02. Bibliothèque",
+      "size": 26,
+      "weight": 10,
+      "path": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md",
+      "label": "🪒 Modèle Mental : Le Rasoir d'Ockham (Occam's Razor)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 28,
+      "weight": 11,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md",
+      "label": "🪒 Modèle Mental : Le Rasoir de Hanlon (Hanlon's Razor)",
+      "group": "01. Mental Models and Wisdom",
+      "size": 20,
+      "weight": 7,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md",
+      "tags": []
+    },
+    {
+      "id": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md",
+      "label": "🪞 Les Biais Cognitifs selon Greene : Ombre, Approximation, Conformisme",
+      "group": "02. Bibliothèque",
+      "size": 34,
+      "weight": 14,
+      "path": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md",
+      "tags": []
+    },
+    {
+      "id": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md",
+      "label": "🪞 Modèle Mental : Le Défaut de l'Ego (The Ego Default",
+      "group": "01. Mental Models and Wisdom",
+      "size": 56,
+      "weight": 25,
+      "path": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md",
+      "tags": []
+    }
+  ],
+  "links": [
+    {
+      "source": "00. Modèles/Prompt NoteBookLM.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Biologie.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Biologie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Biologie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/L'évolution.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Émergence.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Alliage.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "target": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Chimie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Alliage.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Émergence.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Alliage.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "target": "01. Mental Models and Wisdom/Chimie/Chimie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Émergence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Les Taux de Base.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Les Taux de Base.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Les Taux de Base.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Les Taux de Base.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md",
+      "target": "01. Mental Models and Wisdom/Les Taux de Base.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md",
+      "target": "01. Mental Models and Wisdom/Les Taux de Base.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "target": "01. Mental Models and Wisdom/Les Taux de Base.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Entropie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inversion.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inertie.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inertie.md",
+      "target": "01. Mental Models and Wisdom/Physique/Relativité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inertie.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inertie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Les Taux de Base.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/L'inversion.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "target": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "target": "01. Mental Models and Wisdom/Physique/Relativité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "target": "01. Mental Models and Wisdom/Physique/Réciprocité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Relativité.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Réciprocité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Réciprocité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Réciprocité.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Physique/Thermodynamique.md",
+      "target": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md",
+      "target": "01. Mental Models and Wisdom/Physique/Relativité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "target": "01. Mental Models and Wisdom/Physique/Réciprocité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Émergence.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "target": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Émergence.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "target": "01. Mental Models and Wisdom/Physique/Réciprocité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "target": "01. Mental Models and Wisdom/Physique/Réciprocité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "target": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inversion.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inversion.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md",
+      "target": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md",
+      "target": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "target": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md",
+      "target": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md"
+    },
+    {
+      "source": "02. Bibliothèque/Stratégie du dernier carré.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "02. Bibliothèque/Stratégie du dernier carré.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "03. Scolaire/Analyse de Conjoncture/Loi d'Okun.md",
+      "target": "01. Mental Models and Wisdom/La Règle de Tinbergen.md"
+    },
+    {
+      "source": "03. Scolaire/Analyse de Conjoncture/Modèle Coweb.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "03. Scolaire/Analyse de Conjoncture/Monétarisme.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Keynésienne.md"
+    },
+    {
+      "source": "03. Scolaire/Analyse de Conjoncture/Néoclassique.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "03. Scolaire/Analyse de Conjoncture/Régulation - Musgrave.md",
+      "target": "01. Mental Models and Wisdom/La Règle de Tinbergen.md"
+    },
+    {
+      "source": "03. Scolaire/Analyse de Conjoncture/Régulation - Musgrave.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Carré magique de Kaldor.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inversion.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Physique/Relativité.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Physique/Réciprocité.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "MOC — Modèles Mentaux.md"
+    },
+    {
+      "source": "MOC — Antifragile (Taleb).md",
+      "target": "MOC — Économie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Biologie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'Auto-préservation.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Biologie/L'évolution.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Biologie/Les Écosystèmes.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Chimie/Chimie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Alliage.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Émergence.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Énergie d'Activation.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Chimie/Les Catalyseurs.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Les Taux de Base.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Biais de Survie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Estimation de Fermi.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi de Puissance et Pareto.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Loi des Grands Nombres.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Mathématiques et Statistiques/Régression vers la Moyenne.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/Entropie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/Friction et Viscosité.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inertie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'inversion.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/Physique - Mécanique.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/Relativité.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/Réciprocité.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Physique/Thermodynamique.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Barrière de Chesterton.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/La Pensée Bayésienne.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Matrice de Décision.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Effet de la reine rouge.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Garde-fous Algorithmique.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/L'Effet Pygmalion.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir d'Ockham.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Le Rasoir de Hanlon.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Social et Cognitif.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Systèmes Complexes/Boucles de Rétroaction.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Systèmes Complexes/Points de Bascule.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Dissonance Cognitive.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Falsifiabilité.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/La Pensée de Premier Principe.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "01. Mental Models and Wisdom/Épistémologie/Le Biais de Confirmation.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Antifragile.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Convexité et Asymétrie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Cygnes Noirs.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Extrêmistan.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Iatrogénie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/L'Effet Lindy.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Néomanie.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Stratégie des Haltères.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Via Negativa.md"
+    },
+    {
+      "source": "MOC — Modèles Mentaux.md",
+      "target": "MOC — Économie.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Physique/Relativité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Double Loop Learning.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Ego Default.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Emotion Default.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Inertia Default.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Default/Social Default.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Cercle de Compétence.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Le Processus vers la Rationalité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois de la Nature Humaine.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 01 — L'Irrationalité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 02 — Le Narcissisme.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 03 — Le Jeu de Rôles.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 04 — Le Comportement Compulsif.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 05 — La Convoitise.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 06 — La Myopie.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 07 — La Défensivité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 08 — L'Auto-sabotage.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 09 — Le Refoulement.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 10 — L'Envie.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 11 — La Grandiosité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 12 — La Rigidité de Genre.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 13 — L'Absence de But.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 14 — Le Conformisme.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 15 — La Volubilité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 16 — L'Agressivité.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 17 — La Myopie Générationnelle.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les 18 Lois/Loi 18 — Le Déni de la Mort.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Biais Cognitifs — Greene.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Objectifs d'Apprentissage — Greene.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Origines des Émotions.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "02. Bibliothèque/Nature Humaine/Les Trois Cerveaux.md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "MOC — Antifragile (Taleb).md"
+    },
+    {
+      "source": "MOC — Nature Humaine (Greene).md",
+      "target": "MOC — Modèles Mentaux.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Chimie/L'Émergence.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/La Règle de Tinbergen.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Physique/L'Effet de levier.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Social et Cognitif/Apprentissage/Nombre de Dunbar.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Coût d'Opportunité.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Stratégie et Jeux/Le Dilemme du Prisonnier.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/L'Avantage Comparatif.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/La Tragédie des Communs.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "01. Mental Models and Wisdom/Économie Fondamentale/Les Rendements Décroissants.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Hormèse.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "02. Bibliothèque/Antifragile - Taleb/Skin in the Game.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Affectation - Musgrave.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Analyse de conjoncture.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Keynésienne.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/La Courbe de Philips.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Loi d'Okun.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Modèle Coweb.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Monétarisme.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Néoclassique.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Redistribution - Musgrave.md"
+    },
+    {
+      "source": "MOC — Économie.md",
+      "target": "03. Scolaire/Analyse de Conjoncture/Régulation - Musgrave.md"
+    }
+  ]
+}

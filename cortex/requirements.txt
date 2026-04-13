@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+watchdog
+websockets
+python-dotenv
+chromadb
+google-generativeai
+sentence-transformers

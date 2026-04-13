@@ -1,0 +1,4409 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>OMEGA — Topologies de Pensée</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden
+    }
+
+    #c {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh
+    }
+
+    /* Glassmorphism base */
+    .glass {
+      background: rgba(8, 8, 18, 0.45);
+      backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px
+    }
+
+    #tl {
+      position: fixed;
+      top: 28px;
+      left: 36px;
+      pointer-events: none;
+      z-index: 20;
+      font-family: 'SF Mono', 'Fira Code', monospace
+    }
+
+    #tl h1 {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 10px;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 7px
+    }
+
+    #stats {
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.25);
+      letter-spacing: 1.5px;
+      line-height: 2
+    }
+
+    #tr {
+      position: fixed;
+      top: 42px;
+      right: 50px;
+      text-align: right;
+      pointer-events: none;
+      z-index: 20;
+      font-family: -apple-system, 'Helvetica Neue', sans-serif
+    }
+
+    #tr h2 {
+      font-size: 34px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.15;
+      margin-bottom: 18px
+    }
+
+    #mini-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px
+    }
+
+    #mode-label {
+      font-family: 'SF Mono', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.48);
+      letter-spacing: 1px;
+      margin-bottom: 5px
+    }
+
+    #mode-desc {
+      font-family: 'SF Mono', monospace;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.26);
+      max-width: 190px;
+      line-height: 1.7;
+      margin-left: auto
+    }
+
+    #cam-btn {
+      position: fixed;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 20px;
+      color: rgba(255, 255, 255, 0.45);
+      font-family: 'SF Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      z-index: 30;
+      transition: all .25s;
+      user-select: none
+    }
+
+    #cam-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.8)
+    }
+
+    #cam-btn.on {
+      border-color: #10b981;
+      color: #10b981
+    }
+
+
+    #info {
+      position: fixed;
+      bottom: 55px;
+      left: 35px;
+      opacity: 0;
+      transition: opacity .35s;
+      pointer-events: none;
+      z-index: 20;
+      font-family: 'SF Mono', monospace;
+      padding: 18px 20px
+    }
+
+    #info-name {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 5px;
+      transition: color .2s
+    }
+
+    #info-folder {
+      font-size: 8px;
+      color: rgba(255, 255, 255, 0.28);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px
+    }
+
+    #info-rows {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 2.2
+    }
+
+    #info-rows span {
+      color: rgba(255, 255, 255, 0.8)
+    }
+
+    #info-words {
+      margin-top: 10px;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 2
+    }
+
+    #gh {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      pointer-events: none;
+      z-index: 20;
+      font-family: 'SF Mono', monospace
+    }
+
+    #gl {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      min-height: 16px;
+      margin-bottom: 5px;
+      transition: color .3s, opacity .3s
+    }
+
+    #gh-hint {
+      font-size: 8px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.1)
+    }
+
+    #gleg {
+      position: fixed;
+      left: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 20;
+      font-family: 'SF Mono', monospace;
+      display: none;
+      padding: 14px 16px
+    }
+
+    .gli {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.24);
+      letter-spacing: .5px;
+      transition: color .25s, transform .2s
+    }
+
+    .gli.on {
+      color: rgba(255, 255, 255, 0.85);
+      transform: translateX(3px)
+    }
+
+    .glic {
+      font-size: 14px;
+      width: 22px;
+      text-align: center
+    }
+
+    #rot-ind {
+      position: fixed;
+      bottom: 20px;
+      right: 32px;
+      font-family: 'SF Mono', monospace;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.28);
+      letter-spacing: 1px;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 0;
+      transition: opacity .4s
+    }
+
+    /* Minimap bottom-right */
+    #mmap {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 25;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    #mmap canvas {
+      display: block
+    }
+
+    /* Search overlay */
+    #search-ov {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 40;
+      display: none;
+      padding: 16px 22px;
+      min-width: 280px;
+      text-align: center;
+      font-family: 'SF Mono', monospace
+    }
+
+    #search-ov input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      font-family: 'SF Mono', monospace;
+      font-size: 16px;
+      outline: none;
+      width: 100%;
+      padding: 6px 0;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 10px
+    }
+
+    #search-hits {
+      font-size: 9px;
+      color: rgba(255, 255, 255, .35);
+      max-height: 140px;
+      overflow-y: auto;
+      line-height: 2
+    }
+
+    #search-hits div {
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background .15s
+    }
+
+    #search-hits div:hover {
+      background: rgba(255, 255, 255, .08)
+    }
+
+    /* Similarity panel */
+    #sim-panel {
+      position: fixed;
+      bottom: 55px;
+      right: 140px;
+      opacity: 0;
+      transition: opacity .35s;
+      pointer-events: none;
+      z-index: 20;
+      font-family: 'SF Mono', monospace;
+      padding: 14px 16px;
+      max-width: 210px
+    }
+
+    #sim-title {
+      font-size: 8px;
+      color: rgba(255, 255, 255, .28);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .sim-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: rgba(255, 255, 255, .45);
+      line-height: 2.2;
+      gap: 8px
+    }
+
+    .sim-row span {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    .sim-bar {
+      height: 2px;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 1px;
+      margin-top: 1px
+    }
+
+    .sim-bar-fill {
+      height: 100%;
+      border-radius: 1px
+    }
+
+
+    /* Two-hand indicator */
+    #two-hand-ind {
+      position: fixed;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'SF Mono', monospace;
+      font-size: 9px;
+      color: #a855f7;
+      letter-spacing: 1.5px;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    /* Zoom HUD indicator */
+    #zoom-hud {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      font-family: 'SF Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #f59e0b;
+      background: rgba(10,10,14,0.85);
+      border: 1px solid rgba(245,158,11,0.35);
+      padding: 6px 18px;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0;
+      transition: opacity .25s, transform .25s;
+      text-shadow: 0 0 12px rgba(245,158,11,0.5);
+      box-shadow: 0 0 20px rgba(245,158,11,0.15);
+    }
+    #zoom-hud.visible {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* Navigation mode indicator */
+    #nav-mode-ind {
+      position: fixed;
+      top: 36px;
+      right: 24px;
+      font-family: 'SF Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      pointer-events: none;
+      z-index: 25;
+      transition: all .4s;
+    }
+    #nav-mode-ind.free {
+      color: #10b981;
+      border: 1px solid rgba(16,185,129,0.4);
+      background: rgba(16,185,129,0.08);
+      box-shadow: 0 0 12px rgba(16,185,129,0.15);
+    }
+    #nav-mode-ind.fixed {
+      color: #ef4444;
+      border: 1px solid rgba(239,68,68,0.4);
+      background: rgba(239,68,68,0.08);
+      box-shadow: 0 0 12px rgba(239,68,68,0.15);
+    }
+    #palm-progress {
+      position: fixed;
+      top: 36px;
+      right: 150px;
+      width: 50px;
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 25;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    #palm-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+      border-radius: 2px;
+      transition: width .1s;
+    }
+
+    /* Layer legend */
+    .ll-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; font-size:8px; color:rgba(255,255,255,.35); letter-spacing:.5px }
+    .ll-dot { width:8px; height:8px; border-radius:2px; flex-shrink:0 }
+    .ll-txt { flex:1 }
+    .ll-cnt { color:rgba(255,255,255,.55); min-width:20px; text-align:right }
+
+    /* ═══ 3D LAYER OVERLAY ═══ */
+    #overlay-3d {
+      position: fixed; inset: 0; z-index: 200;
+      display: none; opacity: 0;
+      transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1);
+      background: #020408;
+    }
+    #overlay-3d.visible { opacity: 1; }
+    #frame-3d { width: 100%; height: 100%; border: none; display: block; }
+
+    /* Corner brackets animated */
+    #overlay-3d::before, #overlay-3d::after {
+      content: ''; position: absolute; width: 40px; height: 40px;
+      border: 1.5px solid rgba(26,255,128,0.5); pointer-events: none; z-index: 5;
+    }
+    #overlay-3d::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+    #overlay-3d::after  { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+    #exit-3d-btn {
+      position: fixed; top: 22px; right: 30px; z-index: 210;
+      font-family: 'SF Mono', monospace; font-size: 9px; letter-spacing: 2px;
+      padding: 7px 18px; cursor: pointer;
+      color: rgba(26,255,128,0.7); background: rgba(2,4,8,0.6);
+      border: 1px solid rgba(26,255,128,0.25);
+      border-radius: 20px; backdrop-filter: blur(10px);
+      transition: all .2s; user-select: none;
+      text-transform: uppercase;
+    }
+    #exit-3d-btn:hover {
+      background: rgba(26,255,128,0.1);
+      border-color: rgba(26,255,128,0.6);
+      color: #1aff80;
+      box-shadow: 0 0 16px rgba(26,255,128,0.2);
+    }
+    #overlay-3d-hint {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 210; pointer-events: none;
+      font-family: 'SF Mono', monospace; font-size: 8px;
+      letter-spacing: 1.5px; color: rgba(26,255,128,0.3);
+    }
+    /* Rock gesture progress bar (teal) */
+    #rock-progress {
+      position: fixed; top: 36px; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 3px; background: rgba(255,255,255,0.08);
+      border-radius: 2px; overflow: hidden; pointer-events: none;
+      z-index: 26; opacity: 0; transition: opacity .3s;
+    }
+    #rock-progress-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #1aff80, #4d8cff);
+      border-radius: 2px; transition: width .08s;
+    }
+
+    /* Nucleus Mode */
+    #nucleus-exit {
+      position: fixed;
+      bottom: 135px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.92);
+      font-family: 'SF Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #ff4444;
+      background: rgba(255,68,68,0.08);
+      border: 1px solid rgba(255,68,68,0.4);
+      padding: 8px 24px;
+      border-radius: 22px;
+      cursor: pointer;
+      z-index: 55;
+      display: none;
+      transition: all .35s;
+      box-shadow: 0 0 25px rgba(255,68,68,0.15);
+      text-transform: uppercase;
+    }
+    #nucleus-exit:hover {
+      background: rgba(255,68,68,0.18);
+      box-shadow: 0 0 35px rgba(255,68,68,0.3);
+      transform: translateX(-50%) scale(1);
+    }
+    #nucleus-label {
+      position: fixed;
+      top: 68px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'SF Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #a855f7;
+      background: rgba(168,85,247,0.06);
+      border: 1px solid rgba(168,85,247,0.3);
+      padding: 4px 16px;
+      border-radius: 12px;
+      pointer-events: none;
+      z-index: 55;
+      display: none;
+      text-transform: uppercase;
+      box-shadow: 0 0 18px rgba(168,85,247,0.12);
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="c"></canvas>
+  <video id="v" style="display:none" autoplay muted playsinline></video>
+
+  <div id="tl">
+    <h1>OMEGA</h1>
+    <div id="stats">—</div>
+  </div>
+
+  <div id="tr">
+    <h2>Topologies<br>de Pensée</h2>
+    <div id="mini-wrap"><canvas id="mini" width="76" height="76"></canvas></div>
+    <div id="mode-label">—</div>
+    <div id="mode-desc"></div>
+  </div>
+
+  <button id="cam-btn" class="glass">WEBCAM + GESTES</button>
+
+  <div id="gleg" class="glass">
+    <div class="gli" data-g="CURSOR"> <span class="glic">🤏</span>ÉCARTÉS — CURSEUR / FLICK</div>
+    <div class="gli" data-g="TWIST"> <span class="glic">🌀</span>TOURNER DOIGTS — ROTATION</div>
+    <div class="gli" data-g="ROTATE"> <span class="glic">🔄</span>TOURNER — ROTATION 3D</div>
+    <div class="gli" data-g="PINCH"> <span class="glic">📌</span>PINCER — SÉLECTION</div>
+    <div class="gli" data-g="GRAB"> <span class="glic">✊</span>PINCER+MAINTENIR — GRAB</div>
+    <div class="gli" data-g="PAN"> <span class="glic">🫳</span>PINCER+GLISSER — PAN</div>
+    <div class="gli" data-g="ZOOM_IN"> <span class="glic">👐</span>2 MAINS ÉCARTER — ZOOM+</div>
+    <div class="gli" data-g="ZOOM_OUT"><span class="glic">🤌</span>2 MAINS RAPPROCHER — ZOOM−</div>
+    <div class="gli" data-g="ROCK3D" style="color:rgba(26,255,128,0.55)"> <span class="glic">🤘</span>CORNE 2s — 3D LAYERS [L]</div>
+  </div>
+
+  <!-- Rock gesture progress -->
+  <div id="rock-progress"><div id="rock-progress-bar"></div></div>
+
+  <!-- 3D Layers fullscreen overlay -->
+  <div id="overlay-3d">
+    <iframe id="frame-3d" src="cortex_layers.html" allow="autoplay"></iframe>
+    <button id="exit-3d-btn" onclick="toggleLayer3D()">✕ EXIT 3D LAYERS</button>
+    <div id="overlay-3d-hint">🤘 TENIR 2s · ESC · [L] pour quitter</div>
+  </div>
+  <div id="two-hand-ind">✌ DEUX MAINS DÉTECTÉES</div>
+  <div id="zoom-hud"></div>
+  <div id="nav-mode-ind" class="free">🟢 MODE LIBRE</div>
+  <div id="palm-progress"><div id="palm-progress-bar"></div></div>
+  <div id="nucleus-exit">⏻ EXIT NUCLEUS</div>
+  <div id="nucleus-label">⬡ PROTOCOLE NUCLEUS</div>
+
+  <div id="info" class="glass">
+    <div id="info-name">—</div>
+    <div id="info-folder">—</div>
+    <div id="info-rows"></div>
+    <div id="info-words"></div>
+  </div>
+  
+  <div id="cortex-hud" style="display:none; position:absolute; pointer-events:none; background:rgba(10,10,12,0.95); border:1px solid #7c3aed; color:#fff; font-family:'SF Mono',monospace; font-size:12px; padding:12px; border-radius:8px; max-width:280px; box-shadow:0 0 20px rgba(124,58,237,0.4); text-align:left; z-index:9999; transform:translate(-50%, -100%); line-height:1.4; white-space:pre-wrap;"></div>
+
+  <div id="gh">
+    <div id="gl"></div>
+    <div id="gh-hint">SCROLL ZOOM · DRAG PAN · CLIC SELECT · [L] 3D LAYERS · [C] CLUSTERS · [N] NUCLEUS</div>
+  </div>
+  <div id="rot-ind">↻ ROTATION <span id="rot-vals"></span></div>
+
+  <div id="mmap" class="glass"><canvas id="mmC" width="180" height="180"></canvas></div>
+  <div id="search-ov" class="glass"><input id="search-in" placeholder="RECHERCHER..." autocomplete="off">
+    <div id="search-hits"></div>
+  </div>
+  <div id="sim-panel" class="glass">
+    <div id="sim-title">NOEUDS PROCHES</div>
+    <div id="sim-rows"></div>
+  </div>
+
+  <div id="layer-legend" class="glass" style="position:fixed;bottom:55px;left:28px;padding:12px 14px;z-index:20;pointer-events:none;font-family:'SF Mono',monospace;display:none">
+    <div style="font-size:7px;color:rgba(255,255,255,.3);letter-spacing:2px;margin-bottom:8px;text-transform:uppercase">LAYERS [L]</div>
+    <div class="ll-row"><span class="ll-dot" style="background:#10b981"></span><span class="ll-txt">EVERGREEN</span><span class="ll-cnt" id="ll-evergreen">0</span></div>
+    <div class="ll-row"><span class="ll-dot" style="background:#f59e0b"></span><span class="ll-txt">PROJECT</span><span class="ll-cnt" id="ll-project">0</span></div>
+    <div class="ll-row"><span class="ll-dot" style="background:#6366f1"></span><span class="ll-txt">CONCEPT</span><span class="ll-cnt" id="ll-concept">0</span></div>
+    <div class="ll-row"><span class="ll-dot" style="background:#64748b"></span><span class="ll-txt">RAW</span><span class="ll-cnt" id="ll-raw">0</span></div>
+    <div class="ll-row"><span class="ll-dot" style="background:#06b6d4"></span><span class="ll-txt">LITERATURE</span><span class="ll-cnt" id="ll-literature">0</span></div>
+    <div class="ll-row"><span class="ll-dot" style="background:#475569"></span><span class="ll-txt">FLEETING</span><span class="ll-cnt" id="ll-fleeting">0</span></div>
+    <div style="margin-top:8px;font-size:7px;color:rgba(255,255,255,.2);letter-spacing:1px" id="ll-zoom">ZOOM: NODE</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1640029074/camera_utils.js"
+    crossorigin="anonymous"></script>
+
+
+  <script>
+    // ═══════════════════════════════════════════════════════════════════
+    // CANVAS
+    // ═══════════════════════════════════════════════════════════════════
+    const $ = id => document.getElementById(id);
+    const canvas = $('c'), ctx = canvas.getContext('2d');
+    
+    const video = $('v'), mctx = $('mini').getContext('2d');
+    const DPR = devicePixelRatio || 1;
+    let W = 0, H = 0;
+    function resize() {
+      W = innerWidth; H = innerHeight;
+      canvas.width = W * DPR; canvas.height = H * DPR;
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    resize(); addEventListener('resize', resize);
+
+    // ═══════════════════════════════════════════════════════════════════
+    // PALETTE
+    // ═══════════════════════════════════════════════════════════════════
+    // ── Dual palette: folder + layer ──
+    const PAL = { '01. Mental Models and Wisdom': '#00d4ff', '02. Bibliothèque': '#ff6b35', '03. Scolaire': '#a855f7', '00. Agents': '#10b981', '00. Modèles': '#6366f1', 'Root': '#f59e0b' };
+    const LAYER_PAL = {
+      evergreen:  '#10b981',  // emerald
+      project:    '#f59e0b',  // amber
+      concept:    '#6366f1',  // indigo
+      raw:        '#64748b',  // slate
+      fleeting:   '#475569',  // gray
+      literature: '#06b6d4',  // cyan
+    };
+    const LAYER_SHAPE = {
+      evergreen: 'hexagon',   // mature = stable hex
+      project:   'diamond',   // active = sharp diamond
+      concept:   'circle',    // default circle
+      raw:       'circle',
+      fleeting:  'circle',
+      literature:'pentagon',  // reference = pentagon
+    };
+    // Folder palette (fallback)
+    function fc(f) { for (const [k, v] of Object.entries(PAL)) if (f === k || f.startsWith(k + '/')) return v; return '#888' }
+    // Layer palette (primary)
+    function lc(n) { return LAYER_PAL[n.layer] || fc(n.folder) }
+    function hr(hex, a) { const n = parseInt(hex.replace('#', ''), 16); return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})` }
+    function hexRGB(hex) { const n = parseInt(hex.replace('#', ''), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255] }
+
+    // ── Node shapes per layer ──
+    const SHAPES = ['circle', 'diamond', 'hexagon', 'triangle', 'star', 'pentagon'];
+    const folderShapeMap = {};
+    function shapeFor(folder) {
+      if (!folderShapeMap[folder]) {
+        const idx = Object.keys(folderShapeMap).length % SHAPES.length;
+        folderShapeMap[folder] = SHAPES[idx];
+      }
+      return folderShapeMap[folder];
+    }
+    function layerShape(n) { return LAYER_SHAPE[n.layer] || 'circle' }
+
+    // ── Cluster state ──
+    let clusterData = [];
+    let compressedClusters = new Set(); // cluster IDs currently compressed
+    let layerMode = true; // true = layer colors, false = folder colors
+    function drawShape(cx, cy, r, shape) {
+      ctx.beginPath();
+      switch (shape) {
+        case 'diamond':
+          ctx.moveTo(cx, cy - r * 1.3); ctx.lineTo(cx + r, cy); ctx.lineTo(cx, cy + r * 1.3); ctx.lineTo(cx - r, cy); ctx.closePath(); break;
+        case 'hexagon':
+          for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i - Math.PI / 2; ctx.lineTo(cx + r * 1.1 * Math.cos(a), cy + r * 1.1 * Math.sin(a)) } ctx.closePath(); break;
+        case 'triangle':
+          ctx.moveTo(cx, cy - r * 1.3); ctx.lineTo(cx + r * 1.15, cy + r * .75); ctx.lineTo(cx - r * 1.15, cy + r * .75); ctx.closePath(); break;
+        case 'star':
+          for (let i = 0; i < 10; i++) { const a = Math.PI / 5 * i - Math.PI / 2; const rr = i % 2 === 0 ? r * 1.2 : r * .55; ctx.lineTo(cx + rr * Math.cos(a), cy + rr * Math.sin(a)) } ctx.closePath(); break;
+        case 'pentagon':
+          for (let i = 0; i < 5; i++) { const a = Math.PI * 2 / 5 * i - Math.PI / 2; ctx.lineTo(cx + r * 1.1 * Math.cos(a), cy + r * 1.1 * Math.sin(a)) } ctx.closePath(); break;
+        default: // circle
+          ctx.arc(cx, cy, r, 0, Math.PI * 2); break;
+      }
+    }
+
+    // ── Warp effect state ──
+    let warpEffect = { active: false, t: 0, cx: 0, cy: 0 };
+
+    // ── Background tint (adapts to selected folder) ──
+    let bgTint = { r: 0, g: 0, b: 8, tr: 0, tg: 0, tb: 8 };
+
+    // ═══════════════════════════════════════════════════════════════════
+    // SPRING CAMERA — physics-based, Apple Vision-style
+    // ═══════════════════════════════════════════════════════════════════
+    const CAM = { x: 0, y: 0, s: 1, r: 0, tilt: 0 };     // rendered (r=yaw, tilt=pitch)
+    const CAM_T = { x: 0, y: 0, s: 1, r: 0, tilt: 0 };     // target
+    const SPR = { vx: 0, vy: 0, vs: 0, vr: 0, vt: 0 };   // velocity (vt=tilt velocity)
+    const STIFF = 0.12, DAMP = 0.65; // Physique plus solide, moins "élastique"
+    const DAMP_FREE = 0.60;   // Damping élevé pour éviter l'effet bungee
+    const DAMP_FIXED = 0.55;  // transitions sèches mais lisses en mode FIXE
+    const Y_TILT = 0.73;
+    const TILT_MAX = 0.45; // max pitch angle (radians, ~25°)
+    const PERSP = 600; // perspective focal length for Z depth
+    const ZOOM_MIN = 0.05, ZOOM_MAX = 10.0; // 5% → 1000%
+    let zoomLocked = false; // when true, zoom gestures are ignored
+
+    // ── Zoom gestuel reçu par WebSocket (piloté par Python) ──
+    var gestureZoom = {
+      baseScale: 1.0,    // échelle au moment de l'activation du geste
+      active: false,
+      hudTimer: null
+    };
+
+    function showZoomHUD(pct) {
+      const el = $('zoom-hud');
+      el.textContent = `ZOOM : ${pct}%`;
+      el.classList.add('visible');
+      if (gestureZoom.hudTimer) clearTimeout(gestureZoom.hudTimer);
+      gestureZoom.hudTimer = setTimeout(() => {
+        el.classList.remove('visible');
+      }, 1200);
+    }
+
+    // Applique un facteur de zoom reçu depuis le serveur Python via WebSocket
+    function applyRemoteZoom(factor) {
+      if (zoomLocked) return;
+      // factor: 0.5 (très rapproché) → 2.0 (très écarté)
+      // Première réception: enregistrer l'échelle de base
+      if (!gestureZoom.active) {
+        gestureZoom.active = true;
+        gestureZoom.baseScale = CAM.s;
+      }
+      // Calculer la nouvelle échelle cible (lerp élastique via spring)
+      const targetS = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, gestureZoom.baseScale * factor));
+      // Gravitation vers le hub (centre du graphe)
+      const anchor = hubNode ? w2s(hubNode.x, hubNode.y, hubNode.z) : { x: W * .42, y: H / 2 };
+      const currentS = CAM_T.s;
+      const realF = targetS / currentS;
+      // Interpoler la position pour centrer le zoom sur le hub
+      CAM_T.x = anchor.x - (anchor.x - CAM_T.x) * realF;
+      CAM_T.y = anchor.y - (anchor.y - CAM_T.y) * realF;
+      CAM_T.s = targetS;
+      clamp();
+      // Feedback visuel
+      showZoomHUD(Math.round(targetS * 100));
+    }
+
+    function deactivateRemoteZoom() {
+      gestureZoom.active = false;
+    }
+
+    let nodeBounds = null; // set after layout
+
+    function springStep() {
+      // Fini l'élastique ! Remplacement par LERP (Interpolation Linéaire)
+      // Aucun rebond, aucun dépassement, fluide et absolu.
+      const lerpSpeed = navMode === 'FIXED' ? 0.10 : 0.22; 
+
+      CAM.x += (CAM_T.x - CAM.x) * lerpSpeed;
+      CAM.y += (CAM_T.y - CAM.y) * lerpSpeed;
+      CAM.s += (CAM_T.s - CAM.s) * lerpSpeed;
+      
+      let dr = CAM_T.r - CAM.r; 
+      if (dr > Math.PI) dr -= 2 * Math.PI; else if (dr < -Math.PI) dr += 2 * Math.PI;
+      CAM.r += dr * lerpSpeed;
+      
+      CAM.tilt += (CAM_T.tilt - CAM.tilt) * lerpSpeed;
+      
+      // La vélocité n'est plus utilisée que pour annuler les restes dynamiques
+      SPR.vx = 0; SPR.vy = 0; SPR.vs = 0; SPR.vr = 0; SPR.vt = 0;
+      
+      // Clamp tilt
+      CAM.tilt = Math.max(-TILT_MAX, Math.min(TILT_MAX, CAM.tilt));
+      CAM_T.tilt = Math.max(-TILT_MAX, Math.min(TILT_MAX, CAM_T.tilt));
+      // Hard wall clamp
+      CAM.s = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, CAM.s));
+      
+      // En mode NUCLEUS : verrouillage strict de la position et de la rotation
+      if (isNucleusActive && nucleusState.node) {
+        // Formule correcte : pour que w2s(node) = (W/2, H/2), CAM.x = -(node.x - W/2)*s
+        const nx = nucleusState.node.x, ny = nucleusState.node.y;
+        CAM_T.x = -(nx - W / 2) * CAM_T.s;
+        CAM_T.y = -(ny - H / 2) * CAM_T.s * Y_TILT;
+        CAM_T.r = 0;
+        CAM_T.tilt = 0;
+        // Hard-lock immédiat (pas d'interpolation résiduelle qui glisse)
+        CAM.x = -(nx - W / 2) * CAM.s;
+        CAM.y = -(ny - H / 2) * CAM.s * Y_TILT;
+        CAM.r = 0;
+        CAM.tilt = 0;
+      } else if (nodeBounds) {
+        // Appliquer les murs limites seulement si non-nucleus
+        const bw = (nodeBounds.maxX - nodeBounds.minX) / 2, bh = (nodeBounds.maxY - nodeBounds.minY) / 2;
+        const mx = bw * CAM.s * 0.3, my = bh * CAM.s * 0.25 * Y_TILT;
+        if (CAM.x < -mx) { CAM.x = -mx; SPR.vx = 0 }
+        if (CAM.x > mx) { CAM.x = mx; SPR.vx = 0 }
+        if (CAM.y < -my) { CAM.y = -my; SPR.vy = 0 }
+        if (CAM.y > my) { CAM.y = my; SPR.vy = 0 }
+      }
+
+      // En mode FIXE : forcer rotation/tilt vers 0 en continu
+      if (!isNucleusActive && navMode === 'FIXED') {
+        CAM_T.r = 0;
+        CAM_T.tilt = 0;
+      }
+    }
+
+    // True 3D: dual-axis rotation (yaw around Y + pitch around X)
+    function w2s(wx, wy, wz) {
+      const dx = wx - W / 2, dy = wy - H / 2, dz = wz || 0;
+      // Yaw (horizontal rotation in X-Z plane)
+      const cy = Math.cos(CAM.r), sy = Math.sin(CAM.r);
+      const rx = dx * cy + dz * sy;
+      let ry = dy;
+      let rz = -dx * sy + dz * cy;
+      // Pitch (vertical tilt — rotates Y-Z)
+      const cp = Math.cos(CAM.tilt), sp = Math.sin(CAM.tilt);
+      const ry2 = ry * cp - rz * sp;
+      const rz2 = ry * sp + rz * cp;
+      const zf = PERSP / Math.max(1, PERSP + rz2);
+      return { x: rx * CAM.s * zf + W / 2 + CAM.x, y: ry2 * CAM.s * Y_TILT * zf + H / 2 + CAM.y, zf };
+    }
+
+    function clamp() {
+      // Hard zoom limits
+      CAM_T.s = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, CAM_T.s));
+      if (!nodeBounds) return;
+      // Tight X/Y pan — graph ALWAYS stays in view
+      const bw = (nodeBounds.maxX - nodeBounds.minX) / 2;
+      const bh = (nodeBounds.maxY - nodeBounds.minY) / 2;
+      const maxPanX = bw * CAM_T.s * 0.3;
+      const maxPanY = bh * CAM_T.s * 0.25 * Y_TILT;
+      CAM_T.x = Math.max(-maxPanX, Math.min(maxPanX, CAM_T.x));
+      CAM_T.y = Math.max(-maxPanY, Math.min(maxPanY, CAM_T.y));
+    }
+    function camDirect() { CAM_T.x = CAM.x; CAM_T.y = CAM.y; CAM_T.s = CAM.s; CAM_T.r = CAM.r; CAM_T.tilt = CAM.tilt; SPR.vx = SPR.vy = SPR.vs = SPR.vr = SPR.vt = 0 }
+    function smartZoom(f, sx, sy) {
+      if (zoomLocked) return;
+      // Gravitational zoom — always toward the hub (solar system center)
+      const anchor = hubNode ? w2s(hubNode.x, hubNode.y, hubNode.z) : { x: W * .42, y: H / 2, zf: 1 };
+      const newS = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, CAM.s * f));
+      const realF = newS / CAM.s;
+      CAM.s = newS;
+      CAM.x = anchor.x - (anchor.x - CAM.x) * realF; CAM.y = anchor.y - (anchor.y - CAM.y) * realF;
+      camDirect(); clamp();
+    }
+    function resetView() {
+      CAM_T.x = 0; CAM_T.y = 0; CAM_T.s = 1; CAM_T.r = 0; CAM_T.tilt = 0;
+      selected = null; hovered = null; RC.locked = false; RC.snapNode = null; RC.active = null;
+      updatePanel();
+      warpEffect = { active: true, t: 0, cx: W / 2, cy: H / 2 };
+      pulses.push({ x: W / 2, y: H / 2, r: 8, a: .5, c: '#00d4ff' });
+    }
+    function fitView() {
+      if (!nodes.length) return;
+      const xs = nodes.map(n => n.x), ys = nodes.map(n => n.y);
+      const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+      const sw = Math.max(...xs) - Math.min(...xs) + 120, sh = Math.max(...ys) - Math.min(...ys) + 120;
+      let sc = Math.min(W / sw, H / (sh * Y_TILT)) * 0.85;
+      sc = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, sc));
+      CAM_T.x = W / 2 - cx * sc; CAM_T.y = H / 2 - cy * sc * Y_TILT; CAM_T.s = sc; CAM_T.r = 0; CAM_T.tilt = 0;
+      clamp();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // STATE
+    // ═══════════════════════════════════════════════════════════════════
+    let nodes = [], links = [], analysis = {}, ready = false;
+    let hovered = null, selected = null;
+    // (flow animation is now inline in edge rendering)
+    let hubNode = null; // gravitational center — most connected node
+
+    // Background dust
+    const dust = Array.from({ length: 90 }, () => ({
+      x: Math.random(), y: Math.random(),
+      z: .2 + Math.random() * .8,
+      sz: .4 + Math.random() * 1.4,
+      phase: Math.random() * Math.PI * 2,
+      spd: .0005 + Math.random() * .001
+    }));
+
+    // Select pulse effects
+    const pulses = [];
+
+    // Cursor trail
+    const trail = [];
+    const TRAIL_LEN = 16;
+
+    function nodeR(n) {
+      // Base radius from connections + maturity boost
+      const base = Math.max(1.2, Math.min(11, 1.2 + (n.connections || 0) * 0.14));
+      if (!layerMode) return base;
+      const ms = n.maturityScore || 0;
+      const layerBoost = n.layer === 'evergreen' ? 1.4 : n.layer === 'project' ? 1.2 : n.layer === 'concept' ? 1.0 : 0.7;
+      return base * (0.7 + ms * 0.5) * layerBoost;
+    }
+    // Check if node is visible (not hidden by cluster compression)
+    function isNodeVisible(n) {
+      if (!n.compressedInto) return true;
+      return !compressedClusters.has(n.compressedInto);
+    }
+    // Get cluster representative node for a compressed cluster
+    function clusterRepNode(clusterId) {
+      const cl = clusterData.find(c => c.clusterId === clusterId);
+      if (!cl) return null;
+      return nodes.find(n => n.id === cl.representativeId);
+    }
+    // Toggle cluster expand/compress
+    function toggleCluster(clusterId) {
+      if (compressedClusters.has(clusterId)) {
+        compressedClusters.delete(clusterId);
+        showHUDNotification('CLUSTER EXPANDED');
+      } else {
+        compressedClusters.add(clusterId);
+        showHUDNotification('CLUSTER COMPRESSED');
+      }
+      pulses.push({ x: W / 2, y: H / 2, r: 12, a: .4, c: '#6366f1' });
+    }
+    // Current zoom detail level based on camera scale
+    function zoomDetail() {
+      if (CAM.s < 0.45) return 'OUTLINE';
+      if (CAM.s < 1.3) return 'NODE';
+      return 'CONTENT';
+    }
+    function nearNode(sx, sy, maxPx = 55) {
+      let b = null, bd = maxPx;
+      nodes.forEach(n => { const p = w2s(n.x, n.y, n.z); const d = Math.hypot(p.x - sx, p.y - sy); if (d < bd) { bd = d; b = n } });
+      return b;
+    }
+    function neighbors(n) {
+      const s = new Set([n.id]);
+      links.forEach(l => { const si = l.source?.id ?? l.source, ti = l.target?.id ?? l.target; if (si === n.id) s.add(ti); if (ti === n.id) s.add(si) });
+      return s;
+    }
+
+    // BFS shortest path between two nodes — returns array of node IDs
+    function bfsPath(startId, endId) {
+      if (startId === endId) return [startId];
+      const prev = new Map();
+      const visited = new Set([startId]);
+      const q = [startId];
+      // Build adjacency on the fly
+      const adj = new Map();
+      nodes.forEach(n => adj.set(n.id, []));
+      links.forEach(l => {
+        const si = l.source?.id ?? l.source, ti = l.target?.id ?? l.target;
+        if (adj.has(si)) adj.get(si).push(ti);
+        if (adj.has(ti)) adj.get(ti).push(si);
+      });
+      while (q.length) {
+        const cur = q.shift();
+        for (const nb of (adj.get(cur) || [])) {
+          if (!visited.has(nb)) {
+            visited.add(nb); prev.set(nb, cur);
+            if (nb === endId) {
+              // Reconstruct path
+              const path = []; let c = endId;
+              while (c !== undefined) { path.unshift(c); c = prev.get(c) }
+              return path;
+            }
+            q.push(nb);
+          }
+        }
+      }
+      return []; // no path
+    }
+
+    function buildPathEdgeSet(path) {
+      const s = new Set();
+      for (let i = 0; i < path.length - 1; i++) {
+        const a = Math.min(path[i], path[i + 1]), b = Math.max(path[i], path[i + 1]);
+        s.add(`${a}-${b}`);
+      }
+      return s;
+    }
+
+    function maturityColor(score) {
+      if (score < 0.3) return '#ff4444';
+      if (score < 0.6) return '#f59e0b';
+      return '#10b981';
+    }
+
+    // Rect cursor
+    const RC = { x: 0, y: 0, tx: 0, ty: 0, w: 110, h: 72, active: null, locked: false, vis: false, flash: 0, snapNode: null };
+
+    // ══ Aimant de Cible Sémantique ══
+    // Rayon d'influence : 80px à l'écran (scalable avec le zoom)
+    const MAGNET_RADIUS_PX = 80;
+    const magnetState = {
+      node: null,      // nœud actuellement aimanté
+      strength: 0,     // 0→1 : intensité d'attraction (lerp)
+      snapX: 0,        // position écran lissée du snap
+      snapY: 0
+    };
+
+    // Mouse
+    let isDrag = false, dragStart = null, dragC0 = null;
+
+    // Hand: 5 fingers tracking (Thumb, Index, Middle, Ring, Pinky) × 2 mains
+    let handVis = false, webcamOn = false, mpCam = null;
+    let thumbS = { x: 0, y: 0 }, indexS = { x: 0, y: 0 }, middleS = { x: 0, y: 0 };
+    let ringS  = { x: 0, y: 0 }, pinkyS = { x: 0, y: 0 }, wristS  = { x: 0, y: 0 };
+    let thumbS2 = { x: 0, y: 0 }, indexS2 = { x: 0, y: 0 }, middleS2 = { x: 0, y: 0 };
+    let ringS2  = { x: 0, y: 0 }, pinkyS2 = { x: 0, y: 0 }, wristS2 = { x: 0, y: 0 };
+
+    // Navigation history + visited counter
+    const navHistory = [];
+    const visitedSet = new Set();
+    let searchOpen = false;
+    let searchFilter = '';
+
+    // Bookmarks (4 slots)
+    const bookmarks = [null, null, null, null];
+
+    // Double-pinch tracker
+    let dblPinch = { count: 0, lastTime: 0, wasPinch: false };
+
+    // ── Graph Intelligence state ──
+    const pathMode = { active: false, nodeA: null, nodeB: null, path: [], pathEdgeSet: new Set() };
+    let orphanMode = false;
+    let bridgeMode = false;
+    let matureMode = false;
+    let bridgeNodes = new Set(); // set of node IDs that are articulation points
+    let maturityScores = new Map(); // node id → score [0,1]
+    let orphanCount = 0;
+
+    // ── Grab & Throw state ──
+    let grabState = { active: false, node: null, origX: 0, origY: 0, startTime: 0, grabMidX: 0, grabMidY: 0, grabNodeX: 0, grabNodeY: 0 };
+    let thrownNodes = []; // {node,vx,vy,origX,origY,friction:.92}
+
+    // ── Two-hand state ──
+    let twoHandActive = false;
+    // hand2S est remplacé par thumbS2, indexS2, middleS2
+    let hand2Vis = false;
+    let twoHandZoom = {
+      prevDist: null,
+      distVel: 0,
+      smoothDist: null,     // EMA-lissée de la distance inter-mains
+      refDist: null,        // distance de référence au moment où le zoom s'active
+      active: false
+    };
+
+    // Minimap canvas ref
+    const mmCtx = document.getElementById('mmC').getContext('2d');
+
+    // Gesture tracking (thumb+index ONLY)
+    let TRK = {
+      prevSpread: null, prevMid: null, prevAngle: null,
+      spreadVel: 0, midVelX: 0, midVelY: 0, angleDel: 0,
+      // Tilt tracking — vertical component of thumb-index angle
+      prevVAngle: null, vAngleDel: 0,
+      // Rotation momentum — persists after gesture ends
+      rotMomentum: 0, tiltMomentum: 0,
+      // Twist momentum — finger rotation inertia
+      twistMomentum: 0,
+      // Pan momentum — glide after releasing pan gesture
+      panMomX: 0, panMomY: 0,
+      wasPinch: false, gesture: 'IDLE',
+      candGesture: null, candCount: 0,
+      rotTimer: 0, flickCD: 0
+    };
+
+    // ══ GESTURE_NAV : état global du système de navigation par Griffe ══
+    const GNS = {
+      // Force de la griffe lissée (EMA) : 0 = main tendue, 1 = griffe totale
+      clawStrength: 0,
+      // Type de rotation détecté : 'PLANAR' | 'FREE'
+      rotationType: 'PLANAR',
+      // Ancre de rotation (trackpad virtuel pour GESTURE_NAV)
+      anchor: null,
+      // Orientation lissée du plan de paume (pitch, roll) - radians
+      palmPitch: 0,
+      palmRoll: 0,
+      // Position lissée du poignet (centre de la main) pour mouvement PLANAR
+      prevWristX: null,
+      prevWristY: null,
+      // ── Friction cinématique ──
+      // Vélocité instantanée de la rotation (stocke le dernier delta/frame)
+      yawVel: 0,
+      tiltVel: 0,
+      // Momentum résiduel après sortie de la griffe (décélération douce)
+      yawMomentum: 0,
+      tiltMomentum: 0,
+      // Marqueur : était-on en griffe la frame précédente ?
+      wasActive: false,
+      // Dernier r/tilt enregistré (pour calcul du delta frame à frame en FREE)
+      prevR: null,
+      prevTilt: null,
+    };
+
+    // ══ GESTURE PHYSICS — biomechanical controller (finger circle, wrist quat, snap, speed curve) ══
+    const GP = {
+      // ── Finger circle tracker (index fingertip circular trajectory → 2D rotation) ──
+      circleHist: [],        // [{x,y,t}] sliding window
+      CIRCLE_WIN: 20,        // history frames
+      circleAngVel: 0,       // smoothed angular velocity (rad/s)
+      circleConf: 0,         // confidence [0-1]
+      // ── Wrist quaternion tracker (palm_normal delta → 3D rotation) ──
+      prevPalmNormal: null,  // last frame normalized palm normal
+      wristConf: 0,          // confidence [0-1]
+      wristDeltaR: 0,        // smoothed yaw delta (rad/frame)
+      wristDeltaTilt: 0,     // smoothed tilt delta (rad/frame)
+      // ── Snap-to-90° for yaw rotation ──
+      snapActive: false,
+      snapTarget: 0,
+    };
+
+    // Non-linear speed curve: dead zone + power mapping for precision feel
+    // exponent 1.8 → small inputs compressed (stable), large inputs expanded (power)
+    function gpCondition(v, deadZone, maxV, exp) {
+      const abs = Math.abs(v);
+      if (abs < deadZone) return 0;
+      const n = Math.min((abs - deadZone) / (maxV - deadZone), 1);
+      return Math.sign(v) * Math.pow(n, exp || 1.8) * maxV;
+    }
+
+    // Unwrap angle sequence so consecutive values don't jump ±π
+    function gpUnwrap(angles) {
+      if (!angles.length) return [];
+      const out = [angles[0]];
+      for (let i = 1; i < angles.length; i++) {
+        let d = angles[i] - angles[i - 1];
+        while (d > Math.PI)  d -= 2 * Math.PI;
+        while (d < -Math.PI) d += 2 * Math.PI;
+        out.push(out[i - 1] + d);
+      }
+      return out;
+    }
+
+    // Feed index fingertip screen coords → update circle confidence + angular velocity
+    function gpUpdateCircle(ix, iy, tsMs) {
+      GP.circleHist.push({ x: ix, y: iy, t: tsMs });
+      if (GP.circleHist.length > GP.CIRCLE_WIN) GP.circleHist.shift();
+      const h = GP.circleHist;
+      if (h.length < 6) { GP.circleConf *= 0.9; return; }
+
+      // Centroid of trajectory
+      const cx = h.reduce((s, p) => s + p.x, 0) / h.length;
+      const cy = h.reduce((s, p) => s + p.y, 0) / h.length;
+
+      // Unwrapped angular sweep around centroid
+      const rawA  = h.map(p => Math.atan2(p.y - cy, p.x - cx));
+      const angles = gpUnwrap(rawA);
+      const dt   = (h[h.length - 1].t - h[0].t) / 1000;
+      const sweep = angles[angles.length - 1] - angles[0];
+      const angVel = dt > 0.001 ? sweep / dt : 0;
+
+      // Circularity: coefficient of variation of radii (low CoV = perfect circle)
+      const radii = h.map(p => Math.hypot(p.x - cx, p.y - cy));
+      const meanR = radii.reduce((a, b) => a + b, 0) / radii.length;
+      const varR  = radii.reduce((a, r) => a + (r - meanR) ** 2, 0) / radii.length;
+      const cvR   = meanR > 2 ? Math.sqrt(varR) / meanR : 1;
+
+      // Three confidence components — all must be high for confident circle
+      const cRadius = Math.min(meanR / 25, 1);                     // min 25px radius
+      const cArc    = Math.min(Math.abs(sweep) / (Math.PI / 4), 1); // at least 45° sweep
+      const cShape  = Math.max(0, 1 - cvR * 2);                    // low CoV = round
+
+      const rawConf = cRadius * cArc * cShape;
+      GP.circleConf   = GP.circleConf   * 0.88 + rawConf * 0.12;
+      GP.circleAngVel = GP.circleAngVel * 0.80 + angVel  * 0.20;
+    }
+
+    // Feed palm normal vector → compute wrist rotation delta (yaw + tilt) per frame
+    function gpUpdateWrist(nx, ny, nz) {
+      const len = Math.sqrt(nx * nx + ny * ny + nz * nz);
+      if (len < 1e-9) return;
+      nx /= len; ny /= len; nz /= len;
+
+      const NOISE = Math.sin(0.5 * Math.PI / 180); // ignore < 0.5°/frame
+      const SAT   = Math.sin(5.0 * Math.PI / 180); // full confidence at 5°/frame
+
+      if (!GP.prevPalmNormal) {
+        GP.prevPalmNormal = { x: nx, y: ny, z: nz };
+        GP.wristConf = 0;
+        return;
+      }
+      const p = GP.prevPalmNormal;
+      // Cross product of prev→curr normal gives axis of rotation
+      const crossX = p.y * nz - p.z * ny;
+      const crossY = p.z * nx - p.x * nz;
+      const crossMag = Math.sqrt(crossX * crossX + crossY * crossY + (p.x * ny - p.y * nx) ** 2);
+
+      const rawConf = Math.max(0, Math.min(1, (crossMag - NOISE) / (SAT - NOISE)));
+      GP.wristConf = GP.wristConf * 0.88 + rawConf * 0.12;
+
+      // Map cross components to camera axes:
+      // crossY (vertical axis of palm rotation) → yaw (CAM_T.r)
+      // crossX (horizontal axis) → tilt (CAM_T.tilt)
+      const scale = crossMag * GP.wristConf * 1.2;
+      GP.wristDeltaR    = GP.wristDeltaR    * 0.72 + (crossY * scale) * 0.28;
+      GP.wristDeltaTilt = GP.wristDeltaTilt * 0.72 + (-crossX * scale) * 0.28;
+
+      GP.prevPalmNormal = { x: nx, y: ny, z: nz };
+    }
+
+    // Snap CAM_T.r to nearest 90° when slowing down (spring attraction)
+    function gpSnapRotation() {
+      const nearest = Math.round(CAM_T.r / (Math.PI / 2)) * (Math.PI / 2);
+      const dist    = Math.abs(nearest - CAM_T.r);
+      const speed   = Math.abs(JOY.velX);
+
+      if (!GP.snapActive && dist < 0.16 && speed < 1.5) { // ~9° radius, slow speed
+        GP.snapActive = true;
+        GP.snapTarget = nearest;
+      }
+      if (GP.snapActive) {
+        // Exit snap if user rotates away or speeds up
+        if (speed > 2.2 || Math.abs(CAM_T.r - GP.snapTarget) > 0.24) {
+          GP.snapActive = false;
+        } else {
+          // Spring: pull toward target angle
+          const pull = (GP.snapTarget - CAM_T.r) * 0.10;
+          CAM_T.r += pull;
+          // Also drain JOY velocity to allow clean stop
+          JOY.velX *= 0.85;
+        }
+      }
+    }
+
+    const THRESH = {
+      pinch: .055,      // spread < this = pinch
+      zoomVel: .004,    // spread velocity > this = zoom (raised slightly to avoid rot/zoom conflict)
+      rot: .005,        // angle delta > this = rotate (lowered for better sensitivity)
+      midSpd: 10,       // px/frame for pan vs still
+      confirm: 3,       // frames pour confirmer un nouveau geste (plus volontaire)
+      dropSpd: 90       // Vitesse max (au-delà, on considère qu'on sort la main du champ)
+    };
+
+    // ── Navigation Mode : LIBRE (FREE) vs FIXE (FIXED) ──
+    var navMode = 'FREE'; // 'FREE' | 'FIXED'
+    var palmToggle = {
+      palmStart: 0,       // timestamp du début de détection palm
+      palmActive: false,  // est-ce que la paume est détectée en continu
+      toggleCD: 0         // cooldown après toggle (éviter double-toggle)
+    };
+
+    // ── 3D Layers Mode ──
+    var layer3dActive = false;
+    var rock3DGesture = { active: false, startTime: 0, cooldown: 0 };
+
+    function toggleLayer3D() {
+      layer3dActive = !layer3dActive;
+      const overlay = $('overlay-3d');
+      if (layer3dActive) {
+        overlay.style.display = 'block';
+        requestAnimationFrame(() => overlay.classList.add('visible'));
+        showHUDNotification('⬡ 3D LAYERS ACTIVÉ');
+        pulses.push({ x: W / 2, y: H / 2, r: 10, a: .5, c: '#1aff80' });
+        // Highlight gesture legend item
+        document.querySelectorAll('.gli').forEach(e => {
+          e.classList.toggle('on', e.dataset.g === 'ROCK3D');
+        });
+      } else {
+        overlay.classList.remove('visible');
+        setTimeout(() => { overlay.style.display = 'none'; }, 580);
+        showHUDNotification('3D LAYERS DÉSACTIVÉ');
+        document.querySelectorAll('.gli').forEach(e => e.classList.remove('on'));
+      }
+    }
+
+    // Zone morte : carré central (fraction de W/H)
+    const DEAD_ZONE = {
+      xFrac: 0.15,  // ±15% du centre en X
+      yFrac: 0.15   // ±15% du centre en Y
+    };
+
+    function isInDeadZone(sx, sy) {
+      const cx = W / 2, cy = H / 2;
+      const dx = Math.abs(sx - cx) / W;
+      const dy = Math.abs(sy - cy) / H;
+      return dx < DEAD_ZONE.xFrac && dy < DEAD_ZONE.yFrac;
+    }
+
+    // Détection paume ouverte : tous les doigts étendus (bouts au-dessus des MCP)
+    function isPalm(lm) {
+      // Index(8>6), Middle(12>10), Ring(16>14), Pinky(20>18)
+      // "au-dessus" = y plus petit (image miroir)
+      const tips = [8, 12, 16, 20];
+      const mcps = [6, 10, 14, 18];
+      let extended = 0;
+      for (let i = 0; i < 4; i++) {
+        if (lm[tips[i]].y < lm[mcps[i]].y) extended++;
+      }
+      // Pouce : tip(4) doit être loin de la paume(0) latéralement
+      const thumbDist = Math.abs(lm[4].x - lm[0].x);
+      if (thumbDist > 0.06) extended++;
+      return extended >= 4; // au moins 4/5 doigts étendus
+    }
+
+    function setNavMode(mode) {
+      navMode = mode;
+      const el = $('nav-mode-ind');
+      if (mode === 'FREE') {
+        el.className = 'free';
+        el.id = 'nav-mode-ind';
+        el.textContent = '🟢 MODE NAV';
+      } else {
+        el.className = 'fixed';
+        el.id = 'nav-mode-ind';
+        el.textContent = '🟠 MODE FOCUS';
+        // Reset rotation/tilt → la map se remet droite via spring
+        CAM_T.r = 0;
+        CAM_T.tilt = 0;
+        // Tuer toute inertie résiduelle
+        TRK.rotMomentum = 0;
+        TRK.tiltMomentum = 0;
+        TRK.panMomX = 0;
+        TRK.panMomY = 0;
+        SPR.vr = 0;
+        SPR.vt = 0;
+        // Si un nœud est déjà sélectionné, centrer dessus immédiatement
+        if (selected) focusOnNode(selected);
+      }
+      // Notifier le serveur Python
+      if (globalWs && globalWs.readyState === WebSocket.OPEN) {
+        globalWs.send(JSON.stringify({ type: 'system', mode: mode === 'FREE' ? 'FREE' : 'FIXED' }));
+      }
+      // Pulse visuel
+      pulses.push({ x: W / 2, y: H / 2, r: 20, a: .6, c: mode === 'FREE' ? '#10b981' : '#f59e0b' });
+      showHUDNotification(mode === 'FREE' ? 'MODE NAV — Rotation libre' : 'MODE FOCUS — Ciblage automatique');
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // NUCLEUS MODE — State Machine
+    // ═══════════════════════════════════════════════════════════════════
+    var isNucleusActive = false;
+    var nucleusState = {
+      node: null,           // le nœud noyau
+      neighborIds: new Set(),   // IDs des satellites + noyau
+      satelliteNodes: [],    // nœuds satellites (objets)
+      spherePositions: [],   // positions cibles sur la sphère {x, y, z}
+      origPositions: [],     // positions originales des satellites {x, y, z}
+      t: 0,                 // progression de la transition 0→1
+      orbitAngle: 0,        // rotation yaw (contrôlée par gestes uniquement)
+      orbitPitchAngle: 0,   // rotation pitch indépendante (axe X)
+      ghostOpacity: 1.0     // opacité des nœuds fantômes (1.0 → 0.05)
+    };
+
+    const NUCLEUS_MIN_CONNECTIONS = 3;
+    const NUCLEUS_ORBIT_RADIUS = 280;  // rayon de la sphère de satellites
+    const NUCLEUS_TRANSITION_SPEED = 0.025;  // ~40 frames pour compléter
+    const NUCLEUS_ORBIT_SPEED = 0;     // pas de rotation auto — gestes uniquement
+
+    function activateNucleus(node) {
+      // Validation
+      if (!node) {
+        showHUDNotification('ERREUR : Nœud introuvable');
+        return false;
+      }
+      if (typeof node.connections === 'undefined' || node.connections === null) {
+        showHUDNotification('ERREUR : Données de connexions corrompues');
+        return false;
+      }
+      // Seuil de connexions
+      const nbrIds = neighbors(node);
+      const connCount = nbrIds.size - 1; // exclure le noyau lui-même
+      if (connCount < NUCLEUS_MIN_CONNECTIONS) {
+        showHUDNotification(`Connexions insuffisantes pour protocole Nucleus (${connCount}/${NUCLEUS_MIN_CONNECTIONS})`);
+        return false;
+      }
+
+      isNucleusActive = true;
+      nucleusState.node = node;
+      nucleusState.neighborIds = nbrIds;
+      nucleusState.t = 0;
+      nucleusState.orbitAngle = 0;
+      nucleusState.orbitPitchAngle = 0;
+      nucleusState.ghostOpacity = 1.0;
+
+      // Extraire les satellites (voisins, sans le noyau)
+      nucleusState.satelliteNodes = nodes.filter(n => n.id !== node.id && nbrIds.has(n.id));
+
+      // Sauvegarder positions originales
+      nucleusState.origPositions = nucleusState.satelliteNodes.map(n => ({
+        x: n.x, y: n.y, z: n.z || 0
+      }));
+
+      // Calculer positions sphériques (équidistantes sur un cercle 3D) relatives au centre
+      const count = nucleusState.satelliteNodes.length;
+      nucleusState.spherePositions = [];
+      for (let i = 0; i < count; i++) {
+        // Fibonacci sphere pour distribution équidistante
+        const phi = Math.acos(1 - 2 * (i + 0.5) / count);
+        const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+        const sx = NUCLEUS_ORBIT_RADIUS * Math.sin(phi) * Math.cos(theta);
+        const sy = NUCLEUS_ORBIT_RADIUS * Math.sin(phi) * Math.sin(theta); // Vraie sphère (pas de Y_TILT)
+        const sz = NUCLEUS_ORBIT_RADIUS * Math.cos(phi);
+        nucleusState.spherePositions.push({ x: sx, y: sy, z: sz });
+      }
+
+      // Centrer la caméra sur le noyau
+      focusOnNode(node);
+
+      // UI
+      $('nucleus-exit').style.display = 'block';
+      $('nucleus-label').style.display = 'block';
+      $('nucleus-label').textContent = `⬡ NUCLEUS : ${node.name}`;
+      showHUDNotification(`Protocole Nucleus activé — ${count} satellites`);
+
+      return true;
+    }
+
+    function deactivateNucleus() {
+      if (!isNucleusActive) return;
+
+      // Restaurer les positions originales des satellites
+      nucleusState.satelliteNodes.forEach((n, i) => {
+        const orig = nucleusState.origPositions[i];
+        if (orig) {
+          n.x = orig.x; n.y = orig.y; n.z = orig.z;
+          // Libérer la simulation de forces si elle était fixée
+          n.fx = undefined; n.fy = undefined;
+        }
+      });
+
+      isNucleusActive = false;
+      nucleusState.node = null;
+      nucleusState.neighborIds = new Set();
+      nucleusState.satelliteNodes = [];
+      nucleusState.t = 0;
+      nucleusState.ghostOpacity = 1.0;
+
+      // UI
+      $('nucleus-exit').style.display = 'none';
+      $('nucleus-label').style.display = 'none';
+      showHUDNotification('Protocole Nucleus désactivé');
+
+      // Pulse de sortie
+      pulses.push({ x: W / 2, y: H / 2, r: 15, a: .5, c: '#a855f7' });
+    }
+
+    // Mise à jour des positions pendant la transition
+    function updateNucleus() {
+      if (!isNucleusActive) return;
+
+      // Progression de la transition
+      if (nucleusState.t < 1) {
+        nucleusState.t = Math.min(1, nucleusState.t + NUCLEUS_TRANSITION_SPEED);
+      }
+
+      // Ease-out cubique pour transition fluide
+      const ease = 1 - Math.pow(1 - nucleusState.t, 3);
+
+      // Fondu des nœuds fantômes
+      nucleusState.ghostOpacity = 1.0 - ease * 0.95; // 1.0 → 0.05
+
+      // Rotation orbitale (gestes uniquement — pas d'auto-spin)
+      nucleusState.orbitAngle += NUCLEUS_ORBIT_SPEED; // = 0
+
+      const aY = nucleusState.orbitAngle;
+      const aX = nucleusState.orbitPitchAngle; // pitch indépendant, contrôlé par JOY.velY
+
+      const cosY = Math.cos(aY), sinY = Math.sin(aY);
+      const cosX = Math.cos(aX), sinX = Math.sin(aX);
+      const cx = nucleusState.node.x, cy = nucleusState.node.y;
+
+      nucleusState.satelliteNodes.forEach((n, i) => {
+        const orig = nucleusState.origPositions[i];
+        const sph = nucleusState.spherePositions[i]; // relatif au centre
+        if (!orig || !sph) return;
+
+        // Rotation 3D de la sphère
+        // Rotation autour de X
+        const ry = sph.y * cosX - sph.z * sinX;
+        const rz = sph.y * sinX + sph.z * cosX;
+        const rx = sph.x;
+        // Rotation autour de Y
+        const finalX = rx * cosY - rz * sinY;
+        const finalZ = rx * sinY + rz * cosY;
+        const finalY = ry;
+
+        const targetX = cx + finalX;
+        const targetY = cy + finalY;
+        const targetZ = (nucleusState.node.z || 0) + finalZ;
+
+        // Interpoler
+        n.x = orig.x + (targetX - orig.x) * ease;
+        n.y = orig.y + (targetY - orig.y) * ease;
+        n.z = (orig.z || 0) + (targetZ - (orig.z || 0)) * ease;
+
+        // Fixer pour empêcher la simulation d3 de les bouger
+        n.fx = n.x; n.fy = n.y;
+      });
+    }
+
+    // Hook: EXIT button
+    $('nucleus-exit').addEventListener('click', () => deactivateNucleus());
+
+    // ── Focus targeting : transition fluide vers un nœud ──
+    const FOCUS_SCALE = 1.6; // distance de lecture optimale (160%)
+
+    function focusOnNode(node) {
+      if (!node) return;
+      // Calculer le décalage nécessaire pour centrer le nœud
+      // En mode FIXED, rotation=0, donc w2s simplifie à une projection droite
+      const targetX = -(node.x - W / 2) * FOCUS_SCALE;
+      const targetY = -(node.y - H / 2) * FOCUS_SCALE * Y_TILT;
+      // Appliquer via le système spring (transition élastique automatique)
+      CAM_T.x = targetX;
+      CAM_T.y = targetY;
+      CAM_T.s = FOCUS_SCALE;
+      CAM_T.r = 0;     // toujours droit en mode FOCUS
+      CAM_T.tilt = 0;
+      clamp();
+      showZoomHUD(Math.round(FOCUS_SCALE * 100));
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // LOAD + LAYOUT
+    // ═══════════════════════════════════════════════════════════════════
+    fetch('mind_map.json').then(r => { if (!r.ok) throw r.status; return r.json() }).then(data => {
+      analysis = data.analysis || {};
+      clusterData = data.clusters || [];
+      // Initialize all clusters as compressed
+      clusterData.forEach(cl => compressedClusters.add(cl.clusterId));
+      const ns = data.nodes.filter(n => n.folder !== 'memory');
+      const ids = new Set(ns.map(n => n.id));
+      const ls = data.links.filter(l => ids.has(+l.source || l.source) && ids.has(+l.target || l.target));
+
+      // Find hub — gravitational center (most connections)
+      let hubIdx = 0;
+      ns.forEach((n, i) => { if ((n.connections || 0) > (ns[hubIdx].connections || 0)) hubIdx = i });
+      hubNode = ns[hubIdx];
+
+      // Group nodes by tags to create natural cluster attraction
+      const tagLinks = [];
+      const tagGroups = {};
+      ns.forEach(n => {
+        (n.tags || []).forEach(t => {
+          const tLower = t.toLowerCase();
+          if (!tagGroups[tLower]) tagGroups[tLower] = [];
+          tagGroups[tLower].push(n);
+        });
+      });
+      // Link nodes sharing the same tag together
+      Object.values(tagGroups).forEach(group => {
+        for (let i = 1; i < group.length; i++) {
+          tagLinks.push({source: group[i - 1], target: group[i]});
+        }
+        if (group.length > 2) {
+          tagLinks.push({source: group[group.length - 1], target: group[0]});
+        }
+      });
+
+      const cx = W * .42, cy = H / 2;
+      const sim = d3.forceSimulation(ns)
+        .force('charge', d3.forceManyBody().strength(-400)) // Repel nodes without shared links/tags
+        .force('link', d3.forceLink(ls).id(d => d.id).distance(d => d.type === 'explicit' ? 80 : 150).strength(d => d.type === 'explicit' ? .8 : .15)) // Strategic links
+        .force('tags', d3.forceLink(tagLinks).distance(20).strength(1.2)) // Strict gravity to shared tags
+        .force('center', d3.forceCenter(cx, cy))
+        .force('hub', d3.forceRadial(0, cx, cy).strength(d => d.id === hubNode.id ? .8 : 0))
+        .force('col', d3.forceCollide(18))
+        .stop();
+      for (let i = 0; i < 500; i++) sim.tick();
+
+      nodes = ns; links = ls;
+      // FREEZE forever
+      nodes.forEach(n => { n.fx = n.x; n.fy = n.y; n._lo = 0 });
+      // Phase offset for flow animation
+      ls.forEach(l => { l._phase = Math.random() });
+
+      // ── Bridge / articulation point detection ──
+      // Build adjacency list
+      function buildAdj(excludeId) {
+        const adj = new Map();
+        ns.forEach(n => { if (n.id !== excludeId) adj.set(n.id, []) });
+        ls.forEach(l => {
+          const si = l.source?.id ?? l.source, ti = l.target?.id ?? l.target;
+          if (si === excludeId || ti === excludeId) return;
+          if (adj.has(si)) adj.get(si).push(ti);
+          if (adj.has(ti)) adj.get(ti).push(si);
+        });
+        return adj;
+      }
+      function bfsConnected(adj) {
+        const start = [...adj.keys()][0];
+        if (start === undefined) return true;
+        const visited = new Set([start]);
+        const q = [start];
+        while (q.length) {
+          const cur = q.shift();
+          for (const nb of (adj.get(cur) || [])) {
+            if (!visited.has(nb)) { visited.add(nb); q.push(nb) }
+          }
+        }
+        return visited.size === adj.size;
+      }
+      const fullAdj = buildAdj(-1);
+      const isConnectedFull = bfsConnected(fullAdj);
+      if (isConnectedFull) {
+        ns.forEach(n => {
+          const adj = buildAdj(n.id);
+          if (!bfsConnected(adj)) bridgeNodes.add(n.id);
+        });
+      }
+
+      // ── Maturity scores ──
+      const wcs = ns.map(n => n.wordCount || 0);
+      const conns = ns.map(n => n.connections || 0);
+      const mtimes = ns.map(n => n.mtime || 0);
+      const maxWC = Math.max(...wcs) || 1;
+      const maxConn2 = Math.max(...conns) || 1;
+      const minMtime = Math.min(...mtimes.filter(m => m > 0)) || 0;
+      const maxMtime = Math.max(...mtimes) || 1;
+      const mtimeRange = maxMtime - minMtime || 1;
+      ns.forEach(n => {
+        const nwc = (n.wordCount || 0) / maxWC;
+        const nc = (n.connections || 0) / maxConn2;
+        const nr = mtimeRange > 0 ? ((n.mtime || 0) - minMtime) / mtimeRange : 0;
+        const score = nwc * .4 + nc * .4 + nr * .2;
+        maturityScores.set(n.id, score);
+      });
+
+      // Orphan count
+      orphanCount = ns.filter(n => (n.connections || 0) <= 1).length;
+
+      // Z-depth via natural grouping: Distribute groups across Z-layers
+      const tagList = Object.keys(tagGroups);
+      ns.forEach((n, idx) => {
+        let tagZ = 0;
+        if (n.tags && n.tags.length > 0) {
+          // Use the first tag for defining the primary Z layer
+          const tLower = n.tags[0].toLowerCase();
+          const ti = tagList.indexOf(tLower);
+          tagZ = (ti / Math.max(1, tagList.length - 1)) * 300 - 100;
+        } else {
+          // Fallback to random depth if no tag
+          tagZ = (Math.random() - .5) * 100;
+        }
+        n.z = tagZ + (Math.random() - .5) * 40; // Add small cluster spherical volume
+      });
+
+      // Compute node bounds for camera clamping
+      const bxs = ns.map(n => n.x), bys = ns.map(n => n.y);
+      nodeBounds = { minX: Math.min(...bxs), maxX: Math.max(...bxs), minY: Math.min(...bys), maxY: Math.max(...bys) };
+
+      // (flow particles now rendered inline with edges)
+
+      $('stats').innerHTML = `${ns.length} NŒUDS<br>${ls.length} CONNEXIONS<br>${analysis.density || 0} DENSITÉ`;
+
+      // Initialize layer legend counts
+      if (analysis.layerCounts) {
+        for (const [layer, count] of Object.entries(analysis.layerCounts)) {
+          const el = $('ll-' + layer);
+          if (el) el.textContent = count;
+        }
+      }
+      // Show layer legend by default
+      $('layer-legend').style.display = layerMode ? 'block' : 'none';
+
+      renderMode(); renderMini();
+
+      RC.x = RC.tx = W / 2; RC.y = RC.ty = H / 2;
+      RC.snapNode = nearNode(W / 2, H / 2, 9999);
+      ready = true;
+      requestAnimationFrame(loop);
+    }).catch((e) => {
+      console.error(e);
+      document.body.innerHTML = `<div style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#ff4466;text-align:center">Error loading graph Data or Simulator: ${e.message || e}<br><br><span style="color:rgba(255,255,255,.3);font-size:10px">python3 build_mind_map.py && python3 -m http.server 8765</span></div>`;
+    });
+
+    function renderMode() {
+      const c = analysis.centralScore || 0, d = analysis.decentralScore || 0, x = analysis.distribScore || 0, mx = Math.max(c, d, x);
+      let l, ds;
+      if (mx === c && mx > 0) { l = 'mode: centralisé'; ds = 'pensée centrale<br>connectée à tout'; }
+      else if (mx === d) { l = 'mode: décentralisé'; ds = 'clusters isolés<br>par domaine'; }
+      else { l = 'mode: distribué'; ds = 'connexions denses<br>inter-domaines'; }
+      $('mode-label').textContent = l; $('mode-desc').innerHTML = ds;
+    }
+    function renderMini() {
+      const S = 76; mctx.clearRect(0, 0, S, S); mctx.strokeStyle = 'rgba(255,255,255,.6)'; mctx.fillStyle = 'rgba(255,255,255,.8)'; mctx.lineWidth = .9;
+      const c = analysis.centralScore || 0, d = analysis.decentralScore || 0, x = analysis.distribScore || 0, mx = Math.max(c, d, x);
+      if (mx === c && mx > 0) { for (let i = 0; i < 13; i++) { const a = (i / 13) * Math.PI * 2; mctx.beginPath(); mctx.moveTo(38, 38); mctx.lineTo(38 + 24 * Math.cos(a), 38 + 24 * Math.sin(a) * Y_TILT); mctx.stroke(); mctx.beginPath(); mctx.arc(38 + 24 * Math.cos(a), 38 + 24 * Math.sin(a) * Y_TILT, 1.8, 0, Math.PI * 2); mctx.fill(); } mctx.beginPath(); mctx.arc(38, 38, 4.5, 0, Math.PI * 2); mctx.fill(); }
+      else if (mx === d) { [[18, 18], [58, 18], [18, 58], [58, 58]].forEach(([cx, cy]) => { for (let i = 0; i < 4; i++) { const a = (i / 4) * Math.PI * 2; mctx.beginPath(); mctx.moveTo(cx, cy); mctx.lineTo(cx + 10 * Math.cos(a), cy + 10 * Math.sin(a) * Y_TILT); mctx.stroke(); mctx.beginPath(); mctx.arc(cx + 10 * Math.cos(a), cy + 10 * Math.sin(a) * Y_TILT, 1.5, 0, Math.PI * 2); mctx.fill(); } mctx.beginPath(); mctx.arc(cx, cy, 3, 0, Math.PI * 2); mctx.fill(); }); }
+      else { const pts = [[12, 18], [38, 8], [64, 18], [72, 44], [58, 68], [20, 68], [4, 44], [38, 38]]; for (let i = 0; i < pts.length; i++)for (let j = i + 1; j < pts.length; j++) { mctx.globalAlpha = .35; mctx.beginPath(); mctx.moveTo(pts[i][0], pts[i][1]); mctx.lineTo(pts[j][0], pts[j][1]); mctx.stroke(); } mctx.globalAlpha = 1; pts.forEach(([px, py]) => { mctx.beginPath(); mctx.arc(px, py, 2.5, 0, Math.PI * 2); mctx.fill(); }); }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // MAIN RENDER LOOP
+    // ═══════════════════════════════════════════════════════════════════
+    function loop() {
+      if (!ready) { requestAnimationFrame(loop); return }
+      springStep();
+
+      // ── INERTIE CINÉMATIQUE : application de la vélocité JOY à chaque frame ──
+      // Tourne indépendamment de la détection des mains (grace period naturelle)
+      if (isNucleusActive && (Math.abs(JOY.velX) > 0.001 || Math.abs(JOY.velY) > 0.001)) {
+        // Nucleus : JOY tourne l'orbite des satellites, pas la caméra
+        const orbitScale = JOY_SENSITIVITY * 0.0025;
+        nucleusState.orbitAngle      += JOY.velX * orbitScale;
+        nucleusState.orbitPitchAngle  = Math.max(-Math.PI * 0.45,
+          Math.min(Math.PI * 0.45, nucleusState.orbitPitchAngle + JOY.velY * orbitScale));
+      } else if (navMode === 'FREE' && (Math.abs(JOY.velX) > 0.001 || Math.abs(JOY.velY) > 0.001)) {
+        const yawDelta   = JOY.velX * JOY_SENSITIVITY * (Math.PI / W);
+        const pitchDelta = JOY.velY * JOY_SENSITIVITY * (Math.PI / H);
+        CAM_T.r    += yawDelta;
+        CAM_T.tilt  = Math.max(-TILT_MAX, Math.min(TILT_MAX, CAM_T.tilt - pitchDelta));
+      }
+      // Friction : décélération continue (même quand la main est perdue)
+      JOY.velX *= JOY_FRICTION;
+      JOY.velY *= JOY_FRICTION;
+      // Arrêt total en dessous du seuil
+      if (Math.abs(JOY.velX) < 0.001) JOY.velX = 0;
+      if (Math.abs(JOY.velY) < 0.001) JOY.velY = 0;
+
+      ctx.clearRect(0, 0, W, H);
+      const t = Date.now() * .001;
+
+      // ── Aimant Sémantique : calcul 1× par frame (avant tout rendu) ──
+      // Cherche le nœud le plus proche dans le rayon d'influence
+      // Le curseur (index) est la référence. Coût = O(N), 1 itération/frame.
+      if (RC.vis && webcamOn) {
+        const curX = indexS.x, curY = indexS.y;
+        let bestNode = null, bestDist = MAGNET_RADIUS_PX;
+        nodes.forEach(n => {
+          const p = w2s(n.x, n.y, n.z);
+          const d = Math.hypot(p.x - curX, p.y - curY);
+          if (d < bestDist) { bestDist = d; bestNode = n; }
+        });
+        if (bestNode) {
+          // Entrée dans la zone : augmenter la force d'attraction
+          magnetState.node = bestNode;
+          magnetState.strength += (1.0 - magnetState.strength) * 0.12;
+          const np = w2s(bestNode.x, bestNode.y, bestNode.z);
+          // Lerp du snap X/Y vers le centre géométrique du nœud
+          magnetState.snapX += (np.x - magnetState.snapX) * 0.18;
+          magnetState.snapY += (np.y - magnetState.snapY) * 0.18;
+          // Repositionner le RC au centre magnétique
+          RC.snapNode = bestNode;
+          RC.active = bestNode;
+        } else {
+          // Sortie de zone : relâcher progressivement
+          magnetState.strength *= 0.82;
+          if (magnetState.strength < 0.05) {
+            magnetState.node = null;
+            magnetState.strength = 0;
+          }
+        }
+      } else {
+        magnetState.node = null;
+        magnetState.strength = 0;
+      }
+
+      // ── Background tint adapts to selected folder ──
+      const tintNode = selected || hovered;
+      if (tintNode) {
+        const tc = hexRGB(fc(tintNode.folder));
+        bgTint.tr = tc[0] * .06; bgTint.tg = tc[1] * .06; bgTint.tb = tc[2] * .06 + 8;
+      } else { bgTint.tr = 0; bgTint.tg = 0; bgTint.tb = 8 }
+      bgTint.r += (bgTint.tr - bgTint.r) * .03; bgTint.g += (bgTint.tg - bgTint.g) * .03; bgTint.b += (bgTint.tb - bgTint.b) * .03;
+      const bgStr = `rgb(${Math.round(bgTint.r)},${Math.round(bgTint.g)},${Math.round(bgTint.b)})`;
+
+      // ── Background ──
+      if (webcamOn && video.readyState >= 2) {
+        ctx.save(); ctx.scale(-1, 1); ctx.drawImage(video, -W, 0, W, H); ctx.restore();
+        ctx.fillStyle = 'rgba(0,0,8,.58)'; ctx.fillRect(0, 0, W, H);
+      } else {
+        ctx.fillStyle = bgStr; ctx.fillRect(0, 0, W, H);
+        // Animated nebula — slow-moving radial gradients
+        const nx1 = W * .35 + Math.sin(t * .12) * W * .08, ny1 = H * .4 + Math.cos(t * .09) * H * .06;
+        const nx2 = W * .65 + Math.cos(t * .1) * W * .07, ny2 = H * .6 + Math.sin(t * .08) * H * .05;
+        const nx3 = W * .5 + Math.sin(t * .07 + 2) * W * .1, ny3 = H * .3 + Math.cos(t * .11 + 1) * H * .08;
+        // Nebula 1
+        const ng1 = ctx.createRadialGradient(nx1, ny1, 0, nx1, ny1, Math.max(W, H) * .35);
+        ng1.addColorStop(0, `rgba(${10 + Math.round(bgTint.r * 2)},8,${40 + Math.round(bgTint.b)},.18)`);
+        ng1.addColorStop(.5, `rgba(5,5,${25 + Math.round(bgTint.b * .5)},.06)`); ng1.addColorStop(1, 'rgba(0,0,8,0)');
+        ctx.fillStyle = ng1; ctx.fillRect(0, 0, W, H);
+        // Nebula 2
+        const ng2 = ctx.createRadialGradient(nx2, ny2, 0, nx2, ny2, Math.max(W, H) * .3);
+        ng2.addColorStop(0, `rgba(${20 + Math.round(bgTint.r * 3)},${5 + Math.round(bgTint.g)},${15 + Math.round(bgTint.b * .3)},.12)`);
+        ng2.addColorStop(.6, 'rgba(8,3,12,.04)'); ng2.addColorStop(1, 'rgba(0,0,8,0)');
+        ctx.fillStyle = ng2; ctx.fillRect(0, 0, W, H);
+        // Nebula 3 — subtle accent
+        const ng3 = ctx.createRadialGradient(nx3, ny3, 0, nx3, ny3, Math.max(W, H) * .25);
+        ng3.addColorStop(0, `rgba(${5 + Math.round(bgTint.r)},${10 + Math.round(bgTint.g * 2)},${20 + Math.round(bgTint.b * .5)},.08)`);
+        ng3.addColorStop(1, 'rgba(0,0,8,0)');
+        ctx.fillStyle = ng3; ctx.fillRect(0, 0, W, H);
+      }
+
+      // ── Ambient dust particles with parallax ──
+      dust.forEach(d => {
+        d.phase += d.spd;
+        const a = .015 + .05 * Math.sin(d.phase) * d.z;
+        let px = (d.x * W + CAM.x * (1 - d.z) * .012) % W;
+        let py = (d.y * H + CAM.y * (1 - d.z) * .012) % H;
+        if (px < 0) px += W; if (py < 0) py += H;
+        ctx.beginPath(); ctx.arc(px, py, d.sz * d.z, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${a})`; ctx.fill();
+      });
+
+      // Smooth rect — snaps to nearest node
+      RC.x += (RC.tx - RC.x) * .22; RC.y += (RC.ty - RC.y) * .22;
+      if (RC.vis && RC.snapNode) {
+        const sp = w2s(RC.snapNode.x, RC.snapNode.y, RC.snapNode.z);
+        RC.tx = sp.x; RC.ty = sp.y; RC.active = RC.snapNode;
+        // Camera follows rect — gentle cinematic traveling (low to avoid feedback jitter)
+        CAM_T.x -= (sp.x - W * .45) * .018;
+        CAM_T.y -= (sp.y - H * .5) * .018;
+        clamp();
+      } else if (RC.vis) {
+        RC.active = nearNode(RC.x, RC.y, 120);
+      }
+
+      // Trail
+      if (RC.vis) { trail.push({ x: RC.x, y: RC.y }); while (trail.length > TRAIL_LEN) trail.shift() }
+
+      // ── Nucleus Mode animation ──
+      updateNucleus();
+
+      const focus = selected || hovered;
+      const nbrIds = focus ? neighbors(focus) : null;
+      const maxConn = Math.max(...nodes.map(n => n.connections || 0)) || 1;
+
+      // ── Edges (bezier curves + gradient + flow) ──
+      links.forEach(l => {
+        const s = l.source, tt = l.target; if (!s?.x || !tt?.x) return;
+        // Skip edges connected to compressed nodes
+        if (layerMode && (!isNodeVisible(s) || !isNodeVisible(tt))) return;
+        const sp = w2s(s.x, s.y, s.z), tp = w2s(tt.x, tt.y, tt.z);
+        const zMod = (sp.zf + tp.zf) / 2;
+        const si = s.id ?? s, ti = tt.id ?? tt;
+        const hi = nbrIds && nbrIds.has(si) && nbrIds.has(ti);
+
+        // Check if this edge is on the shortest path
+        const edgeKey = `${Math.min(si, ti)}-${Math.max(si, ti)}`;
+        const isPathEdge = pathMode.path.length > 0 && pathMode.pathEdgeSet.has(edgeKey);
+
+        let a, lw;
+        if (isPathEdge) {
+          a = 0.92; lw = 2.2;
+        } else if (!focus) {
+          a = l.type === 'explicit' ? .14 : .03; lw = l.type === 'explicit' ? .3 : .12;
+        } else if (hi) {
+          a = l.type === 'explicit' ? .7 : .35; lw = l.type === 'explicit' ? .6 : .3;
+        } else {
+          a = l.type === 'explicit' ? .09 : .025; lw = l.type === 'explicit' ? .2 : .1;
+        }
+        if (!isPathEdge) { a *= Math.min(zMod, 1.15); lw = Math.min(lw, 0.7) }
+
+        // ── Nucleus ghost: liens non-connectés au noyau ──
+        if (isNucleusActive) {
+          const nIds = nucleusState.neighborIds;
+          const linkInNucleus = nIds.has(si) && nIds.has(ti);
+          if (!linkInNucleus) {
+            a *= nucleusState.ghostOpacity;
+            lw *= nucleusState.ghostOpacity;
+          } else {
+            // Liens du noyau : opacité douce pour ne pas masquer les labels
+            a = Math.min(0.18, a);
+            lw = Math.min(0.5, lw);
+          }
+        }
+
+        // Bezier control point — perpendicular offset for organic curve
+        const mx = (sp.x + tp.x) / 2, my = (sp.y + tp.y) / 2;
+        const dx = tp.x - sp.x, dy = tp.y - sp.y;
+        const dist = Math.hypot(dx, dy);
+        const off = Math.min(dist * .15, 30);
+        const cpx = mx + (-dy / dist) * off, cpy = my + (dx / dist) * off;
+
+        if (isPathEdge) {
+          // Glowing cyan path edge
+          ctx.save();
+          ctx.beginPath(); ctx.moveTo(sp.x, sp.y); ctx.quadraticCurveTo(cpx, cpy, tp.x, tp.y);
+          ctx.strokeStyle = `rgba(0,212,255,${a})`; ctx.lineWidth = lw;
+          ctx.shadowColor = '#00d4ff'; ctx.shadowBlur = 12; ctx.stroke();
+          ctx.shadowBlur = 0;
+          // Brighter core line
+          ctx.beginPath(); ctx.moveTo(sp.x, sp.y); ctx.quadraticCurveTo(cpx, cpy, tp.x, tp.y);
+          ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 0.9; ctx.stroke();
+          // Animated flow dots — faster + brighter
+          const nDots = 3;
+          for (let di = 0; di < nDots; di++) {
+            const ft = ((t * .7 + di / nDots + l._phase) % 1);
+            const u = 1 - ft;
+            const fx = u * u * sp.x + 2 * u * ft * cpx + ft * ft * tp.x;
+            const fy = u * u * sp.y + 2 * u * ft * cpy + ft * ft * tp.y;
+            const dotR = 2.2;
+            const dotA = Math.sin(ft * Math.PI) * .9;
+            ctx.beginPath(); ctx.arc(fx, fy, dotR, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0,255,200,${dotA})`; ctx.fill();
+            ctx.beginPath(); ctx.arc(fx, fy, dotR * 3, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0,212,255,${dotA * .3})`; ctx.fill();
+          }
+          ctx.restore();
+        } else {
+          // Normal links
+          ctx.beginPath(); ctx.strokeStyle = `rgba(255,255,255,${a})`; ctx.lineWidth = lw;
+          ctx.moveTo(sp.x, sp.y); ctx.quadraticCurveTo(cpx, cpy, tp.x, tp.y); ctx.stroke();
+
+          // ── Nerve signal flow on explicit links (disabled during webcam) ──
+          if (l.type === 'explicit' && !webcamOn) {
+            const nDots = 2;
+            for (let di = 0; di < nDots; di++) {
+              const ft = ((t * .4 + di / nDots + l._phase) % 1);
+              const u = 1 - ft;
+              const fx = u * u * sp.x + 2 * u * ft * cpx + ft * ft * tp.x;
+              const fy = u * u * sp.y + 2 * u * ft * cpy + ft * ft * tp.y;
+              const fzf = sp.zf + (tp.zf - sp.zf) * ft;
+              const dotR = 1.2 * fzf;
+              const dotA = Math.sin(ft * Math.PI) * .55 * Math.min(zMod, 1.1);
+              ctx.beginPath(); ctx.arc(fx, fy, dotR, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(255,255,255,${dotA})`; ctx.fill();
+              ctx.beginPath(); ctx.arc(fx, fy, dotR * 3, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(255,255,255,${dotA * .25})`; ctx.fill();
+            }
+          }
+        }
+      });
+
+      // ── Cluster brackets ──
+      if (!focus && CAM.s > .35) {
+        const byF = {}; nodes.forEach(n => { if (!byF[n.folder]) byF[n.folder] = []; byF[n.folder].push(n) });
+        Object.entries(byF).forEach(([folder, ns]) => {
+          if (ns.length < 3) return;
+          const pts = ns.map(n => w2s(n.x, n.y, n.z));
+          const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+          const x0 = Math.min(...xs) - 18, x1 = Math.max(...xs) + 18, y0 = Math.min(...ys) - 18, y1 = Math.max(...ys) + 18;
+          if (x1 < -40 || x0 > W + 40 || y1 < -40 || y0 > H + 40) return;
+          const col = fc(folder), arm = 12;
+          ctx.strokeStyle = hr(col, .22); ctx.lineWidth = .7; ctx.beginPath();
+          ctx.moveTo(x0, y0 + arm); ctx.lineTo(x0, y0); ctx.lineTo(x0 + arm, y0);
+          ctx.moveTo(x1 - arm, y0); ctx.lineTo(x1, y0); ctx.lineTo(x1, y0 + arm);
+          ctx.moveTo(x0, y1 - arm); ctx.lineTo(x0, y1); ctx.lineTo(x0 + arm, y1);
+          ctx.moveTo(x1 - arm, y1); ctx.lineTo(x1, y1); ctx.lineTo(x1, y1 - arm); ctx.stroke();
+          if (CAM.s > .48) {
+            ctx.font = '8px SF Mono,monospace'; ctx.fillStyle = hr(col, .3);
+            ctx.fillText('[' + folder.replace(/^\d+\.\s*/, '').toUpperCase() + ']', x0 + 3, y0 - 5)
+          }
+        });
+      }
+
+      // ── Cluster compressed bubbles ──
+      if (layerMode) {
+        clusterData.forEach(cl => {
+          if (!compressedClusters.has(cl.clusterId)) return;
+          const rep = nodes.find(nd => nd.id === cl.representativeId);
+          if (!rep) return;
+          const p = w2s(rep.x, rep.y, rep.z);
+          if (p.x < -100 || p.x > W + 100 || p.y < -100 || p.y > H + 100) return;
+          const cR = 18 + cl.size * 3;
+          // Cluster bubble
+          const cg = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, cR * 1.5);
+          cg.addColorStop(0, 'rgba(99,102,241,0.18)'); cg.addColorStop(.6, 'rgba(99,102,241,0.06)'); cg.addColorStop(1, 'rgba(99,102,241,0)');
+          ctx.beginPath(); ctx.arc(p.x, p.y, cR * 1.5, 0, Math.PI * 2); ctx.fillStyle = cg; ctx.fill();
+          // Border ring
+          ctx.beginPath(); ctx.arc(p.x, p.y, cR, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(99,102,241,0.35)'; ctx.lineWidth = 1.2; ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]);
+          // Label
+          const zd = zoomDetail();
+          if (zd !== 'OUTLINE') {
+            ctx.save(); ctx.globalAlpha = 0.8;
+            ctx.font = '10px SF Mono,monospace'; ctx.fillStyle = '#818cf8';
+            ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 8;
+            ctx.fillText(cl.representativeLabel, p.x + cR + 6, p.y - 2);
+            ctx.font = '8px SF Mono,monospace'; ctx.fillStyle = 'rgba(129,140,248,0.5)';
+            ctx.fillText(`${cl.size} notes`, p.x + cR + 6, p.y + 12);
+            ctx.shadowBlur = 0; ctx.restore();
+          }
+        });
+      }
+
+      // ── Nodes (sorted back→front by Z) ──
+      const sortedNodes = [...nodes].sort((a, b) => (b.z || 0) - (a.z || 0));
+      const curZoom = zoomDetail();
+      sortedNodes.forEach(n => {
+        // Skip nodes hidden by cluster compression
+        if (layerMode && !isNodeVisible(n)) return;
+        const p = w2s(n.x, n.y, n.z);
+        if (p.x < -70 || p.x > W + 70 || p.y < -70 || p.y > H + 70) return;
+        const isHub = hubNode && n.id === hubNode.id;
+        let r = (isHub ? 3 : nodeR(n)) * p.zf;
+        const col = n._cortexColor || (matureMode ? maturityColor(maturityScores.get(n.id) || 0) : layerMode ? lc(n) : fc(n.folder));
+        const isSel = selected?.id === n.id, isHov = hovered?.id === n.id;
+        if (n._cortexFlash > 0) {
+          r += Math.sin(n._cortexFlash * 0.3) * 6;
+          ctx.save();
+          ctx.globalAlpha = (n._cortexFlash / 60) * 0.8;
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#00d4ff'; ctx.fill();
+          ctx.restore();
+          n._cortexFlash--;
+        }
+        const isNbr = nbrIds?.has(n.id);
+        const isRect = RC.vis && RC.active?.id === n.id;
+        const isOrphan = orphanMode && (n.connections || 0) <= 1;
+        const isBridge = bridgeMode && bridgeNodes.has(n.id);
+        const isPathNode = pathMode.path.length > 0 && pathMode.path.includes(n.id);
+        const isPathA = pathMode.nodeA?.id === n.id;
+        const isPathB = pathMode.nodeB?.id === n.id;
+        // Fade non-orphans when orphan mode is on
+        const orphanFade = orphanMode ? (isOrphan ? 1 : 0.22) : 1;
+        const fade = ((focus && !isNbr) ? .75 : 1) * orphanFade;
+        const connR = (n.connections || 0) / maxConn;
+
+        // Focus depth — nodes near cursor are brighter (VR depth-of-field)
+        let depthFade = 1;
+        if (RC.vis && !focus) {
+          const dcur = Math.hypot(p.x - RC.x, p.y - RC.y);
+          depthFade = Math.max(.35, 1 - dcur / (Math.min(W, H) * .55));
+        }
+
+        // ── Nucleus ghost : nœuds non-connectés au noyau ──
+        let nucleusFade = 1;
+        if (isNucleusActive) {
+          const inNucleus = nucleusState.neighborIds.has(n.id);
+          if (!inNucleus) {
+            nucleusFade = nucleusState.ghostOpacity;
+          }
+        }
+
+        ctx.save(); ctx.globalAlpha = Math.max(.02, fade * depthFade * p.zf * nucleusFade);
+
+        // Hub "sun" — massive gravitational glow with enhanced bloom
+        if (isHub) {
+          const sunR = r * 12;
+          const sg = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, sunR);
+          sg.addColorStop(0, hr(col, .55)); sg.addColorStop(.1, hr(col, .3));
+          sg.addColorStop(.25, hr(col, .12)); sg.addColorStop(.5, hr(col, .04));
+          sg.addColorStop(.75, hr(col, .012)); sg.addColorStop(1, hr(col, 0));
+          ctx.beginPath(); ctx.fillStyle = sg; ctx.arc(p.x, p.y, sunR, 0, Math.PI * 2); ctx.fill();
+          // Outer bloom haze
+          const bloomR = r * 18 + Math.sin(t * .7) * r * 3;
+          const bg2 = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, bloomR);
+          bg2.addColorStop(0, hr(col, .08)); bg2.addColorStop(.5, hr(col, .02)); bg2.addColorStop(1, hr(col, 0));
+          ctx.beginPath(); ctx.fillStyle = bg2; ctx.arc(p.x, p.y, bloomR, 0, Math.PI * 2); ctx.fill();
+          // Slow pulsing corona
+          const corona = r * 5 + Math.sin(t * 1.5) * r * 1.5;
+          ctx.beginPath(); ctx.arc(p.x, p.y, corona, 0, Math.PI * 2);
+          ctx.strokeStyle = hr(col, .12 + .06 * Math.sin(t * 2)); ctx.lineWidth = 1.2; ctx.stroke();
+          // Second corona ring
+          const corona2 = r * 7 + Math.cos(t * 1.1) * r * 2;
+          ctx.beginPath(); ctx.arc(p.x, p.y, corona2, 0, Math.PI * 2);
+          ctx.strokeStyle = hr(col, .06 + .03 * Math.cos(t * 1.7)); ctx.lineWidth = .6; ctx.stroke();
+        }
+
+        // Glow — brightness ∝ connections, scaled by Z depth
+        const gAlpha = isSel ? .85 : isHov || isRect ? .65 : isHub ? .55 : .04 + connR * .15;
+        const gR = r * (isSel ? 6.5 : isHov || isRect ? 4.5 : isHub ? 6 : 1.8 + connR * 2);
+        const gc = isSel ? '#ff4444' : col;
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, gR);
+        g.addColorStop(0, hr(gc, gAlpha)); g.addColorStop(.4, hr(gc, gAlpha * .35)); g.addColorStop(1, hr(gc, 0));
+        ctx.beginPath(); ctx.fillStyle = g; ctx.arc(p.x, p.y, gR, 0, Math.PI * 2); ctx.fill();
+
+        // Core shape (layer-based when layerMode, folder-based otherwise)
+        const shape = layerMode ? layerShape(n) : shapeFor(n.folder);
+        drawShape(p.x, p.y, r, shape);
+        ctx.fillStyle = isSel ? '#ff4444' : isHov ? '#fff' : col; ctx.fill();
+
+        // Orbital particles for highly connected nodes (electrons)
+        if (connR > .35 && !isHub) {
+          const nOrbs = Math.floor(connR * 4) + 1;
+          for (let oi = 0; oi < nOrbs; oi++) {
+            const orbR = r * 2.5 + oi * 3;
+            const orbSpd = 1.2 + oi * .7;
+            const orbAngle = t * orbSpd + oi * Math.PI * 2 / nOrbs;
+            const ox = p.x + orbR * Math.cos(orbAngle);
+            const oy = p.y + orbR * Math.sin(orbAngle) * .65;
+            ctx.beginPath(); ctx.arc(ox, oy, 1 + connR * .8, 0, Math.PI * 2);
+            ctx.fillStyle = hr(col, .35 + connR * .2); ctx.fill();
+          }
+        }
+
+        // Holographic ring on hover/rect (VR feel)
+        if (isRect || isHov || isSel) {
+          const rr = r * 3; const ra = .3 + .12 * Math.sin(t * 3);
+          ctx.beginPath(); ctx.arc(p.x, p.y, rr, 0, Math.PI * 2);
+          ctx.strokeStyle = hr(gc, ra); ctx.lineWidth = 1.1; ctx.stroke();
+          // Spinning dashed orbit
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(t * 1.2);
+          ctx.setLineDash([3, 7]); ctx.beginPath(); ctx.arc(0, 0, rr + 5, 0, Math.PI * 2);
+          ctx.strokeStyle = hr(gc, ra * .45); ctx.lineWidth = .55; ctx.stroke();
+          ctx.setLineDash([]); ctx.restore();
+        }
+
+        // ── Aimant Sémantique : Feedback visuel premium ──
+        const isMagneted = magnetState.node?.id === n.id && magnetState.strength > 0.08;
+        if (isMagneted) {
+          const ms = magnetState.strength; // 0→1
+          const pulseA = 0.5 + 0.4 * Math.sin(t * 5);  // Battement 5Hz
+          const scanA  = 0.3 + 0.2 * Math.cos(t * 7);
+          const magR   = r * (3.5 + ms * 2.5);          // Rayon réactif
+
+          ctx.save();
+
+          // 1) Halo magnétique pulsant (cyan → blanc)
+          const magG = ctx.createRadialGradient(p.x, p.y, r, p.x, p.y, magR * 2);
+          magG.addColorStop(0,   `rgba(0,212,255,${ms * pulseA * 0.55})`);
+          magG.addColorStop(0.4, `rgba(80,255,220,${ms * pulseA * 0.20})`);
+          magG.addColorStop(1,   `rgba(0,212,255,0)`);
+          ctx.beginPath(); ctx.arc(p.x, p.y, magR * 2, 0, Math.PI * 2);
+          ctx.fillStyle = magG; ctx.fill();
+
+          // 2) Anneau de scan rotatif (comme un lock-on)
+          ctx.translate(p.x, p.y); ctx.rotate(t * 2.5);
+          ctx.setLineDash([4, 6]);
+          ctx.beginPath(); ctx.arc(0, 0, magR, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(0,255,200,${ms * scanA})`;
+          ctx.lineWidth = 1.4 * ms; ctx.stroke();
+          // Anneau solide intérieur
+          ctx.rotate(-t * 4.5);
+          ctx.setLineDash([]);
+          ctx.beginPath(); ctx.arc(0, 0, magR * 0.75, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(0,212,255,${ms * 0.6 + pulseA * 0.2})`;
+          ctx.lineWidth = 1.8 * ms; ctx.stroke();
+
+          ctx.restore();
+
+          // 3) Label grand format aimanté (nom du nœud en grand)
+          if (ms > 0.3) {
+            const labelSize = Math.round(9 + ms * 10);  // 9→19px
+            ctx.save();
+            ctx.globalAlpha = ms * 0.92;
+            ctx.font = `bold ${labelSize}px 'SF Mono','Fira Code',monospace`;
+            ctx.fillStyle = '#00d4ff';
+            ctx.shadowColor = 'rgba(0,0,0,0.95)'; ctx.shadowBlur = 14;
+            ctx.fillText(n.name, p.x + r + 10, p.y - r - 6);
+            // Sous-titre : nombre de connexions
+            ctx.globalAlpha = ms * 0.6;
+            ctx.font = `${Math.round(7 + ms * 4)}px 'SF Mono',monospace`;
+            ctx.fillStyle = '#80ffee';
+            ctx.fillText(`${n.connections || 0} connexions`, p.x + r + 10, p.y - r + 10);
+            ctx.shadowBlur = 0;
+            ctx.restore();
+          }
+        }
+
+        // Select animated pulse ring
+        if (isSel) {
+          const pulse = .5 + .5 * Math.sin(t * 4);
+          ctx.beginPath(); ctx.arc(p.x, p.y, r + 5 + pulse * 5, 0, Math.PI * 2);
+          ctx.strokeStyle = hr('#ff4444', .22 + pulse * .12); ctx.lineWidth = .8; ctx.stroke();
+        }
+
+        // ── Orphan mode — red breathing ring ──
+        if (isOrphan) {
+          const breath = 0.45 + 0.3 * Math.sin(t * 3);
+          const og = ctx.createRadialGradient(p.x, p.y, r * .5, p.x, p.y, r * 4);
+          og.addColorStop(0, `rgba(255,68,68,${breath * .35})`); og.addColorStop(1, 'rgba(255,68,68,0)');
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * 4, 0, Math.PI * 2); ctx.fillStyle = og; ctx.fill();
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * 2.8, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(255,68,68,${breath})`; ctx.lineWidth = 1.5; ctx.stroke();
+        }
+
+        // ── Bridge mode — amber glow + outer ring ──
+        if (isBridge) {
+          const bpulse = 0.5 + 0.3 * Math.sin(t * 2.2);
+          ctx.save();
+          ctx.shadowColor = '#f59e0b'; ctx.shadowBlur = 18;
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * 3.2, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(245,158,11,${bpulse})`; ctx.lineWidth = 2; ctx.stroke();
+          ctx.shadowBlur = 0;
+          // Rotating dashes
+          ctx.translate(p.x, p.y); ctx.rotate(t * 0.8);
+          ctx.setLineDash([4, 6]);
+          ctx.beginPath(); ctx.arc(0, 0, r * 4.5, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(245,158,11,${bpulse * .55})`; ctx.lineWidth = 0.9; ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.restore();
+        }
+
+        // ── Path mode — green glow for path nodes (A/B endpoints brighter) ──
+        if (isPathNode) {
+          const isEndpoint = isPathA || isPathB;
+          const pg = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * (isEndpoint ? 5 : 3.5));
+          pg.addColorStop(0, `rgba(0,255,136,${isEndpoint ? .5 : .25})`); pg.addColorStop(1, 'rgba(0,212,255,0)');
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * (isEndpoint ? 5 : 3.5), 0, Math.PI * 2); ctx.fillStyle = pg; ctx.fill();
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * (isEndpoint ? 3.2 : 2.4), 0, Math.PI * 2);
+          const pp = 0.6 + 0.3 * Math.sin(t * 5);
+          ctx.strokeStyle = `rgba(0,255,136,${pp})`; ctx.lineWidth = isEndpoint ? 2 : 1.2; ctx.stroke();
+        }
+
+        ctx.restore();
+
+        // ── Nucleus : orbital ring around nucleus node ──
+        if (isNucleusActive && n.id === nucleusState.node?.id) {
+          const nRing = NUCLEUS_ORBIT_RADIUS * CAM.s * p.zf;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(nucleusState.orbitAngle * 0.5);
+          // Anneau holographique principal
+          ctx.beginPath(); ctx.arc(0, 0, nRing * 0.7, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(168,85,247,${0.15 + 0.08 * Math.sin(t * 2.5)})`;  ctx.lineWidth = 1.2; ctx.stroke();
+          // Second anneau rotatif en dash
+          ctx.setLineDash([5, 8]); ctx.rotate(-nucleusState.orbitAngle);
+          ctx.beginPath(); ctx.arc(0, 0, nRing * 0.85, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(168,85,247,${0.08 + 0.05 * Math.cos(t * 1.8)})`; ctx.lineWidth = 0.7; ctx.stroke();
+          ctx.setLineDash([]);
+          // Glow central noyau
+          const nucG = ctx.createRadialGradient(0, 0, 0, 0, 0, r * 8);
+          nucG.addColorStop(0, 'rgba(168,85,247,0.35)'); nucG.addColorStop(0.3, 'rgba(168,85,247,0.12)'); nucG.addColorStop(1, 'rgba(168,85,247,0)');
+          ctx.beginPath(); ctx.arc(0, 0, r * 8, 0, Math.PI * 2); ctx.fillStyle = nucG; ctx.fill();
+          ctx.restore();
+        }
+
+        // ── Nucleus : satellite glow enhanced ──
+        if (isNucleusActive && nucleusState.satelliteNodes.includes(n) && nucleusState.t > 0.3) {
+          const satGlowR = r * 3.5;
+          const satG = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, satGlowR);
+          satG.addColorStop(0, hr(col, 0.45)); satG.addColorStop(0.5, hr(col, 0.12)); satG.addColorStop(1, hr(col, 0));
+          ctx.beginPath(); ctx.arc(p.x, p.y, satGlowR, 0, Math.PI * 2); ctx.fillStyle = satG; ctx.fill();
+          // Ligne de connexion vers le noyau
+          const np = w2s(nucleusState.node.x, nucleusState.node.y, nucleusState.node.z);
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(np.x, np.y);
+          ctx.strokeStyle = `rgba(168,85,247,${0.12 + 0.06 * Math.sin(t * 3 + n.id)})`;  ctx.lineWidth = 0.6; ctx.stroke();
+        }
+
+        // ── Label — smooth fade (zoom-adaptive) ──
+        const show = isRect || (!RC.vis && (isHov || isSel));
+        // En Nucleus mode : toujours afficher les labels des satellites
+        const nucleusShow = isNucleusActive && (nucleusState.neighborIds.has(n.id)) && nucleusState.t > 0.5;
+        // Zoom-level: always show labels for evergreen/project at NODE+ zoom
+        const zoomAutoLabel = layerMode && curZoom !== 'OUTLINE' && (n.layer === 'evergreen' || n.layer === 'project') && CAM.s > 0.7;
+        n._lo = n._lo * 0.82 + ((show || nucleusShow || zoomAutoLabel) ? 1 : 0) * 0.18;
+        if (n._lo > .02) {
+          const fs = Math.max(9, Math.min(13, 9 + (n.connections || 0) * .1));
+          ctx.save(); ctx.globalAlpha = n._lo * (isSel ? .95 : .88) * fade * depthFade * nucleusFade;
+          if (isNucleusActive && nucleusState.neighborIds.has(n.id)) ctx.globalAlpha = Math.max(ctx.globalAlpha, 0.7);
+          ctx.font = `${fs}px 'SF Mono','Fira Code',monospace`;
+          ctx.fillStyle = isSel ? '#ff6644' : (isNucleusActive && n.id === nucleusState.node?.id) ? '#a855f7' : isRect ? col : '#fff';
+          ctx.shadowColor = 'rgba(0,0,0,.92)'; ctx.shadowBlur = 10;
+          ctx.fillText(n.name, p.x + r + 6, p.y + 4);
+
+          // Layer badge (small colored tag)
+          if (layerMode && n._lo > 0.3 && curZoom !== 'OUTLINE') {
+            const badgeY = p.y + 4 + 14;
+            const badge = n.layer.toUpperCase();
+            ctx.font = '7px SF Mono,monospace';
+            ctx.fillStyle = hr(LAYER_PAL[n.layer] || '#888', 0.7);
+            ctx.fillText(badge, p.x + r + 6, badgeY);
+          }
+
+          // CONTENT zoom: show summary preview for selected/hovered
+          if (curZoom === 'CONTENT' && (isSel || isHov) && n.summary) {
+            const previewY = p.y + 4 + (layerMode ? 28 : 16);
+            ctx.font = '8px -apple-system,sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,0.4)';
+            const maxW = 200;
+            const txt = n.summary.length > 80 ? n.summary.slice(0, 80) + '…' : n.summary;
+            ctx.fillText(txt, p.x + r + 6, previewY);
+          }
+
+          ctx.shadowBlur = 0; ctx.restore();
+        }
+
+        // ── Bridge label ──
+        if (isBridge && CAM.s > .6) {
+          ctx.save(); ctx.globalAlpha = 0.65 * fade * depthFade;
+          ctx.font = '7px SF Mono,monospace'; ctx.fillStyle = '#f59e0b';
+          ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 6;
+          ctx.fillText('PONT', p.x + r + 5, p.y - r - 3); ctx.shadowBlur = 0; ctx.restore();
+        }
+
+        // ── Maturity label near hovered/selected node ──
+        if (matureMode && (isHov || isSel)) {
+          const ms = maturityScores.get(n.id) || 0;
+          ctx.save(); ctx.globalAlpha = 0.85;
+          ctx.font = '8px SF Mono,monospace'; ctx.fillStyle = maturityColor(ms);
+          ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 6;
+          ctx.fillText(`${Math.round(ms * 100)}%`, p.x + r + 5, p.y + r + 10); ctx.shadowBlur = 0; ctx.restore();
+        }
+
+        // ── Path A/B labels ──
+        if (isPathA || isPathB) {
+          ctx.save(); ctx.globalAlpha = 0.9;
+          ctx.font = 'bold 9px SF Mono,monospace'; ctx.fillStyle = isPathA ? '#00ff88' : '#00d4ff';
+          ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 6;
+          ctx.fillText(isPathA ? 'A' : 'B', p.x - 4, p.y - r - 6); ctx.shadowBlur = 0; ctx.restore();
+        }
+      });
+
+      // ── Select pulses ──
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        const p = pulses[i]; p.r += (72 - p.r) * .08; p.a *= .93;
+        if (p.a < .01) { pulses.splice(i, 1); continue }
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.strokeStyle = hr(p.c, p.a); ctx.lineWidth = 1.8; ctx.stroke();
+        // Second ring
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * .6, 0, Math.PI * 2);
+        ctx.strokeStyle = hr(p.c, p.a * .5); ctx.lineWidth = .8; ctx.stroke();
+      }
+
+      // ── Warp effect (FIST reset) ──
+      if (warpEffect.active) {
+        warpEffect.t += .035;
+        const wt = warpEffect.t;
+        if (wt > 1) { warpEffect.active = false }
+        else {
+          const maxR = Math.max(W, H) * .8;
+          const warpR = maxR * (1 - wt); // shrinks inward
+          const wa = (.7 - wt * .7) * Math.max(0, 1 - wt);
+          // Outer white ring contracting
+          ctx.save();
+          ctx.beginPath(); ctx.arc(warpEffect.cx, warpEffect.cy, warpR, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(255,255,255,${wa})`; ctx.lineWidth = 3 + wt * 8; ctx.stroke();
+          // Inner glow
+          const wg = ctx.createRadialGradient(warpEffect.cx, warpEffect.cy, 0, warpEffect.cx, warpEffect.cy, warpR * .5);
+          wg.addColorStop(0, `rgba(255,255,255,${wa * .5})`); wg.addColorStop(1, `rgba(255,255,255,0)`);
+          ctx.beginPath(); ctx.arc(warpEffect.cx, warpEffect.cy, warpR * .5, 0, Math.PI * 2); ctx.fillStyle = wg; ctx.fill();
+          // Speed lines radiating inward
+          for (let i = 0; i < 16; i++) {
+            const a = Math.PI * 2 * i / 16;
+            const r0 = warpR * .4 + warpR * .5 * wt;
+            const r1 = warpR * .15;
+            ctx.beginPath();
+            ctx.moveTo(warpEffect.cx + r0 * Math.cos(a), warpEffect.cy + r0 * Math.sin(a));
+            ctx.lineTo(warpEffect.cx + r1 * Math.cos(a), warpEffect.cy + r1 * Math.sin(a));
+            ctx.strokeStyle = `rgba(200,220,255,${wa * .4})`; ctx.lineWidth = 1.2; ctx.stroke();
+          }
+          ctx.restore();
+        }
+      }
+
+      // ── Luminous cursor trail ──
+      if (RC.vis && trail.length > 2) {
+        const trailCol = RC.active ? fc(RC.active.folder) : '#fff';
+        for (let i = 1; i < trail.length; i++) {
+          const pct = i / trail.length;
+          const a = pct * .25;
+          const s = pct * 3.5;
+          // Glow halo
+          const tg = ctx.createRadialGradient(trail[i].x, trail[i].y, 0, trail[i].x, trail[i].y, s * 3);
+          tg.addColorStop(0, hr(trailCol, a * .6)); tg.addColorStop(1, hr(trailCol, 0));
+          ctx.beginPath(); ctx.arc(trail[i].x, trail[i].y, s * 3, 0, Math.PI * 2); ctx.fillStyle = tg; ctx.fill();
+          // Core dot
+          ctx.beginPath(); ctx.arc(trail[i].x, trail[i].y, s * .6, 0, Math.PI * 2);
+          ctx.fillStyle = hr(trailCol, a * 1.2); ctx.fill();
+        }
+      }
+
+      // ── Thrown node physics ──
+      for (let i = thrownNodes.length - 1; i >= 0; i--) {
+        const tn = thrownNodes[i];
+        // Apply velocity
+        tn.node.x += tn.vx; tn.node.y += tn.vy;
+        // Friction
+        tn.vx *= tn.friction; tn.vy *= tn.friction;
+        // Spring back to original position
+        const dx = tn.origX - tn.node.x, dy = tn.origY - tn.node.y;
+        tn.vx += dx * tn.spring; tn.vy += dy * tn.spring;
+        // Update frozen position
+        tn.node.fx = tn.node.x; tn.node.fy = tn.node.y;
+        // Draw motion trail
+        const p = w2s(tn.node.x, tn.node.y, tn.node.z);
+        const speed = Math.hypot(tn.vx, tn.vy);
+        if (speed > .5) {
+          ctx.save(); ctx.globalAlpha = Math.min(.4, speed * .03);
+          ctx.beginPath(); ctx.arc(p.x, p.y, nodeR(tn.node) * p.zf * 2, 0, Math.PI * 2);
+          ctx.fillStyle = hr(fc(tn.node.folder), .3); ctx.fill(); ctx.restore();
+        }
+        // Remove when settled
+        if (speed < .15 && Math.hypot(dx, dy) < .5) {
+          tn.node.x = tn.origX; tn.node.y = tn.origY;
+          tn.node.fx = tn.origX; tn.node.fy = tn.origY;
+          thrownNodes.splice(i, 1);
+        }
+      }
+
+      // ── Grab indicator — glow around grabbed node ──
+      if (grabState.active && grabState.node) {
+        const gn = grabState.node;
+        const gp = w2s(gn.x, gn.y, gn.z);
+        const gr = nodeR(gn) * gp.zf;
+        ctx.save();
+        const grabPulse = .6 + .3 * Math.sin(t * 6);
+        ctx.shadowColor = '#f59e0b'; ctx.shadowBlur = 20;
+        ctx.beginPath(); ctx.arc(gp.x, gp.y, gr * 3.5, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(245,158,11,${grabPulse})`; ctx.lineWidth = 2.5; ctx.stroke();
+        ctx.shadowBlur = 0;
+        // Dashed orbit
+        ctx.translate(gp.x, gp.y); ctx.rotate(t * 3);
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath(); ctx.arc(0, 0, gr * 5, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(245,158,11,${grabPulse * .4})`; ctx.lineWidth = 1; ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.restore();
+        // "GRAB" label
+        ctx.save(); ctx.globalAlpha = .8; ctx.font = 'bold 8px SF Mono,monospace';
+        ctx.fillStyle = '#f59e0b'; ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 6;
+        ctx.fillText('GRAB', gp.x + gr + 8, gp.y - gr - 4); ctx.shadowBlur = 0; ctx.restore();
+      }
+
+      // ── Rect cursor ──
+      if (RC.vis) drawRect();
+
+      // ── Control zone frame ──
+      if (webcamOn) drawControlZone(t);
+
+      // ── Hand dots ──
+      if (handVis) drawHandObj(thumbS, indexS, middleS, ringS, pinkyS, wristS, TRK.gesture, false);
+      if (hand2Vis && twoHandActive) drawHandObj(thumbS2, indexS2, middleS2, ringS2, pinkyS2, wristS2, 'IDLE', true);
+
+      // ── Post-render (tags, clusters, minimap) ──
+      postRender(t);
+
+      requestAnimationFrame(loop);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // RECT CURSOR
+    // ═══════════════════════════════════════════════════════════════════
+    function drawRect() {
+      if (RC.flash > 0) RC.flash--;
+      const { x, y, w, h, active, locked } = RC;
+      const col = active ? fc(active.folder) : 'rgba(255,255,255,.5)';
+      const hw = w / 2, hh = h / 2, arm = 15;
+      ctx.save(); ctx.globalAlpha = RC.flash > 0 ? 1 : .7;
+      ctx.strokeStyle = col; ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(x - hw, y - hh + arm); ctx.lineTo(x - hw, y - hh); ctx.lineTo(x - hw + arm, y - hh);
+      ctx.moveTo(x + hw - arm, y - hh); ctx.lineTo(x + hw, y - hh); ctx.lineTo(x + hw, y - hh + arm);
+      ctx.moveTo(x - hw, y + hh - arm); ctx.lineTo(x - hw, y + hh); ctx.lineTo(x - hw + arm, y + hh);
+      ctx.moveTo(x + hw - arm, y + hh); ctx.lineTo(x + hw, y + hh); ctx.lineTo(x + hw, y + hh - arm);
+      ctx.stroke();
+      const st = (Date.now() % 2400) / 2400, sy = y - hh + st * h;
+      ctx.beginPath(); ctx.moveTo(x - hw, sy); ctx.lineTo(x + hw, sy);
+      ctx.strokeStyle = hr(col.startsWith('#') ? col : '#fff', .22); ctx.lineWidth = .6; ctx.globalAlpha = .35; ctx.stroke();
+      ctx.globalAlpha = .3; ctx.strokeStyle = col; ctx.lineWidth = .7; ctx.beginPath();
+      ctx.moveTo(x - 5, y); ctx.lineTo(x + 5, y); ctx.moveTo(x, y - 5); ctx.lineTo(x, y + 5); ctx.stroke();
+      if (active) {
+        ctx.globalAlpha = .8; ctx.font = '9px SF Mono,monospace'; ctx.fillStyle = col;
+        ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 8;
+        ctx.fillText(active.name, x - hw + 3, y - hh - 7); ctx.shadowBlur = 0;
+        if (locked) { ctx.fillStyle = hr(col.startsWith('#') ? col : '#fff', .6); ctx.fillText('● LOCK', x + hw - 38, y + hh + 14) }
+      }
+      ctx.restore();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // HAND DOTS — rendering 5 fingers (Thumb, Index, Middle, Ring, Pinky)
+    // ═══════════════════════════════════════════════════════════════════
+    function drawHandObj(tS, iS, mS, rS, pS, wS, gMode, isH2 = false) {
+      const g = grabState.active ? 'GRAB' : gMode;
+      const COLS = { CURSOR: '#ffffff', ROTATE: '#00d4ff', PINCH: '#ff4444', GRAB: '#f59e0b', PAN: '#10b981', ZOOM_IN: '#f59e0b', ZOOM_OUT: '#a855f7', IDLE: 'rgba(0,255,200,.6)' };
+      let col = COLS[g] || '#fff';
+      if (isH2) col = 'rgba(0,255,200,.6)';
+
+      ctx.save();
+
+      // ── Squelette : rayon du poignet vers chaque bout de doigt ──
+      const skelCol = col.startsWith('#') ? col : '#00ffc8';
+      ctx.strokeStyle = hr(skelCol, .18);
+      ctx.lineWidth = 1.0;
+      [[wS, tS], [wS, iS], [wS, mS], [wS, rS], [wS, pS]].forEach(([a, b]) => {
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      });
+
+      // Arc de connexion : thumb → index → middle → ring → pinky
+      ctx.beginPath();
+      ctx.moveTo(tS.x, tS.y);
+      ctx.lineTo(iS.x, iS.y);
+      ctx.lineTo(mS.x, mS.y);
+      ctx.lineTo(rS.x, rS.y);
+      ctx.lineTo(pS.x, pS.y);
+      ctx.strokeStyle = hr(skelCol, .28);
+      ctx.lineWidth = 1.2; ctx.stroke();
+
+      // Helper : dessine un dot avec halo
+      function dot(x, y, r, fillCol, alpha, haloR) {
+        ctx.globalAlpha = alpha;
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = fillCol; ctx.fill();
+        ctx.beginPath(); ctx.arc(x, y, haloR, 0, Math.PI * 2);
+        ctx.strokeStyle = fillCol; ctx.lineWidth = .6; ctx.globalAlpha = alpha * .28; ctx.stroke();
+      }
+
+      // Wrist — point d'ancrage, discret
+      dot(wS.x, wS.y, 3.5, skelCol, .45, 7);
+      // Thumb — couleur geste, plus gros
+      dot(tS.x, tS.y, 6,   col,   .70, 11);
+      // Index — blanc, curseur principal
+      dot(iS.x, iS.y, 5,   '#fff', .75, 9);
+      // Middle
+      dot(mS.x, mS.y, 4,   '#fff', .65, 8);
+      // Ring — légèrement teinté
+      dot(rS.x, rS.y, 3.5, '#fff', .50, 7);
+      // Pinky — plus petit
+      dot(pS.x, pS.y, 3,   '#fff', .40, 6);
+
+      // Midpoint thumb+index (référence geste)
+      const mx = (tS.x + iS.x) / 2, my = (tS.y + iS.y) / 2;
+      ctx.globalAlpha = .4;
+      ctx.beginPath(); ctx.arc(mx, my, 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = col; ctx.fill();
+
+      if (isH2 && !pathMode.active) {
+        ctx.globalAlpha = .8; ctx.font = '9px SF Mono,monospace'; ctx.fillStyle = '#00ffc8';
+        ctx.shadowColor = '#000'; ctx.shadowBlur = 4;
+        ctx.fillText('H2/PAN', mx + 14, my + 3);
+        ctx.shadowBlur = 0;
+      }
+      ctx.restore();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // CONTROL ZONE FRAME
+    // ═══════════════════════════════════════════════════════════════════
+    function drawControlZone(t) {
+      const pad = 0.14;
+      const zx = W * pad, zy = H * pad;
+      const zw = W * (1 - pad * 2), zh = H * (1 - pad * 2);
+
+      const pulse = 0.18 + 0.07 * Math.sin(t * 1.8); // respiration très discrète
+      const activeHand = handVis || (hand2Vis && twoHandActive);
+      // Gris discret au repos → blanc lumineux avec la main
+      const bracketCol = activeHand
+        ? `rgba(255,255,255,${0.55 + 0.15 * Math.sin(t * 2.2)})`
+        : `rgba(160,160,160,${pulse})`;
+      const labelCol = activeHand ? 'rgba(255,255,255,.50)' : 'rgba(130,130,130,.28)';
+      const bk = 18; // longueur des brackets
+
+      ctx.save();
+
+      // Brackets de coin uniquement (pas de rectangle plein)
+      ctx.lineWidth = activeHand ? 1.6 : 1.2;
+      ctx.strokeStyle = bracketCol;
+      const corners = [
+        [zx,      zy,       bk,  0,   0,  bk ],
+        [zx+zw,   zy,      -bk,  0,   0,  bk ],
+        [zx,      zy+zh,    bk,  0,   0, -bk ],
+        [zx+zw,   zy+zh,   -bk,  0,   0, -bk ],
+      ];
+      corners.forEach(([cx, cy, hx, hy, vx, vy]) => {
+        ctx.beginPath();
+        ctx.moveTo(cx + hx, cy + hy); ctx.lineTo(cx, cy); ctx.lineTo(cx + vx, cy + vy);
+        ctx.stroke();
+      });
+
+      // Label en haut à gauche
+      ctx.font = '8px SF Mono,monospace';
+      ctx.fillStyle = labelCol;
+      ctx.shadowColor = '#000'; ctx.shadowBlur = 4;
+      ctx.fillText(activeHand ? '● HAND ACTIVE' : '○ GESTURE ZONE', zx + 6, zy - 5);
+      ctx.shadowBlur = 0;
+
+      ctx.restore();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // MOUSE
+    // ═══════════════════════════════════════════════════════════════════
+    canvas.addEventListener('mousemove', e => {
+      if (!ready || RC.vis) return;
+      const n = nearNode(e.clientX, e.clientY, 42);
+      
+      let validHover = n;
+      if (isNucleusActive && n && !nucleusState.neighborIds.has(n.id)) {
+        validHover = null;
+      }
+      
+      if (validHover !== hovered) { hovered = validHover; updatePanel() }
+      canvas.style.cursor = n ? 'pointer' : e.shiftKey ? 'grab' : 'crosshair';
+      if (isDrag) {
+        if (e.shiftKey) {
+          // Shift+drag → dual-axis rotation
+          const dx = e.clientX - dragStart.x, dy = e.clientY - dragStart.y;
+          CAM_T.r = dragC0.r + dx * .003;
+          CAM_T.tilt = Math.max(-TILT_MAX, Math.min(TILT_MAX, dragC0.tilt + dy * .003));
+          $('rot-ind').style.opacity = '1'; $('rot-vals').textContent = `${Math.round(CAM_T.r * 57.3)}° / ${Math.round(CAM_T.tilt * 57.3)}°`;
+        } else {
+          CAM.x = dragC0.x + (e.clientX - dragStart.x); CAM.y = dragC0.y + (e.clientY - dragStart.y);
+          camDirect(); clamp();
+        }
+      }
+    });
+    canvas.addEventListener('contextmenu', e => e.preventDefault());
+    canvas.addEventListener('mousedown', e => { isDrag = true; dragStart = { x: e.clientX, y: e.clientY }; dragC0 = { x: CAM.x, y: CAM.y, r: CAM_T.r, tilt: CAM_T.tilt } });
+    canvas.addEventListener('mouseup', e => {
+      if (isDrag && Math.hypot(e.clientX - dragStart.x, e.clientY - dragStart.y) < 5) {
+        const n = nearNode(e.clientX, e.clientY, 42);
+        // ── Nucleus lock : on limite la sélection aux satellites et au noyau ──
+        if (isNucleusActive) {
+          if (n && nucleusState.neighborIds.has(n.id)) {
+            selected = (selected?.id === n.id) ? nucleusState.node : n;
+            if (selected) { const p = w2s(selected.x, selected.y, selected.z); pulses.push({ x: p.x, y: p.y, r: 5, a: .65, c: fc(selected.folder) }) }
+            updatePanel();
+          }
+        } else {
+          selected = (selected?.id === n?.id) ? null : n;
+          if (selected) { const p = w2s(selected.x, selected.y, selected.z); pulses.push({ x: p.x, y: p.y, r: 5, a: .65, c: fc(selected.folder) }) }
+          updatePanel();
+        }
+      }
+      isDrag = false; $('rot-ind').style.opacity = '0';
+    });
+    canvas.addEventListener('wheel', e => { e.preventDefault(); smartZoom(e.deltaY < 0 ? 1.09 : .92, e.clientX, e.clientY) }, { passive: false });
+    canvas.addEventListener('mouseleave', () => { if (!selected) { hovered = null; updatePanel() } });
+
+    var lastSelectedId = null;
+    var cortexHUDText = "";
+    
+    // Fonction globale pour afficher les réponses Cortex
+    window.displayHUD = function(text) {
+      const hud = $('cortex-hud');
+      if (!text) {
+        hud.style.display = 'none';
+        cortexHUDText = "";
+        return;
+      }
+      cortexHUDText = text;
+      hud.textContent = text;
+      hud.style.display = 'block';
+    };
+
+    function updatePanel() {
+      const n = selected || hovered; const el = $('info');
+      
+      // Envoi du Focus à cortex_brain via WebSocket
+      if (selected && selected.id !== lastSelectedId) {
+        lastSelectedId = selected.id;
+        if (globalWs && globalWs.readyState === WebSocket.OPEN) {
+          globalWs.send(JSON.stringify({ event: "node_focus", node_name: selected.name }));
+        }
+        // ── MODE FOCUS : centrer la caméra sur le nœud sélectionné (uniquement hors mode NUCLEUS) ──
+        if (navMode === 'FIXED' && selected && !isNucleusActive) {
+          focusOnNode(selected);
+        }
+      } else if (!selected) {
+        lastSelectedId = null;
+      }
+
+      if (!n) { el.style.opacity = 0; if (typeof updateSimilarity === 'function') updateSimilarity(); return }
+      el.style.opacity = 1;
+      $('info-name').textContent = n.name;
+      $('info-name').style.color = selected?.id === n.id ? '#ff6644' : '#fff';
+      const folderLabel = n.folder.replace(/^\d+\.\s*/, '');
+      const layerLabel = n.layer ? n.layer.toUpperCase() : '';
+      const layerCol = LAYER_PAL[n.layer] || '#888';
+      $('info-folder').innerHTML = layerMode
+        ? `<span style="color:${layerCol}">${layerLabel}</span> · ${folderLabel}`
+        : folderLabel;
+      const msLabel = n.maturityScore != null ? `<br>MATURITÉ <span>${Math.round(n.maturityScore * 100)}%</span>` : '';
+      $('info-rows').innerHTML = `CONNEXIONS <span>${n.connections}</span><br>LIENS WIKI <span>${n.explicitLinks || 0}</span><br>TOKENS <span>${n.wordCount || 0}</span>${msLabel}`;
+      $('info-words').innerHTML = (n.topWords || []).map(w => `<span style="color:rgba(255,255,255,.4)">${w}</span>`).join('  ');
+      // Navigation history + similarity
+      if (selected && typeof navPush === 'function') navPush(selected);
+      if (typeof updateSimilarity === 'function') updateSimilarity();
+    }
+
+    // (zoom-ctrl buttons removed — zoom via scroll/pinch/deux mains uniquement)
+
+    // ═══════════════════════════════════════════════════════════════════
+    // WEBCAM
+    // ═══════════════════════════════════════════════════════════════════
+    $('cam-btn').onclick = toggleCam;
+    async function toggleCam() {
+      const btn = $('cam-btn');
+      if (webcamOn) {
+        webcamOn = false; RC.vis = false; handVis = false; trail.length = 0; RC.snapNode = null;
+        if (mpCam) { try { mpCam.stop() } catch (e) { } mpCam = null }
+        if (video.srcObject) { video.srcObject.getTracks().forEach(t => t.stop()); video.srcObject = null }
+        btn.textContent = 'WEBCAM + GESTES'; btn.classList.remove('on');
+        setGl('', ''); $('gleg').style.display = 'none'; _hlGLast = null;
+        $('gh-hint').textContent = 'SCROLL ZOOM · DRAG PAN · CLIC SELECT';
+        return;
+      }
+      btn.textContent = 'CHARGEMENT...';
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480, facingMode: 'user' } });
+        video.srcObject = stream; await new Promise(r => { video.onloadedmetadata = r }); video.play();
+        webcamOn = true; RC.vis = true;
+        btn.textContent = 'DÉSACTIVER'; btn.classList.add('on');
+        $('gleg').style.display = 'block';
+        $('gh-hint').textContent = 'POUCE + INDEX CONTRÔLENT TOUT';
+
+        if (window.Hands && window.Camera) {
+          const h = new Hands({ locateFile: f => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/${f}` });
+          // Optimisation CPU : modelComplexity = 0, baisse de la résolution à 320x240
+          h.setOptions({ maxNumHands: 2, modelComplexity: 0, minDetectionConfidence: .6, minTrackingConfidence: .5 });
+          h.onResults(onHands);
+          mpCam = new Camera(video, { onFrame: async () => { await h.send({ image: video }) }, width: 320, height: 240 });
+          mpCam.start();
+        }
+      } catch (e) { btn.textContent = 'REFUSÉ'; console.warn(e) }
+    }
+
+    class DynamicSmoother {
+      constructor() {
+        this.x = 0; this.y = 0; this.init = false;
+      }
+      update(rawX, rawY) {
+        if (!this.init) {
+          this.x = rawX; this.y = rawY; this.init = true;
+          return { x: this.x, y: this.y };
+        }
+        const dx = rawX - this.x;
+        const dy = rawY - this.y;
+        const dist = Math.hypot(dx, dy);
+        
+        // Zone morte sémantique totale : supprime les micro-tremblements
+        if (dist < 2.0) {
+          return { x: this.x, y: this.y };
+        }
+        
+        // Lissage Adaptatif Dynamique
+        const minA = 0.05; // Stabilité forte à basse vélocité
+        const maxA = 0.80; // Suivi parfait à haute vélocité
+        const maxDist = 40.0; // Vitesse de saturation
+        const alpha = Math.max(minA, Math.min(maxA, minA + (maxA - minA) * (dist / maxDist)));
+        
+        this.x += dx * alpha;
+        this.y += dy * alpha;
+        return { x: this.x, y: this.y };
+      }
+      reset() { this.init = false; }
+    }
+
+    const thumbSmoother  = new DynamicSmoother();
+    const indexSmoother  = new DynamicSmoother();
+    const middleSmoother = new DynamicSmoother();
+    const ringSmoother   = new DynamicSmoother();
+    const pinkySmoother  = new DynamicSmoother();
+    const thumbSmoother2  = new DynamicSmoother();
+    const indexSmoother2  = new DynamicSmoother();
+    const middleSmoother2 = new DynamicSmoother();
+    const ringSmoother2   = new DynamicSmoother();
+    const pinkySmoother2  = new DynamicSmoother();
+    const wristSmoother   = new DynamicSmoother();
+    const wristSmoother2  = new DynamicSmoother();
+
+    // ═══════════════════════════════════════════════════════════════════
+    // GESTURE ENGINE — thumb + index ONLY
+    // ═══════════════════════════════════════════════════════════════════
+    const GNAMES = { CURSOR: '🤏 CURSEUR', TWIST: '🌀 TWIST', ROTATE: '🔄 ROTATION', PINCH: '📌 SÉLECTION', GRAB: '✊ GRAB', PAN: '🫳 PANORAMIQUE', ZOOM_IN: '👐 ZOOM +', ZOOM_OUT: '🤌 ZOOM −', PALM: '🖐️ PAUME', IDLE: '', GESTURE_NAV: '👾 GESTURE NAV' };
+
+    // hlGL définie plus haut avec cache (_hlGLast)
+
+    // ── Cache DOM : évite les écritures inutiles sur $('gl') ──
+    let _glText = '', _glCol = '';
+    function setGl(text, col) {
+      if (text !== _glText) { $('gl').textContent = _glText = text; }
+      if (col  !== _glCol)  { $('gl').style.color  = _glCol  = col;  }
+    }
+
+    // ── Cache hlGL : évite querySelectorAll si le geste n'a pas changé ──
+    let _hlGLast = null;
+    function hlGL(g) {
+      if (g === _hlGLast) return;
+      _hlGLast = g;
+      document.querySelectorAll('.gli').forEach(e => { e.classList.toggle('on', e.dataset.g === g) });
+    }
+
+    // ── Throttle WebSocket : max ~30 envois/sec pour les données de geste ──
+    let _wsGestureLastSend = 0;
+    function wsSendGesture(payload) {
+      if (!globalWs || globalWs.readyState !== WebSocket.OPEN) return;
+      const now = performance.now();
+      if (now - _wsGestureLastSend < 33) return; // ~30fps
+      _wsGestureLastSend = now;
+      globalWs.send(JSON.stringify(payload));
+    }
+
+    function confirmGesture(candidate) {
+      if (candidate === TRK.gesture) { TRK.candCount = 0; return TRK.gesture }
+      if (candidate === TRK.candGesture) { 
+        TRK.candCount++; 
+        if (TRK.candCount >= THRESH.confirm) { 
+          TRK.gesture = candidate; 
+          TRK.candCount = 0; 
+        } 
+      }
+      else { TRK.candGesture = candidate; TRK.candCount = 1 }
+      return TRK.gesture;
+    }
+
+    // ── Helper: process single-hand gesture engine (shared by 1-hand and 2-hand nav hand) ──
+    function processNavHand(lm, thumb, index, mid, spread, angle, vAngle) {
+      // Velocities
+      if (TRK.prevSpread !== null) {
+        const sv = spread - TRK.prevSpread;
+        TRK.spreadVel = TRK.spreadVel * .55 + sv * .45;
+        let dx = mid.x - (TRK.prevMid?.x || mid.x);
+        let dy = mid.y - (TRK.prevMid?.y || mid.y);
+        // Anti-Ghosting: ignorer les grands sauts soudains (sortie du cadre ou perte de main)
+        if (Math.abs(dx) > 60) dx = 0;
+        if (Math.abs(dy) > 60) dy = 0;
+        TRK.midVelX = TRK.midVelX * .5 + dx * .5; TRK.midVelY = TRK.midVelY * .5 + dy * .5;
+        let ad = angle - (TRK.prevAngle || angle);
+        if (ad > Math.PI) ad -= 2 * Math.PI; if (ad < -Math.PI) ad += 2 * Math.PI;
+        TRK.angleDel = TRK.angleDel * .35 + ad * .65;
+        if (TRK.prevVAngle !== null) {
+          let vd = vAngle - TRK.prevVAngle;
+          if (vd > Math.PI) vd -= 2 * Math.PI; if (vd < -Math.PI) vd += 2 * Math.PI;
+          TRK.vAngleDel = TRK.vAngleDel * .4 + vd * .6;
+        }
+      }
+      TRK.prevSpread = spread; TRK.prevMid = { ...mid }; TRK.prevAngle = angle; TRK.prevVAngle = vAngle;
+    }
+
+    function applyMomentum() {
+      // Nucleus : aucun momentum caméra — la caméra est fixe, seule l'orbite bouge
+      if (isNucleusActive) {
+        TRK.rotMomentum = 0; TRK.tiltMomentum = 0; TRK.twistMomentum = 0;
+        TRK.panMomX = 0; TRK.panMomY = 0;
+        GNS.yawMomentum = 0; GNS.tiltMomentum = 0;
+        return;
+      }
+      // Friction très forte : inertie très courte, arrêt presque immédiat et naturel
+      const rotFriction = navMode === 'FIXED' ? 0 : 0.65;
+      const panFriction = navMode === 'FIXED' ? 0 : 0.70;
+
+      TRK.rotMomentum *= rotFriction;
+      TRK.tiltMomentum *= rotFriction;
+      if (Math.abs(TRK.rotMomentum) > .0003) CAM_T.r += TRK.rotMomentum;
+      if (Math.abs(TRK.tiltMomentum) > .0003) CAM_T.tilt += TRK.tiltMomentum;
+
+      // ── TWIST : Inertie de rotation par twist des doigts ──
+      const twistFriction = navMode === 'FIXED' ? 0 : 0.88; // Décélération douce
+      TRK.twistMomentum *= twistFriction;
+      if (Math.abs(TRK.twistMomentum) > 0.0003) CAM_T.r += TRK.twistMomentum;
+      else TRK.twistMomentum = 0;
+
+      TRK.panMomX *= panFriction;
+      TRK.panMomY *= panFriction;
+      if (Math.abs(TRK.panMomX) > .10 || Math.abs(TRK.panMomY) > .10) {
+        CAM_T.x += TRK.panMomX; CAM_T.y += TRK.panMomY; clamp();
+      }
+
+      // ── GESTURE_NAV : Friction cinématique douce après sortie de la griffe ──
+      const gnsFriction = navMode === 'FIXED' ? 0 : 0.88; // Décélération douce (~12 frames)
+      GNS.yawMomentum  *= gnsFriction;
+      GNS.tiltMomentum *= gnsFriction;
+      if (Math.abs(GNS.yawMomentum) > 0.0005) CAM_T.r    += GNS.yawMomentum;
+      else GNS.yawMomentum = 0;
+      if (Math.abs(GNS.tiltMomentum) > 0.0005) {
+        CAM_T.tilt = Math.max(-TILT_MAX, Math.min(TILT_MAX, CAM_T.tilt + GNS.tiltMomentum));
+      } else GNS.tiltMomentum = 0;
+
+      // En mode FIXE, forcer arrêt total de toute inertie
+      if (navMode === 'FIXED') {
+        TRK.rotMomentum = 0; TRK.tiltMomentum = 0;
+        TRK.twistMomentum = 0;
+        TRK.panMomX = 0; TRK.panMomY = 0;
+        GNS.yawMomentum = 0; GNS.tiltMomentum = 0;
+      }
+
+      // ── GP SNAP : aimant magnétique vers les angles 0°/90°/180°/270° ──
+      // Actif en mode FREE seulement, quand la vélocité est faible.
+      if (navMode === 'FREE' && !isNucleusActive) {
+        gpSnapRotation();
+      }
+    }
+
+    // ══ MODE JOYSTICK : Rotation par vélocité + inertie cinématique ══
+    // ── Stabilisation avancée : Deadzone + Non-linéaire + Target Brake + Velocity Cap + Lerp ──
+    const JOY = {
+      prevX: null,
+      prevY: null,
+      velX: 0,       // Vélocité en px/frame (jamais appliquée directement à CAM_T)
+      velY: 0,
+      active: false, // Main actuellement en contrôle ?
+      brakeFactor: 1.0, // 1.0 = pleine puissance, 0.1 = freinage de sélection (lerpé)
+    };
+    const JOY_SENSITIVITY = 1.6;  // Gain ajustable : augmenter si trop lent
+    const JOY_FRICTION = 0.95;    // Décélération par frame (0.95 = glissement cinématique doux)
+    const JOY_VEL_LERP = 0.25;    // Vitesse de convergence de la vélocité vers le mouvement de la main
+
+    // ── ZONE MORTE : ignore les micro-mouvements < seuil ──
+    const JOY_DEADZONE = 0.008;   // Seuil absolu en delta normalisé (px/frame)
+
+    // ── SENSIBILITÉ NON-LINÉAIRE : puissance sur la vitesse ──
+    const JOY_POWER = 1.2;        // Exposant : petits mouvements ultra-stables, grands = puissants
+
+    // ── VELOCITY CAP : vitesse de rotation maximale ──
+    const JOY_MAX_SPEED = 8.0;    // Plafond absolu en px/frame — la carte ne s'emballe jamais
+
+    // ── TARGET BRAKE : diviseur de sensibilité quand on survole un nœud ──
+    const JOY_BRAKE_DIVISOR = 10; // Sensibilité /10 quand isHoveringNode == true
+    const JOY_BRAKE_LERP = 0.08;  // Vitesse de transition vers le freinage (fluide, pas brutal)
+
+    // Appelée par single-hand et two-hand : alimente la vélocité (pas la caméra)
+    function applyJoystickRotation(curX, curY, canRotate) {
+      // ── TARGET BRAKE : détection du survol de nœud via l'aimant sémantique ──
+      const isHoveringNode = magnetState.node !== null && magnetState.strength > 0.3;
+      const targetBrake = isHoveringNode ? (1.0 / JOY_BRAKE_DIVISOR) : 1.0;
+      // Lerp fluide : transition douce vers/depuis le freinage (pas de coup de frein brutal)
+      JOY.brakeFactor += (targetBrake - JOY.brakeFactor) * JOY_BRAKE_LERP;
+
+      if (canRotate && (navMode === 'FREE' || isNucleusActive)) {
+        if (JOY.prevX !== null && JOY.prevY !== null) {
+          let rawDx = curX - JOY.prevX;
+          let rawDy = curY - JOY.prevY;
+
+          // ── ZONE MORTE : ignorer les micro-mouvements de sélection ──
+          if (Math.abs(rawDx) < JOY_DEADZONE * W) rawDx = 0;
+          if (Math.abs(rawDy) < JOY_DEADZONE * H) rawDy = 0;
+
+          // ── SENSIBILITÉ NON-LINÉAIRE : vitesse = sign(delta) * |delta|^1.5 ──
+          // Les petits mouvements sont écrasés, les grands conservent leur puissance
+          rawDx = Math.sign(rawDx) * Math.pow(Math.abs(rawDx), JOY_POWER);
+          rawDy = Math.sign(rawDy) * Math.pow(Math.abs(rawDy), JOY_POWER);
+
+          // ── TARGET BRAKE : appliquer le facteur de freinage lissé ──
+          rawDx *= JOY.brakeFactor;
+          rawDy *= JOY.brakeFactor;
+
+          // Lerp organique : la vélocité suit le mouvement de la main sans saut
+          JOY.velX += (rawDx - JOY.velX) * JOY_VEL_LERP;
+          JOY.velY += (rawDy - JOY.velY) * JOY_VEL_LERP;
+
+          // ── VELOCITY CAP : plafonner la vitesse maximale ──
+          const speed = Math.hypot(JOY.velX, JOY.velY);
+          if (speed > JOY_MAX_SPEED) {
+            const scale = JOY_MAX_SPEED / speed;
+            JOY.velX *= scale;
+            JOY.velY *= scale;
+          }
+        }
+        JOY.prevX = curX;
+        JOY.prevY = curY;
+        JOY.active = true;
+      } else {
+        // Pinch actif ou FIXED : on lâche le contrôle mais on NE TUE PAS la vélocité.
+        // L'inertie (friction dans loop()) fait décélérer naturellement.
+        JOY.prevX = null;
+        JOY.prevY = null;
+        JOY.active = false;
+      }
+    }
+
+    // ── Grab & throw: release handler ──
+    function releaseGrab() {
+      if (!grabState.active || !grabState.node) return;
+      const n = grabState.node;
+      // Compute throw velocity — convert screen velocity to world velocity
+      const cr = Math.cos(-CAM.r);
+      const vx = (TRK.midVelX * cr) / CAM.s * 1.5;
+      const vy = TRK.midVelY / (CAM.s * Y_TILT) * 1.5;
+      if (Math.hypot(vx, vy) > 3) {
+        // Throw!
+        thrownNodes.push({ node: n, vx, vy, origX: grabState.origX, origY: grabState.origY, friction: .92, spring: .015 });
+        pulses.push({ x: w2s(n.x, n.y, n.z).x, y: w2s(n.x, n.y, n.z).y, r: 5, a: .5, c: '#f59e0b' });
+      } else {
+        // Dropped gently — snap back
+        thrownNodes.push({ node: n, vx: 0, vy: 0, origX: grabState.origX, origY: grabState.origY, friction: .85, spring: .06 });
+      }
+      grabState.active = false; grabState.node = null;
+    }
+
+    function onHands(results) {
+      if (!window.handReleaseCooldown) window.handReleaseCooldown = 0;
+      if (window.handReleaseCooldown > 0) window.handReleaseCooldown--;
+
+      const numHands = results.multiHandLandmarks?.length || 0;
+
+      if (!numHands) {
+        handVis = false; hand2Vis = false; twoHandActive = false;
+        twoHandZoom.prevDist = null; twoHandZoom.distVel = 0;
+        TRK.gesture = 'IDLE'; TRK.prevSpread = null; TRK.prevMid = null; TRK.prevAngle = null; TRK.prevVAngle = null;
+        TRK.spreadVel = 0; TRK.angleDel = 0; TRK.vAngleDel = 0; TRK.midVelX = 0; TRK.midVelY = 0; TRK.wasPinch = false;
+        if (grabState.active) releaseGrab();
+        setGl('', ''); hlGL(null); $('two-hand-ind').style.opacity = '0';
+        
+        // Reset des smoothers (position tracking — 5 doigts × 2 mains)
+        thumbSmoother.reset();  indexSmoother.reset();  middleSmoother.reset();
+        ringSmoother.reset();   pinkySmoother.reset();   wristSmoother.reset();
+        thumbSmoother2.reset(); indexSmoother2.reset(); middleSmoother2.reset();
+        ringSmoother2.reset();  pinkySmoother2.reset();  wristSmoother2.reset();
+
+        // ── HAND-LOST GRACE PERIOD ──
+        // On NE TUE PAS JOY.velX/velY ici.
+        // La friction dans loop() fait décélérer naturellement.
+        // Seul le pointeur précédent est reset pour éviter un saut au retour.
+        JOY.prevX = null;
+        JOY.prevY = null;
+        JOY.active = false;
+        // ── GP reset : vider l'historique du cercle et le tracking de poignet ──
+        GP.circleHist = [];
+        GP.circleConf = 0; GP.circleAngVel = 0;
+        GP.prevPalmNormal = null; GP.wristConf = 0;
+        GP.wristDeltaR = 0; GP.wristDeltaTilt = 0;
+        GP.snapActive = false;
+        return;
+      }
+
+      // ════════════════════════════════════════════════════════════════
+      // TWO-HAND MODE — both hands identical, merged into one combined input
+      // Only difference: zoom = inter-hand distance (both fingers spread)
+      // ════════════════════════════════════════════════════════════════
+      if (numHands === 2) {
+        twoHandActive = true; handVis = true; hand2Vis = true;
+        $('two-hand-ind').style.opacity = '1';
+
+        // ── Identification de la Main Maître (Right = master) ──
+        // MediaPipe fournit multiHandedness[i].label = 'Right' ou 'Left'
+        // Note : en mode miroir, 'Right' désigne bien la main droite physique de l'utilisateur
+        const handLabels = results.multiHandedness?.map(h => h.label) || ['Right', 'Left'];
+        const masterIdx = handLabels.indexOf('Right') !== -1 ? handLabels.indexOf('Right') : 0;
+        const slaveIdx  = masterIdx === 0 ? 1 : 0;
+        const can_grab = false; // 2 mains = pas de grab
+
+        const lm0 = results.multiHandLandmarks[masterIdx];  // Main maître (Right)
+        const lm1 = results.multiHandLandmarks[slaveIdx];   // Main esclave (Left)
+
+        // Both hands: extract and dynamically smooth all 5 fingers
+        const h0ThumbRaw  = { x: (1 - lm0[4].x)  * W, y: lm0[4].y  * H };
+        const h0IndexRaw  = { x: (1 - lm0[8].x)  * W, y: lm0[8].y  * H };
+        const h0MiddleRaw = { x: (1 - lm0[12].x) * W, y: lm0[12].y * H };
+        const h0RingRaw   = { x: (1 - lm0[16].x) * W, y: lm0[16].y * H };
+        const h0PinkyRaw  = { x: (1 - lm0[20].x) * W, y: lm0[20].y * H };
+        const h0WristRaw  = { x: (1 - lm0[0].x)  * W, y: lm0[0].y  * H };
+        const h1ThumbRaw  = { x: (1 - lm1[4].x)  * W, y: lm1[4].y  * H };
+        const h1IndexRaw  = { x: (1 - lm1[8].x)  * W, y: lm1[8].y  * H };
+        const h1MiddleRaw = { x: (1 - lm1[12].x) * W, y: lm1[12].y * H };
+        const h1RingRaw   = { x: (1 - lm1[16].x) * W, y: lm1[16].y * H };
+        const h1PinkyRaw  = { x: (1 - lm1[20].x) * W, y: lm1[20].y * H };
+        const h1WristRaw  = { x: (1 - lm1[0].x)  * W, y: lm1[0].y  * H };
+
+        const h0Thumb  = thumbSmoother.update(h0ThumbRaw.x,   h0ThumbRaw.y);
+        const h0Index  = indexSmoother.update(h0IndexRaw.x,   h0IndexRaw.y);
+        const h0Middle = middleSmoother.update(h0MiddleRaw.x, h0MiddleRaw.y);
+        const h0Ring   = ringSmoother.update(h0RingRaw.x,     h0RingRaw.y);
+        const h0Pinky  = pinkySmoother.update(h0PinkyRaw.x,   h0PinkyRaw.y);
+        const h0Wrist  = wristSmoother.update(h0WristRaw.x,   h0WristRaw.y);
+        const h1Thumb  = thumbSmoother2.update(h1ThumbRaw.x,   h1ThumbRaw.y);
+        const h1Index  = indexSmoother2.update(h1IndexRaw.x,   h1IndexRaw.y);
+        const h1Middle = middleSmoother2.update(h1MiddleRaw.x, h1MiddleRaw.y);
+        const h1Ring   = ringSmoother2.update(h1RingRaw.x,     h1RingRaw.y);
+        const h1Pinky  = pinkySmoother2.update(h1PinkyRaw.x,   h1PinkyRaw.y);
+        const h1Wrist  = wristSmoother2.update(h1WristRaw.x,   h1WristRaw.y);
+
+        // Maître = main 0 (smoothers primaires), Esclave = main 1
+        thumbS  = h0Thumb;  indexS  = h0Index;  middleS = h0Middle;
+        ringS   = h0Ring;   pinkyS  = h0Pinky;  wristS  = h0Wrist;
+        thumbS2 = h1Thumb;  indexS2 = h1Index;  middleS2 = h1Middle;
+        ringS2  = h1Ring;   pinkyS2 = h1Pinky;  wristS2 = h1Wrist;
+
+        // Use SMOOTHED positions for spread and angles to completely kill micro-jitter
+        const h0Spread = Math.hypot(lm0[4].x - lm0[8].x, lm0[4].y - lm0[8].y);
+        const h1Spread = Math.hypot(lm1[4].x - lm1[8].x, lm1[4].y - lm1[8].y);
+        const h0Mid = { x: (h0Thumb.x + h0Index.x) / 2, y: (h0Thumb.y + h0Index.y) / 2 };
+        const h1Mid = { x: (h1Thumb.x + h1Index.x) / 2, y: (h1Thumb.y + h1Index.y) / 2 };
+
+        // Combined midpoint of both hands for cursor/snap
+        const comboMid = { x: (h0Mid.x + h1Mid.x) / 2, y: (h0Mid.y + h1Mid.y) / 2 };
+
+        // Use hand 0 for gesture engine (angles, velocities)
+        const h0Angle = Math.atan2(h0Index.y - h0Wrist.y, h0Index.x - h0Wrist.x);
+        const h0VAngle = Math.atan2(lm0[8].y - lm0[0].y, lm0[8].x - lm0[0].x);
+        processNavHand(lm0, h0Thumb, h0Index, h0Mid, h0Spread, h0Angle, h0VAngle);
+        applyMomentum();
+        const midSpd = Math.hypot(TRK.midVelX, TRK.midVelY);
+
+        // ── Two-hand ZOOM : activé UNIQUEMENT quand les deux mains sont pincées ──
+        // La distance mesurée est celle entre les midpoints des deux pinces serrées
+        const bothPinch = h0Spread < THRESH.pinch && h1Spread < THRESH.pinch;
+        let isZooming = false;
+        let isOrbiting = false;
+        let zoomEmitFactor = 1.0; // facteur normalisé pour WebSocket
+
+        if (bothPinch) {
+          // Calcul de la distance entre les deux pinces
+          const pinch0 = { x: (h0Thumb.x + h0Index.x)/2, y: (h0Thumb.y + h0Index.y)/2 };
+          const pinch1 = { x: (h1Thumb.x + h1Index.x)/2, y: (h1Thumb.y + h1Index.y)/2 };
+          const rawDist = Math.hypot(pinch0.x - pinch1.x, pinch0.y - pinch1.y);
+
+          // Angle "Volant" (Steering wheel) pour rotation Yaw
+          const steerAngle = Math.atan2(pinch1.y - pinch0.y, pinch1.x - pinch0.x);
+
+          // EMA sur la distance pour supprimer les tremblements
+          const D_EMA = 0.25;
+          if (twoHandZoom.smoothDist === null) {
+            twoHandZoom.smoothDist = rawDist;
+            twoHandZoom.refDist = rawDist;
+            twoHandZoom.prevSteer = steerAngle;
+            twoHandZoom.prevMid = { ...comboMid };
+          } else {
+            twoHandZoom.smoothDist = twoHandZoom.smoothDist * (1 - D_EMA) + rawDist * D_EMA;
+          }
+          const handDist = twoHandZoom.smoothDist;
+
+          if (twoHandZoom.prevDist !== null) {
+            // ── 1. ZOOM (Distance) ──
+            const dv = handDist - twoHandZoom.prevDist;
+            twoHandZoom.distVel = twoHandZoom.distVel * .5 + dv * .5;
+
+            if (Math.abs(twoHandZoom.distVel) > 1.2 && !zoomLocked) {
+              isZooming = true;
+              const zoomFactor = twoHandZoom.distVel > 0 ? 1.012 : 0.988;
+              const hp = hubNode ? w2s(hubNode.x, hubNode.y, hubNode.z) : { x: W * .42, y: H / 2 };
+              CAM_T.s = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, CAM_T.s * zoomFactor));
+              if (twoHandZoom.distVel > 0) {
+                CAM_T.x = hp.x - (hp.x - CAM_T.x) * zoomFactor;
+                CAM_T.y = hp.y - (hp.y - CAM_T.y) * zoomFactor;
+              }
+              clamp();
+
+              if (twoHandZoom.refDist && twoHandZoom.refDist > 0) {
+                zoomEmitFactor = Math.max(0.5, Math.min(2.0, handDist / twoHandZoom.refDist));
+              }
+            }
+            
+          }
+          twoHandZoom.prevDist = handDist;
+          twoHandZoom.prevMid = { ...comboMid };
+          twoHandZoom.active = true;
+
+        } else {
+          // Les deux mains relâchent : verrouillage de la vue actuelle
+          if (twoHandZoom.active) {
+            twoHandZoom.active = false;
+            twoHandZoom.refDist = null;
+            $('rot-ind').style.opacity = '0';
+            // ANTI-JUMP: Ignore single-hand dragging for next 0.5s when dropping a 2-hand orbit/zoom
+            window.handReleaseCooldown = 30; // 30 frames
+          }
+          twoHandZoom.prevDist = null;
+          twoHandZoom.prevMid = null;
+          twoHandZoom.distVel = 0;
+          twoHandZoom.smoothDist = null;
+
+          // ── MODE JOYSTICK (deux mains, pas de zoom) ──
+          // can_grab = false → rotation TOUJOURS active (sauf si FIXED)
+          applyJoystickRotation(wristS.x, wristS.y, true);
+        }
+
+        // ── Gesture detection: either hand can navigate (when NOT in two-pinch zoom) ──
+        const eitherPinch = !bothPinch && (h0Spread < THRESH.pinch || h1Spread < THRESH.pinch);
+
+        // Which hand pinched (for position)?
+        const pinchMid = h0Spread < THRESH.pinch ? h0Mid : h1Mid;
+
+        let raw2;
+        const pinchThresh0 = TRK.wasPinch ? THRESH.pinch * 1.35 : THRESH.pinch;
+        const eitherPinchStable = !bothPinch && (h0Spread < pinchThresh0 || h1Spread < pinchThresh0);
+
+        if (isZooming || isOrbiting) {
+          raw2 = isOrbiting ? 'ORBIT' : (twoHandZoom.distVel > 0 ? 'ZOOM_IN' : 'ZOOM_OUT');
+        } else if (eitherPinchStable && window.handReleaseCooldown === 0) {
+          raw2 = midSpd > THRESH.midSpd ? 'PAN' : 'PINCH';
+        } else {
+          raw2 = 'CURSOR';
+        }
+        const gesture2 = confirmGesture(raw2);
+
+        // ── Apply gestures (same as single-hand) ──
+        switch (gesture2) {
+          case 'CURSOR':
+            if (TRK.wasPinch) TRK.wasPinch = false;
+            if (TRK.rotTimer > 0) { TRK.rotTimer--; if (TRK.rotTimer === 0) $('rot-ind').style.opacity = '0' }
+            break;
+          case 'ORBIT':
+            TRK.rotTimer = 50; 
+            break;
+          case 'NUCLEUS_WAIT':
+            if (TRK.wasPinch) TRK.wasPinch = false;
+            break;
+          case 'PINCH':
+            if (!TRK.wasPinch) {
+              TRK.wasPinch = true;
+              const nd = nearNode(pinchMid.x, pinchMid.y, 80);
+              if (pathMode.active && nd) {
+                if (!pathMode.nodeA) { pathMode.nodeA = nd; pulses.push({ x: w2s(nd.x, nd.y, nd.z).x, y: w2s(nd.x, nd.y, nd.z).y, r: 5, a: .7, c: '#00ff88' }) }
+                else if (!pathMode.nodeB && nd.id !== pathMode.nodeA.id) { pathMode.nodeB = nd; const pth = bfsPath(pathMode.nodeA.id, pathMode.nodeB.id); pathMode.path = pth; pathMode.pathEdgeSet = buildPathEdgeSet(pth); pulses.push({ x: w2s(nd.x, nd.y, nd.z).x, y: w2s(nd.x, nd.y, nd.z).y, r: 5, a: .7, c: '#00ff88' }) }
+                else { pathMode.nodeA = null; pathMode.nodeB = null; pathMode.path = []; pathMode.pathEdgeSet = new Set() }
+              } else if (!pathMode.active && nd) {
+                selected = (selected?.id === nd.id) ? null : nd; RC.locked = !!selected; RC.flash = 16;
+                if (selected) { const p = w2s(nd.x, nd.y, nd.z); pulses.push({ x: p.x, y: p.y, r: 5, a: .65, c: fc(nd.folder) }) }
+                updatePanel();
+              }
+            }
+            break;
+          case 'PAN':
+            TRK.wasPinch = true;
+            CAM_T.x += TRK.midVelX * .55; CAM_T.y += TRK.midVelY * .55;
+            TRK.panMomX = TRK.midVelX * .4; TRK.panMomY = TRK.midVelY * .4;
+            RC.snapNode = nearNode(RC.x, RC.y, 9999); clamp(); break;
+        }
+        if (gesture2 !== 'PINCH' && gesture2 !== 'PAN') TRK.wasPinch = false;
+
+        // Snap rect to combined midpoint (not a separate hand)
+        if (!grabState.active) {
+          const snapT = nearNode(comboMid.x, comboMid.y, 9999);
+          if (snapT) {
+            if (RC.snapNode) {
+              const curP = w2s(RC.snapNode.x, RC.snapNode.y, RC.snapNode.z);
+              const curD = Math.hypot(comboMid.x - curP.x, comboMid.y - curP.y);
+              const newP = w2s(snapT.x, snapT.y, snapT.z);
+              const newD = Math.hypot(comboMid.x - newP.x, comboMid.y - newP.y);
+              if (newD < curD * 0.45) RC.snapNode = snapT;
+            } else { RC.snapNode = snapT; }
+          }
+        }
+        if (RC.vis && RC.active && !RC.locked) { hovered = RC.active; updatePanel() }
+
+        const displayG = isZooming ? raw2 : gesture2;
+        setGl(`✌ ${GNAMES[displayG] || displayG}`, isZooming ? '#f59e0b' : '#a855f7'); hlGL(displayG);
+
+        // ── Envoi WebSocket enrichi throttlé ~30fps ──
+        {
+          const rotDelta = { x: Math.round(TRK.midVelX * 10) / 10, y: Math.round(TRK.midVelY * 10) / 10 };
+          if (isZooming) {
+            wsSendGesture({ type: "gesture", action: "ZOOM",
+              value: Math.round(zoomEmitFactor * 1000) / 1000,
+              master_x: Math.round(indexS.x), master_y: Math.round(indexS.y),
+              hands_count: 2, can_grab: can_grab, rotation_delta: rotDelta });
+          } else {
+            wsSendGesture({ master_x: Math.round(indexS.x), master_y: Math.round(indexS.y),
+              hands_count: 2, can_grab: can_grab, rotation_delta: rotDelta,
+              action: "cursor", gesture: gesture2, grabbedNodeId: null });
+          }
+        }
+
+        // ── Forward gesture + hand positions to 3D overlay (two-hand zoom) ──
+        if (layer3dActive) {
+          const frame = $('frame-3d');
+          if (frame?.contentWindow) {
+            frame.contentWindow.postMessage({
+              type: 'gesture3d',
+              gesture: gesture2,
+              velX: TRK.midVelX,
+              velY: TRK.midVelY,
+              angleDel: 0,
+              twoHand: true,
+              zoomVel: twoHandZoom.distVel,
+            }, '*');
+            frame.contentWindow.postMessage({
+              type: 'hands3d',
+              hands: {
+                h1: handVis ? { thumb: thumbS, index: indexS, middle: middleS, ring: ringS, pinky: pinkyS, wrist: wristS } : null,
+                h2: (hand2Vis && twoHandActive) ? { thumb: thumbS2, index: indexS2, middle: middleS2, ring: ringS2, pinky: pinkyS2, wrist: wristS2 } : null,
+              }
+            }, '*');
+          }
+        }
+        return;
+      }
+
+      // ════════════════════════════════════════════════════════════════
+      // SINGLE-HAND MODE (original behavior + grab/circle)
+      // ════════════════════════════════════════════════════════════════
+      twoHandActive = false; hand2Vis = false;
+      twoHandZoom.prevDist = null; twoHandZoom.distVel = 0;
+      $('two-hand-ind').style.opacity = '0';
+
+      const lm = results.multiHandLandmarks[0];
+      handVis = true;
+
+      const rawThumb  = { x: (1 - lm[4].x)  * W, y: lm[4].y  * H };
+      const rawIndex  = { x: (1 - lm[8].x)  * W, y: lm[8].y  * H };
+      const rawMiddle = { x: (1 - lm[12].x) * W, y: lm[12].y * H };
+      const rawRing   = { x: (1 - lm[16].x) * W, y: lm[16].y * H };
+      const rawPinky  = { x: (1 - lm[20].x) * W, y: lm[20].y * H };
+      const rawWrist  = { x: (1 - lm[0].x)  * W, y: lm[0].y  * H };
+
+      // Lissage adaptatif de la main principale (5 doigts + poignet)
+      const thumb  = thumbSmoother.update(rawThumb.x,   rawThumb.y);
+      const index  = indexSmoother.update(rawIndex.x,   rawIndex.y);
+      const middle = middleSmoother.update(rawMiddle.x, rawMiddle.y);
+      const ring   = ringSmoother.update(rawRing.x,     rawRing.y);
+      const pinky  = pinkySmoother.update(rawPinky.x,   rawPinky.y);
+      const wrist  = wristSmoother.update(rawWrist.x,   rawWrist.y);
+
+      thumbS  = thumb;  indexS  = index;  middleS = middle;
+      ringS   = ring;   pinkyS  = pinky;  wristS  = wrist;
+
+      // ── GP : feed index fingertip into circle tracker ──
+      gpUpdateCircle(index.x, index.y, performance.now());
+
+      const spread = Math.hypot(lm[4].x - lm[8].x, lm[4].y - lm[8].y);
+      const mid = { x: (thumb.x + index.x) / 2, y: (thumb.y + index.y) / 2 };
+      // Angle basé sur poignet→index (pivot stable, vrai "bouton de volume")
+      const angle = Math.atan2(index.y - wrist.y, index.x - wrist.x);
+      const vAngle = Math.atan2(lm[8].y - lm[0].y, lm[8].x - lm[0].x);
+
+      processNavHand(lm, thumb, index, mid, spread, angle, vAngle);
+      applyMomentum();
+
+      const midSpd = Math.hypot(TRK.midVelX, TRK.midVelY);
+
+      checkDoublePinch(spread);
+
+      // Anti-dépassement : Si on retire brusquement la main du champ (Vitesse extrême)
+      if (midSpd > THRESH.dropSpd) {
+        TRK.midVelX = 0; TRK.midVelY = 0; TRK.angleDel = 0;
+        TRK.velX = 0; TRK.velY = 0;
+      }
+
+      // ── Détection PALM → Toggle FREE/FIXED ──
+      const palmDetected = isPalm(lm) && spread > THRESH.pinch * 2;
+      if (palmDetected) {
+        if (!palmToggle.palmActive) {
+          palmToggle.palmActive = true;
+          palmToggle.palmStart = Date.now();
+        }
+        const elapsed = Date.now() - palmToggle.palmStart;
+        const pct = Math.min(100, (elapsed / 2000) * 100);
+        $('palm-progress').style.opacity = '1';
+        $('palm-progress-bar').style.width = pct + '%';
+        if (elapsed >= 2000 && palmToggle.toggleCD === 0) {
+          setNavMode(navMode === 'FREE' ? 'FIXED' : 'FREE');
+          palmToggle.toggleCD = 60; // ~1s cooldown
+          palmToggle.palmActive = false;
+          $('palm-progress').style.opacity = '0';
+          $('palm-progress-bar').style.width = '0%';
+        }
+      } else {
+        palmToggle.palmActive = false;
+        $('palm-progress').style.opacity = '0';
+        $('palm-progress-bar').style.width = '0%';
+      }
+      if (palmToggle.toggleCD > 0) palmToggle.toggleCD--;
+
+      // ── Détection geste 🤘 ROCK → Mode 3D Layers ──
+      // Index (8) + Auriculaire (20) levés, Majeur (12) + Annulaire (16) pliés
+      const _distW = id => Math.hypot(lm[id].x - lm[0].x, lm[id].y - lm[0].y);
+      const _indexUp  = _distW(8)  > _distW(6);
+      const _middleUp = _distW(12) > _distW(10);
+      const _ringUp   = _distW(16) > _distW(14);
+      const _pinkyUp  = _distW(20) > _distW(18);
+      const isRockGesture = _indexUp && _pinkyUp && !_middleUp && !_ringUp;
+
+      if (isRockGesture && rock3DGesture.cooldown === 0) {
+        if (!rock3DGesture.active) {
+          rock3DGesture.active = true;
+          rock3DGesture.startTime = Date.now();
+        }
+        const elapsed = Date.now() - rock3DGesture.startTime;
+        const pct = Math.min(100, (elapsed / 2000) * 100);
+        $('rock-progress').style.opacity = '1';
+        $('rock-progress-bar').style.width = pct + '%';
+        hlGL('ROCK3D');
+        if (elapsed >= 2000) {
+          toggleLayer3D();
+          rock3DGesture.active = false;
+          rock3DGesture.cooldown = 90;
+          $('rock-progress').style.opacity = '0';
+          $('rock-progress-bar').style.width = '0%';
+        }
+      } else if (!isRockGesture && rock3DGesture.active) {
+        rock3DGesture.active = false;
+        $('rock-progress').style.opacity = '0';
+        $('rock-progress-bar').style.width = '0%';
+      }
+      if (rock3DGesture.cooldown > 0) rock3DGesture.cooldown--;
+
+      // ── Finger Extension Logic (Doigts Levés/Pliés) ──
+      // Vérifie si le bout du doigt est plus éloigné du poignet (0) que la phalange intermédiaire
+      const distFromWrist = (id) => Math.hypot(lm[id].x - lm[0].x, lm[id].y - lm[0].y);
+      const indexUp = distFromWrist(8) > distFromWrist(6);
+      const middleUp = distFromWrist(12) > distFromWrist(10);
+      const ringUp = distFromWrist(16) > distFromWrist(14);
+      const pinkyUp = distFromWrist(20) > distFromWrist(18);
+      const thumbUp = distFromWrist(4) > distFromWrist(2);
+
+      // Determine raw gesture
+      let raw;
+      const pinchThresh = TRK.wasPinch ? THRESH.pinch * 1.35 : THRESH.pinch;
+      const isPinching = spread < pinchThresh;
+
+      // ── Geste Très Volontaire NUCLEUS (Activer / Annuler) ──
+      // Index et Majeur collés ensemble (<80px), Pouce éloigné (>120px) => Forme de 'U'
+      const indexMiddleDist = Math.hypot(index.x - middle.x, index.y - middle.y);
+      const thumbIndexDist = Math.hypot(thumb.x - index.x, thumb.y - index.y);
+      const isNucleusTrigger = indexUp && middleUp && (indexMiddleDist < 80) && (thumbIndexDist > 120);
+
+      // ── Mouvement ROTATION 3D 1 main (3 Doigts Levés & Écartés) ──
+      const thumbMiddleDist = Math.hypot(thumb.x - middle.x, thumb.y - middle.y);
+      // Orbit s'active UNIQUEMENT si Pouce, Index et Majeur sont LEVÉS. 
+      // Dès que l'un d'eux se plie, le capteur l'enregistre et annule l'Orbit.
+      const is3FingerOrbit = thumbUp && indexUp && middleUp && !(ringUp && pinkyUp) && (spread > 65) && (thumbMiddleDist > 65);
+
+      // ── GESTURE_NAV : Détection de la Griffe + Orientation de la Paume ──
+      // 1. Longueur de référence : distance entre le poignet (lm[0]) et le MCP du majeur (lm[9])
+      //    → représente la longueur de la main en position tendue, stable à la caméra
+      const handRef3D = Math.hypot(
+        lm[9].x - lm[0].x, lm[9].y - lm[0].y, (lm[9].z || 0) - (lm[0].z || 0)
+      );
+
+      // 2. Calcul de la distance normalisée de chaque bout de doigt par rapport au poignet
+      //    en 3D (les landmarks z sont disponibles dans MediaPipe)
+      const finger3DDist = (tip, mcp) => {
+        const tipD = Math.hypot(lm[tip].x - lm[0].x, lm[tip].y - lm[0].y, (lm[tip].z || 0) - (lm[0].z || 0));
+        const mcpD = Math.hypot(lm[mcp].x - lm[0].x, lm[mcp].y - lm[0].y, (lm[mcp].z || 0) - (lm[0].z || 0));
+        return handRef3D > 0.001 ? tipD / (handRef3D * 1.8) : 0; // normalisé sur main étendue
+      };
+
+      // Griffe : chaque doigt a son bout entre 40% et 70% de la longueur main tendue
+      const clawLo = 0.40, clawHi = 0.72;
+      const clawFingers = [
+        { norm: finger3DDist(8,  5),  up: indexUp  },  // index
+        { norm: finger3DDist(12, 9),  up: middleUp },  // majeur
+        { norm: finger3DDist(16, 13), up: ringUp   },  // annulaire
+        { norm: finger3DDist(20, 17), up: pinkyUp  },  // auriculaire
+      ];
+      // Un doigt est "en griffe" si sa distance normalisée est dans la zone [clawLo, clawHi]
+      const clawCount = clawFingers.filter(f => f.norm >= clawLo && f.norm <= clawHi).length;
+      const rawClawStrength = clawCount / 4; // 0 (aucun) → 1 (tous en griffe)
+
+      // 3. Filtre EMA fluide sur la force de la griffe → pas de saut de caméra
+      const CLAW_EMA = 0.10; // Très doux : transition sur ~20 frames
+      GNS.clawStrength = GNS.clawStrength * (1 - CLAW_EMA) + rawClawStrength * CLAW_EMA;
+
+      // 4. Orientation de la paume via le plan formé par poignet + MCP index (lm[5]) + MCP annulaire (lm[13])
+      //    → vecteur normal au plan = produit croisé
+      const vA = { x: lm[5].x  - lm[0].x, y: lm[5].y  - lm[0].y, z: (lm[5].z  || 0) - (lm[0].z || 0) };
+      const vB = { x: lm[13].x - lm[0].x, y: lm[13].y - lm[0].y, z: (lm[13].z || 0) - (lm[0].z || 0) };
+      const palmNormal = {
+        x: vA.y * vB.z - vA.z * vB.y,
+        y: vA.z * vB.x - vA.x * vB.z,
+        z: vA.x * vB.y - vA.y * vB.x,
+      };
+      // Pitch : inclinaison avant/arrière (composante X du plan)
+      // Roll  : inclinaison gauche/droite (composante Y du plan)
+      const rawPitch = Math.atan2(palmNormal.x, Math.abs(palmNormal.z) + 0.001);
+      const rawRoll  = Math.atan2(palmNormal.y, Math.abs(palmNormal.z) + 0.001);
+
+      // 5. Lissage EMA de l'orientation → transitions douces entre PLANAR et FREE
+      const ORI_EMA = 0.12;
+      GNS.palmPitch = GNS.palmPitch * (1 - ORI_EMA) + rawPitch * ORI_EMA;
+      GNS.palmRoll  = GNS.palmRoll  * (1 - ORI_EMA) + rawRoll  * ORI_EMA;
+
+      // 6. Différenciation PLANAR vs FREE
+      //    Si pitch ET roll < 28° → paume face caméra → PLANAR
+      //    Sinon la main est inclinée → FREE
+      const PLANAR_THRESH = 0.49; // ~28° en radians
+      const isPlanarPalm = Math.abs(GNS.palmPitch) < PLANAR_THRESH && Math.abs(GNS.palmRoll) < PLANAR_THRESH;
+      GNS.rotationType = isPlanarPalm ? 'PLANAR' : 'FREE';
+
+      // 7. La griffe est active si clawStrength > seuil (0.55 = au moins 3/4 doigts)
+      const isClawActive = GNS.clawStrength > 0.55 && !isPinching && !is3FingerOrbit;
+
+      // ── GP : feed palm normal into wrist tracker (biomechanical 3D rotation) ──
+      gpUpdateWrist(palmNormal.x, palmNormal.y, palmNormal.z);
+
+      if (!window.nucleusToggleCD) window.nucleusToggleCD = 0;
+      if (window.nucleusToggleCD > 0) window.nucleusToggleCD--;
+
+      if (isNucleusTrigger && hovered && navMode !== 'FIXED' && window.nucleusToggleCD === 0) {
+        if (!window.nucleusGestureStart) window.nucleusGestureStart = Date.now();
+        const elapsed = Date.now() - window.nucleusGestureStart;
+        const pct = Math.min(100, (elapsed / 3000) * 100);
+        
+        $('palm-progress').style.opacity = '1';
+        $('palm-progress-bar').style.width = pct + '%';
+        $('palm-progress-bar').style.background = '#00e5ff'; // Cyan
+        
+        if (elapsed >= 3000) {
+          if (isNucleusActive) {
+            deactivateNucleus();
+          } else {
+            activateNucleus(hovered);
+          }
+          window.nucleusGestureStart = null;
+          window.nucleusToggleCD = 60; // 2s cooldown at ~30-60fps
+          $('palm-progress').style.opacity = '0';
+          $('palm-progress-bar').style.width = '0%';
+          $('palm-progress-bar').style.background = '#00ff88'; // Reset default color
+        }
+      } else {
+        if (window.nucleusGestureStart) {
+          window.nucleusGestureStart = null;
+          if (!palmToggle.palmActive) {
+            $('palm-progress').style.opacity = '0';
+            $('palm-progress-bar').style.width = '0%';
+            $('palm-progress-bar').style.background = '#00ff88';
+          }
+        }
+      }
+
+      // ── TWIST detection : rotation du pouce+index l'un autour de l'autre ──
+      // Conditions : doigts ÉCARTÉS (pas de pinch), delta angulaire significatif,
+      // pas en griffe, pas en orbit, vitesse de déplacement faible (twist ≠ pan)
+      const TWIST_ANGLE_THRESH = 0.025; // seuil angulaire minimal (rad/frame)
+      const isTwisting = !isPinching && !isClawActive && !is3FingerOrbit && !palmDetected
+        && Math.abs(TRK.angleDel) > TWIST_ANGLE_THRESH
+        && midSpd < THRESH.midSpd * 1.5 // pas en déplacement rapide
+        && spread > THRESH.pinch * 1.2;   // doigts suffisamment ouverts
+
+      if (isNucleusTrigger) {
+        raw = 'NUCLEUS_WAIT'; // Priorité haute
+      } else if (isClawActive) {
+        raw = 'GESTURE_NAV';  // Griffe = navigation gestuelle 2D/3D
+      } else if (is3FingerOrbit) {
+        raw = 'ORBIT'; // Dès que doigts écartés -> Rotation
+      } else if (isTwisting) {
+        raw = 'TWIST'; // Rotation par twist des doigts
+      } else if (palmDetected && !isPinching) {
+        raw = 'PALM'; // Paume neutre si Orbit ne trigger pas
+      } else if (isPinching) {
+        raw = midSpd > THRESH.midSpd ? 'PAN' : 'PINCH';
+      } else {
+        raw = 'CURSOR'; // Etat de base
+      }
+
+      const gesture = confirmGesture(raw);
+
+      // Snap rect (skip during grab — grabbed node follows hand directly)
+      if (!grabState.active) {
+        const snapTarget = nearNode(mid.x, mid.y, 9999);
+        if (snapTarget) {
+          if (RC.snapNode) {
+            const curP = w2s(RC.snapNode.x, RC.snapNode.y, RC.snapNode.z);
+            const curD = Math.hypot(mid.x - curP.x, mid.y - curP.y);
+            const newP = w2s(snapTarget.x, snapTarget.y, snapTarget.z);
+            const newD = Math.hypot(mid.x - newP.x, mid.y - newP.y);
+            // Only switch if new node is much closer (avoid jitter between nodes)
+            if (newD < curD * 0.45) RC.snapNode = snapTarget;
+          } else {
+            RC.snapNode = snapTarget;
+          }
+        }
+      }
+
+      // ── MODE JOYSTICK (une main) : rotation incrémentale ──
+      // Rotation active quand : main ne pince PAS (can_grab=true → rotation seulement si !isPinching)
+      // Exclusion : en pinch + can_grab → on déplace un nœud, PAS de rotation
+      const joyCanRotate = !isPinching && !grabState.active;
+      applyJoystickRotation(wristS.x, wristS.y, joyCanRotate);
+
+      // ── Apply gesture (with grab & circle enhancements) ──
+
+      switch (gesture) {
+        case 'GESTURE_NAV':
+          TRK.wasPinch = false;
+          if (grabState.active) releaseGrab();
+          TRK.orbitAnchor = null;
+          TRK.rotMomentum = 0; TRK.tiltMomentum = 0;
+
+          if (navMode === 'FREE') {
+            // La rotation caméra est gérée par le Joystick (applyJoystickRotation).
+            GNS.wasActive = true;
+
+            // ── GP WRIST : biomechanical 3D rotation layer ──
+            // En mode FREE, on superpose le delta de poignet au-dessus du joystick.
+            // Le wrist tracker mesure le changement de palm_normal frame-à-frame
+            // et l'envoie comme correction de yaw + tilt avec gate de confiance.
+            if (GP.wristConf > 0.25) {
+              const wYaw  = gpCondition(GP.wristDeltaR,    0.0004, 0.06, 1.5);
+              const wTilt = gpCondition(GP.wristDeltaTilt, 0.0004, 0.04, 1.5);
+              CAM_T.r    += wYaw  * GP.wristConf;
+              CAM_T.tilt  = Math.max(-TILT_MAX, Math.min(TILT_MAX,
+                              CAM_T.tilt + wTilt * GP.wristConf));
+            }
+
+            TRK.rotTimer = 50; $('rot-ind').style.opacity = '1';
+            $('rot-vals').textContent =
+              `${GNS.rotationType} | ${Math.round(CAM.r * 57.3)}° / ${Math.round(CAM.tilt * 57.3)}°`;
+
+            // Envoi WebSocket throttlé ~30fps
+            wsSendGesture({
+              master_x: Math.round(indexS.x), master_y: Math.round(indexS.y),
+              hands_count: twoHandActive ? 2 : 1, can_grab: !twoHandActive,
+              rotation_delta: { x: Math.round(JOY.velX * 10) / 10, y: Math.round(JOY.velY * 10) / 10 },
+              type: 'gesture', action: 'GESTURE_NAV', rotation_type: GNS.rotationType,
+              claw_strength: Math.round(GNS.clawStrength * 100) / 100,
+              palm_pitch: Math.round(GNS.palmPitch * 1000) / 1000,
+              palm_roll:  Math.round(GNS.palmRoll  * 1000) / 1000,
+              yaw: Math.round(CAM_T.r * 57.3), tilt: Math.round(CAM_T.tilt * 57.3),
+            });
+          } else {
+            GNS.anchor = null; GNS.wasActive = false;
+            GNS.yawMomentum = 0; GNS.tiltMomentum = 0;
+          }
+          break;
+
+        case 'PALM':
+          // Paume visible → on ne fait rien (toggle géré plus haut)
+          if (TRK.wasPinch) TRK.wasPinch = false;
+          if (grabState.active) releaseGrab();
+          // Relâche de tous les embrayages + friction résiduelle (pas d'arrêt brutal)
+          TRK.orbitAnchor  = null;
+          GNS.anchor = null;
+          // Si on sortait de GESTURE_NAV, laisser la friction cinématique agir dans applyMomentum
+          if (GNS.wasActive) { GNS.wasActive = false; }
+          TRK.rotMomentum  = 0; TRK.tiltMomentum = 0;
+          TRK.panMomX = 0; TRK.panMomY = 0;
+          break;
+
+        case 'TWIST':
+          TRK.wasPinch = false;
+          if (grabState.active) releaseGrab();
+          if (navMode === 'FREE') {
+            // ── TWIST : delta angulaire poignet→index + renforcement cercle GP ──
+            const TWIST_SENSITIVITY = 2.8;
+            const TWIST_MAX_VEL = 0.12;
+
+            // Signal de base : rotation du vecteur poignet→index
+            let twistVel = -TRK.angleDel * TWIST_SENSITIVITY;
+
+            // ── GP CIRCLE boost : si l'index fait un cercle intentionnel,
+            // on blend sa vélocité angulaire (plus précise, moins de bruit).
+            // Le blend est proportionnel à la confiance du cercle [0-1].
+            if (GP.circleConf > 0.30) {
+              const circleVel = gpCondition(GP.circleAngVel * 0.018, 0.002, TWIST_MAX_VEL, 1.6);
+              twistVel = twistVel * (1 - GP.circleConf) + circleVel * GP.circleConf;
+            }
+
+            // Plafond
+            twistVel = Math.max(-TWIST_MAX_VEL, Math.min(TWIST_MAX_VEL, twistVel));
+            // Appliquer au yaw caméra
+            CAM_T.r += twistVel;
+            // Stocker pour l'inertie à la sortie
+            TRK.twistMomentum = twistVel * 0.6;
+
+            // Tuer les autres momentums (pas de conflit orbit/joystick)
+            TRK.rotMomentum  = 0;
+            TRK.tiltMomentum = 0;
+            GNS.yawMomentum  = 0;
+            GNS.tiltMomentum = 0;
+
+            // Indicateur visuel
+            TRK.rotTimer = 50; $('rot-ind').style.opacity = '1';
+            $('rot-vals').textContent = `TWIST ${Math.round(CAM.r * 57.3)}°`;
+          }
+          break;
+
+        case 'ORBIT':
+        case 'ROTATE':
+          TRK.wasPinch = false;
+          if (navMode === 'FREE') {
+            // La rotation caméra est gérée par le Joystick (applyJoystickRotation).
+            // Ce case ne fait que l'indicateur UI.
+            TRK.rotMomentum  = 0;
+            TRK.tiltMomentum = 0;
+            TRK.rotTimer = 50; $('rot-ind').style.opacity = '1';
+            $('rot-vals').textContent = `${Math.round(CAM.r * 57.3)}° / ${Math.round(CAM.tilt * 57.3)}°`;
+          } else {
+            TRK.orbitAnchor  = null;
+            TRK.rotMomentum  = 0;
+            TRK.tiltMomentum = 0;
+          }
+          break;
+
+        case 'CURSOR':
+          if (TRK.wasPinch) TRK.wasPinch = false;
+          if (grabState.active) releaseGrab();
+          if (TRK.rotTimer > 0) { TRK.rotTimer--; if (TRK.rotTimer === 0) $('rot-ind').style.opacity = '0' }
+          // ── Sortie de la Griffe : Friction cinématique (pas d'arrêt brutal) ──
+          // L'ancre est libérée; le momentum résiduel dans GNS est appliqué
+          // par applyMomentum() avec friction 0.88 → décélération douce
+          if (GNS.anchor || GNS.wasActive) {
+            GNS.anchor = null;
+            GNS.wasActive = false;
+            GNS.prevR = null; GNS.prevTilt = null;
+            // Le momentum est déjà stocké → applyMomentum gère la décélération
+          }
+          // ── Relâche de l'Embrayage ORBIT : Arrêt Net ──
+          if (TRK.orbitAnchor) {
+            TRK.orbitAnchor  = null;
+            TRK.rotMomentum  = 0;
+            TRK.tiltMomentum = 0;
+          }
+
+          // FLICK (indépendant du mode — navigation entre nœuds)
+          if (TRK.flickCD > 0) TRK.flickCD--;
+          if (midSpd > 12 && RC.snapNode && TRK.flickCD === 0) {
+            TRK.flickCD = 12;
+            const flickDir = Math.atan2(TRK.midVelY, TRK.midVelX);
+            const curP = w2s(RC.snapNode.x, RC.snapNode.y, RC.snapNode.z);
+            const nbrSet = neighbors(RC.snapNode);
+            let bestN = null, bestScore = -Infinity;
+            nodes.forEach(n => {
+              if (n.id === RC.snapNode.id) return;
+              const np = w2s(n.x, n.y, n.z);
+              const nd = Math.atan2(np.y - curP.y, np.x - curP.x);
+              let ad = Math.abs(flickDir - nd); if (ad > Math.PI) ad = 2 * Math.PI - ad;
+              const dist = Math.hypot(np.x - curP.x, np.y - curP.y);
+              const score = Math.cos(ad) * 100 - dist * .3 + (nbrSet.has(n.id) ? 40 : 0);
+              if (ad < Math.PI * .55 && score > bestScore) { bestScore = score; bestN = n }
+            });
+            if (bestN) { RC.snapNode = bestN; RC.flash = 8; hovered = bestN; updatePanel() }
+          }
+          break;
+
+        case 'PINCH':
+          if (!TRK.wasPinch) {
+            TRK.wasPinch = true;
+            grabState.startTime = Date.now();
+            // ── Priorité Aimant Sémantique ──
+            // Si un nœud est dans la zone d'influence (strength > 0.5),
+            // il est capturé en priorité absolue — même si le doigt n'est pas parfaitement dessus.
+            const nd = (magnetState.node && magnetState.strength > 0.5)
+              ? magnetState.node
+              : nearNode(RC.x, RC.y, 80);
+            if (pathMode.active && nd) {
+              if (!pathMode.nodeA) { pathMode.nodeA = nd; pulses.push({ x: w2s(nd.x, nd.y, nd.z).x, y: w2s(nd.x, nd.y, nd.z).y, r: 5, a: .7, c: '#00ff88' }) }
+              else if (!pathMode.nodeB && nd.id !== pathMode.nodeA.id) { pathMode.nodeB = nd; const pth = bfsPath(pathMode.nodeA.id, pathMode.nodeB.id); pathMode.path = pth; pathMode.pathEdgeSet = buildPathEdgeSet(pth); pulses.push({ x: w2s(nd.x, nd.y, nd.z).x, y: w2s(nd.x, nd.y, nd.z).y, r: 5, a: .7, c: '#00ff88' }) }
+              else { pathMode.nodeA = null; pathMode.nodeB = null; pathMode.path = []; pathMode.pathEdgeSet = new Set() }
+            } else if (!pathMode.active && nd) {
+              // ── Nucleus lock : on limite la sélection aux satellites et au noyau ──
+              if (isNucleusActive) {
+                if (nucleusState.neighborIds.has(nd.id)) {
+                  selected = (selected?.id === nd.id) ? nucleusState.node : nd;
+                  RC.locked = !!selected; RC.flash = 16;
+                  if (selected) {
+                    const p = w2s(nd.x, nd.y, nd.z); pulses.push({ x: p.x, y: p.y, r: 5, a: .65, c: fc(nd.folder) });
+                    grabState.node = nd; grabState.origX = nd.x; grabState.origY = nd.y;
+                  }
+                  updatePanel();
+                }
+              } else {
+                // Start potential grab — select immediately, will upgrade to grab if held
+                selected = (selected?.id === nd.id) ? null : nd; RC.locked = !!selected; RC.flash = 16;
+                if (selected) {
+                  const p = w2s(nd.x, nd.y, nd.z); pulses.push({ x: p.x, y: p.y, r: 5, a: .65, c: fc(nd.folder) });
+                  // Prepare grab candidate
+                  grabState.node = nd; grabState.origX = nd.x; grabState.origY = nd.y;
+                }
+                updatePanel();
+              }
+            }
+          } else if (grabState.node && !grabState.active && Date.now() - grabState.startTime > 300) {
+            // Held pinch >300ms near a node → activate GRAB
+            grabState.active = true;
+            grabState.grabMidX = mid.x; grabState.grabMidY = mid.y;
+            grabState.grabNodeX = grabState.node.x; grabState.grabNodeY = grabState.node.y;
+          }
+
+          // ── Active grab: move node with hand (position-based, rotation-aware) ──
+          if (grabState.active && grabState.node) {
+            const n = grabState.node;
+            // Delta in screen space since grab started
+            const sdx = mid.x - grabState.grabMidX;
+            const sdy = mid.y - grabState.grabMidY;
+            // Inverse rotation to convert screen delta → world delta
+            const cr = Math.cos(-CAM.r), sr = Math.sin(-CAM.r);
+            const wdx = (sdx * cr) / CAM.s;
+            const wdy = (sdy) / (CAM.s * Y_TILT);
+            n.x = grabState.grabNodeX + wdx;
+            n.y = grabState.grabNodeY + wdy;
+            n.fx = n.x; n.fy = n.y;
+          }
+          break;
+
+        case 'PAN':
+          TRK.wasPinch = true;
+          if (grabState.active && grabState.node) {
+            // Grab mode PAN — same position-based drag as PINCH grab
+            const n = grabState.node;
+            const sdx = mid.x - grabState.grabMidX;
+            const sdy = mid.y - grabState.grabMidY;
+            const cr = Math.cos(-CAM.r), sr = Math.sin(-CAM.r);
+            const wdx = (sdx * cr) / CAM.s;
+            const wdy = (sdy) / (CAM.s * Y_TILT);
+            n.x = grabState.grabNodeX + wdx;
+            n.y = grabState.grabNodeY + wdy;
+            n.fx = n.x; n.fy = n.y;
+          } else {
+            // Normal PAN — camera movement (embrayage : seulement si pinch actif)
+            if (navMode === 'FREE') {
+              CAM_T.x += TRK.midVelX * .55; CAM_T.y += TRK.midVelY * .55;
+              TRK.panMomX = TRK.midVelX * .4; TRK.panMomY = TRK.midVelY * .4;
+              RC.snapNode = nearNode(RC.x, RC.y, 9999); clamp();
+            }
+            // En mode FIXE : PAN bloqué
+          }
+          break;
+
+        // ZOOM_IN/ZOOM_OUT removed from single-hand — zoom is two-hand only
+      }
+
+      // Unpinch → release grab + wasPinch reset
+      if (gesture !== 'PINCH' && gesture !== 'PAN') {
+        TRK.wasPinch = false;
+        if (grabState.active) releaseGrab();
+        grabState.node = null;
+      }
+
+      // Hover from rect
+      if (RC.vis && RC.active && !RC.locked) { hovered = RC.active; updatePanel() }
+
+      // Determine display gesture (show GRAB if active)
+      let displayGesture = gesture;
+      if (grabState.active) displayGesture = 'GRAB';
+
+      setGl(
+        GNAMES[displayGesture] || GNAMES[gesture] || '',
+        gesture === 'PINCH' || displayGesture === 'GRAB' ? '#ff4444' : gesture === 'TWIST' ? '#a855f7' : gesture === 'ROTATE' ? '#00d4ff' : 'rgba(255,255,255,.55)'
+      );
+      hlGL(displayGesture !== gesture ? displayGesture : gesture);
+
+      // ── Envoi WebSocket throttlé ~30fps (une seule main) ──
+      wsSendGesture({
+        master_x: Math.round(indexS.x), master_y: Math.round(indexS.y),
+        hands_count: 1, can_grab: true,
+        rotation_delta: { x: Math.round(TRK.midVelX * 10) / 10, y: Math.round(TRK.midVelY * 10) / 10 },
+        action: "cursor", gesture: displayGesture,
+        grabbedNodeId: grabState.active && grabState.node ? grabState.node.id : null
+      });
+
+      // ── Forward gesture + hand positions to 3D overlay ──
+      if (layer3dActive) {
+        const frame = $('frame-3d');
+        if (frame?.contentWindow) {
+          frame.contentWindow.postMessage({
+            type: 'gesture3d',
+            gesture,
+            velX: TRK.midVelX,
+            velY: TRK.midVelY,
+            angleDel: TRK.angleDel,
+            twoHand: false,
+            zoomVel: 0,
+          }, '*');
+          frame.contentWindow.postMessage({
+            type: 'hands3d',
+            hands: {
+              h1: handVis ? { thumb: thumbS, index: indexS, middle: middleS, ring: ringS, pinky: pinkyS, wrist: wristS } : null,
+              h2: (hand2Vis && twoHandActive) ? { thumb: thumbS2, index: indexS2, middle: middleS2, ring: ringS2, pinky: pinkyS2, wrist: wristS2 } : null,
+            }
+          }, '*');
+        }
+      }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // NAVIGATION HISTORY
+    // ═══════════════════════════════════════════════════════════════════
+    function navPush(n) {
+      if (!n) return;
+      if (navHistory.length === 0 || navHistory[navHistory.length - 1]?.id !== n.id) {
+        navHistory.push(n);
+        visitedSet.add(n.id);
+      }
+    }
+    function navBack() {
+      if (navHistory.length > 1) {
+        navHistory.pop(); // remove current
+        const prev = navHistory[navHistory.length - 1];
+        selected = prev; hovered = prev;
+        RC.snapNode = prev; RC.locked = true; RC.flash = 12;
+        const p = w2s(prev.x, prev.y, prev.z);
+        CAM_T.x -= (p.x - W * .45) * .04; CAM_T.y -= (p.y - H * .5) * .04;
+        clamp(); updatePanel(); updateSimilarity();
+      }
+    }
+
+    // (navPush + updateSimilarity are called directly inside updatePanel)
+
+    // ═══════════════════════════════════════════════════════════════════
+    // SEARCH (keyboard)
+    // ═══════════════════════════════════════════════════════════════════
+    document.addEventListener('keydown', e => {
+      // "/" or Ctrl+F opens search
+      if ((e.key === '/' || ((e.ctrlKey || e.metaKey) && e.key === 'f')) && !searchOpen) {
+        e.preventDefault(); searchOpen = true;
+        $('search-ov').style.display = 'block'; $('search-in').value = ''; $('search-in').focus();
+        searchFilter = ''; updateSearchHits(); return;
+      }
+      // Escape closes search OR exits 3D overlay OR exits Nucleus
+      if (e.key === 'Escape') {
+        if (layer3dActive) { toggleLayer3D(); return }
+        if (isNucleusActive) { deactivateNucleus(); return }
+        if (searchOpen) { searchOpen = false; $('search-ov').style.display = 'none'; return }
+      }
+      // Backspace for nav back
+      if (e.key === 'Backspace' && !searchOpen) { e.preventDefault(); navBack(); return }
+      // 'N' pour activer le mode Nucleus sur le nœud sélectionné
+      if ((e.key === 'n' || e.key === 'N') && !searchOpen && !isNucleusActive && selected) {
+        activateNucleus(selected);
+        return;
+      }
+      // 'L' → 3D Layers overlay  |  Ctrl+L → toggle layer/folder colors
+      if ((e.key === 'l' || e.key === 'L') && !searchOpen) {
+        if (e.ctrlKey || e.metaKey) {
+          // Ctrl+L: toggle layer color mode (ancien comportement)
+          e.preventDefault();
+          layerMode = !layerMode;
+          $('layer-legend').style.display = layerMode ? 'block' : 'none';
+          showHUDNotification(layerMode ? 'LAYER MODE' : 'FOLDER MODE');
+          pulses.push({ x: W / 2, y: H / 2, r: 10, a: .4, c: layerMode ? '#6366f1' : '#00d4ff' });
+        } else {
+          // L: toggle 3D layered graph
+          toggleLayer3D();
+        }
+        return;
+      }
+      // 'C' toggle cluster expand/compress on selected node
+      if ((e.key === 'c' || e.key === 'C') && !searchOpen && layerMode) {
+        if (selected && selected.compressedInto) {
+          toggleCluster(selected.compressedInto);
+          return;
+        }
+        // Check if selected IS a cluster rep
+        const cl = clusterData.find(c => c.representativeId === selected?.id);
+        if (cl) { toggleCluster(cl.clusterId); return }
+        // No cluster context — expand/compress all
+        if (compressedClusters.size > 0) {
+          compressedClusters.clear();
+          showHUDNotification('ALL CLUSTERS EXPANDED');
+        } else {
+          clusterData.forEach(c => compressedClusters.add(c.clusterId));
+          showHUDNotification('ALL CLUSTERS COMPRESSED');
+        }
+        return;
+      }
+    });
+    $('search-in').addEventListener('input', e => {
+      searchFilter = e.target.value.toLowerCase(); updateSearchHits();
+    });
+    function updateSearchHits() {
+      const el = $('search-hits');
+      if (!searchFilter) { el.innerHTML = '<div style="color:rgba(255,255,255,.2)">tapez pour filtrer...</div>'; return }
+      const hits = nodes.filter(n => n.name.toLowerCase().includes(searchFilter)).slice(0, 12);
+      el.innerHTML = hits.map(n => `<div data-nid="${n.id}" style="color:${layerMode ? lc(n) : fc(n.folder)}">${n.name}</div>`).join('');
+      el.querySelectorAll('div').forEach(d => d.onclick = () => {
+        const nd = nodes.find(n => n.id === +d.dataset.nid);
+        if (nd) {
+          selected = nd; hovered = nd; RC.snapNode = nd; RC.locked = true; RC.flash = 12;
+          const p = w2s(nd.x, nd.y, nd.z);
+          CAM_T.x -= (p.x - W * .45) * .06; CAM_T.y -= (p.y - H * .5) * .06;
+          clamp(); updatePanel();
+          searchOpen = false; $('search-ov').style.display = 'none';
+        }
+      });
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // SIMILARITY PANEL
+    // ═══════════════════════════════════════════════════════════════════
+    function updateSimilarity() {
+      const n = selected; const el = $('sim-panel');
+      if (!n) { el.style.opacity = 0; return }
+      el.style.opacity = 1;
+      // Find links connected to this node, sorted by weight
+      const connected = [];
+      links.forEach(l => {
+        const si = l.source?.id ?? l.source, ti = l.target?.id ?? l.target;
+        if (si === n.id || ti === n.id) {
+          const otherId = si === n.id ? ti : si;
+          const other = nodes.find(nn => nn.id === otherId);
+          if (other) {
+            const w = l.weight || ((l.type === 'explicit') ? 1 : .5);
+            connected.push({ node: other, weight: w, type: l.type });
+          }
+        }
+      });
+      connected.sort((a, b) => b.weight - a.weight);
+      const top = connected.slice(0, 6);
+      const maxW = Math.max(...top.map(c => c.weight), 0.01);
+      $('sim-rows').innerHTML = top.map(c => {
+        const pct = Math.round(c.weight / maxW * 100);
+        const col = layerMode ? lc(c.node) : fc(c.node.folder);
+        return `<div class="sim-row"><span>${c.node.name.slice(0, 18)}</span>${c.type === 'explicit' ? '⟷' : '∿'} ${Math.round(c.weight * 100)}%</div>
+    <div class="sim-bar"><div class="sim-bar-fill" style="width:${pct}%;background:${col}"></div></div>`;
+      }).join('');
+    }
+
+    // (bookmarks + intel-bar supprimés)
+
+    // ═══════════════════════════════════════════════════════════════════
+    // LIVE MINIMAP (redrawn each frame via render hook)
+    // ═══════════════════════════════════════════════════════════════════
+    function drawMinimap() {
+      if (!nodes.length || !nodeBounds) return;
+      const S = 180, R = S / 2 - 6, cx = S / 2, cy = S / 2;
+      mmCtx.clearRect(0, 0, S, S);
+
+      // Globe background — dark sphere with subtle gradient
+      const gbg = mmCtx.createRadialGradient(cx - 15, cy - 15, 0, cx, cy, R);
+      gbg.addColorStop(0, 'rgba(18,18,40,.8)'); gbg.addColorStop(.85, 'rgba(8,8,20,.9)'); gbg.addColorStop(1, 'rgba(0,0,0,0)');
+      mmCtx.beginPath(); mmCtx.arc(cx, cy, R, 0, Math.PI * 2); mmCtx.fillStyle = gbg; mmCtx.fill();
+
+      // Globe edge ring
+      mmCtx.beginPath(); mmCtx.arc(cx, cy, R, 0, Math.PI * 2);
+      mmCtx.strokeStyle = 'rgba(255,255,255,.12)'; mmCtx.lineWidth = .8; mmCtx.stroke();
+
+      // Latitude/longitude grid lines
+      mmCtx.strokeStyle = 'rgba(255,255,255,.04)'; mmCtx.lineWidth = .5;
+      for (let i = -2; i <= 2; i++) {
+        const yy = cy + i * (R * .3);
+        const rr = Math.sqrt(Math.max(0, R * R - (yy - cy) * (yy - cy)));
+        mmCtx.beginPath(); mmCtx.ellipse(cx, yy, rr, rr * .15, 0, 0, Math.PI * 2); mmCtx.stroke();
+      }
+      for (let i = 0; i < 4; i++) {
+        const a = CAM.r + i * Math.PI / 4;
+        const x1 = cx + R * Math.cos(a), x2 = cx - R * Math.cos(a);
+        mmCtx.beginPath(); mmCtx.ellipse(cx, cy, Math.abs(R * Math.sin(a)), R, 0, 0, Math.PI * 2); mmCtx.stroke();
+      }
+
+      // Map nodes to spherical coordinates, apply same rotation as main cam
+      const bx = (nodeBounds.minX + nodeBounds.maxX) / 2;
+      const by = (nodeBounds.minY + nodeBounds.maxY) / 2;
+      const bz = 0;
+      const spread = Math.max(nodeBounds.maxX - nodeBounds.minX, nodeBounds.maxY - nodeBounds.minY) / 2 + 60;
+
+      // 3D projection matching main camera rotation
+      function globeProject(wx, wy, wz) {
+        // Normalize to [-1,1] relative to center
+        let dx = (wx - bx) / spread, dy = (wy - by) / spread, dz = (wz || 0) / spread;
+        // Apply yaw (same as main cam)
+        const cr = Math.cos(CAM.r), sr = Math.sin(CAM.r);
+        const rx = dx * cr + dz * sr;
+        let ry = dy;
+        let rz = -dx * sr + dz * cr;
+        // Apply tilt
+        const cp = Math.cos(CAM.tilt), sp = Math.sin(CAM.tilt);
+        const ry2 = ry * cp - rz * sp;
+        const rz2 = ry * sp + rz * cp;
+        // Perspective on globe
+        const depth = .65 / (1 + rz2 * .4); // subtle perspective
+        return { x: cx + rx * R * .8 * depth, y: cy + ry2 * R * .8 * depth, z: rz2, vis: rz2 > -0.9 };
+      }
+
+      // Sort nodes by depth for correct layering
+      const projected = nodes.map(n => ({ n, p: globeProject(n.x, n.y, n.z) }));
+      projected.sort((a, b) => a.p.z - b.p.z);
+
+      // Clip to globe circle
+      mmCtx.save();
+      mmCtx.beginPath(); mmCtx.arc(cx, cy, R - 1, 0, Math.PI * 2); mmCtx.clip();
+
+      // Edges (single pass)
+      const projMap = new Map(); projected.forEach(({ n, p }) => projMap.set(n.id, p));
+      links.forEach(l => {
+        const si = l.source?.id ?? l.source, ti = l.target?.id ?? l.target;
+        const sp = projMap.get(si), tp = projMap.get(ti);
+        if (!sp || !tp || (!sp.vis && !tp.vis)) return;
+        const za = Math.max(.01, (.5 + Math.min(sp.z, tp.z) * .4));
+        mmCtx.globalAlpha = za * .12;
+        mmCtx.strokeStyle = 'rgba(255,255,255,1)'; mmCtx.lineWidth = .3;
+        mmCtx.beginPath(); mmCtx.moveTo(sp.x, sp.y); mmCtx.lineTo(tp.x, tp.y); mmCtx.stroke();
+      });
+      mmCtx.globalAlpha = 1;
+
+      // Nodes
+      projected.forEach(({ n, p }) => {
+        if (!p.vis) return;
+        const isSel = selected?.id === n.id;
+        const isHub = hubNode && n.id === hubNode.id;
+        const depthA = Math.max(.15, .5 + p.z * .5);
+        const r = isSel ? 3 : isHub ? 2.5 : 1.3;
+        mmCtx.globalAlpha = isSel ? 1 : depthA;
+        mmCtx.beginPath(); mmCtx.arc(p.x, p.y, r, 0, Math.PI * 2);
+        mmCtx.fillStyle = isSel ? '#ff4444' : fc(n.folder); mmCtx.fill();
+        // Glow for selected/hub
+        if (isSel || isHub) {
+          mmCtx.globalAlpha = (isSel ? .4 : .2) * depthA;
+          mmCtx.beginPath(); mmCtx.arc(p.x, p.y, r * 3, 0, Math.PI * 2);
+          mmCtx.fillStyle = isSel ? '#ff4444' : fc(n.folder); mmCtx.fill();
+        }
+      });
+      mmCtx.globalAlpha = 1;
+
+      // Specular highlight — top-left shine
+      const shine = mmCtx.createRadialGradient(cx - R * .3, cy - R * .3, 0, cx, cy, R);
+      shine.addColorStop(0, 'rgba(255,255,255,.06)'); shine.addColorStop(.5, 'rgba(255,255,255,0)');
+      mmCtx.fillStyle = shine; mmCtx.beginPath(); mmCtx.arc(cx, cy, R, 0, Math.PI * 2); mmCtx.fill();
+
+      mmCtx.restore();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // DOUBLE-PINCH → OPEN IN OBSIDIAN
+    // ═══════════════════════════════════════════════════════════════════
+    function checkDoublePinch(spread) {
+      const isPinch = spread < THRESH.pinch;
+      if (isPinch && !dblPinch.wasPinch) {
+        const now = Date.now();
+        if (now - dblPinch.lastTime < 500) {
+          dblPinch.count++;
+          if (dblPinch.count >= 2) {
+            dblPinch.count = 0;
+            openInObsidian();
+          }
+        } else { dblPinch.count = 1 }
+        dblPinch.lastTime = now;
+      }
+      dblPinch.wasPinch = isPinch;
+    }
+    function openInObsidian() {
+      const n = selected || RC.active;
+      if (!n || !n.path) return;
+      const vault = 'Omega';
+      const file = n.path.replace(/\.md$/, '');
+      const url = `obsidian://open?vault=${encodeURIComponent(vault)}&file=${encodeURIComponent(file)}`;
+      window.open(url, '_blank');
+      pulses.push({ x: W / 2, y: H / 2, r: 5, a: .4, c: '#a855f7' });
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // INJECT INTO RENDER LOOP — floating tags + cluster bubbles + minimap
+    // ═══════════════════════════════════════════════════════════════════
+    // Override loop to add new renderings (monkey-patch the RAF call)
+    // Post-render additions called at end of each frame
+    function postRender(t) {
+      const focus = selected || hovered;
+
+      // ── Layer legend zoom indicator (throttled — every ~30 frames) ──
+      if (layerMode && Math.round(t * 30) % 30 === 0) {
+        const zd = zoomDetail();
+        const el = $('ll-zoom');
+        if (el) el.textContent = 'ZOOM: ' + zd;
+      }
+
+      // ── Path mode — floating label showing path length and step count ──
+      if (pathMode.active) {
+        ctx.save();
+        ctx.font = '10px SF Mono,monospace';
+        ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 8;
+        if (!pathMode.nodeA) {
+          ctx.fillStyle = 'rgba(0,255,136,0.7)';
+          ctx.fillText('CHEMIN : selectionnez nœud A', 24, H - 210);
+        } else if (!pathMode.nodeB) {
+          ctx.fillStyle = 'rgba(0,255,136,0.7)';
+          ctx.fillText(`A: ${pathMode.nodeA.name} — selectionnez nœud B`, 24, H - 210);
+        } else if (pathMode.path.length > 0) {
+          ctx.fillStyle = '#00d4ff';
+          ctx.fillText(`A→B : ${pathMode.path.length - 1} sauts  [ pincez pour réinitialiser ]`, 24, H - 210);
+          // Draw floating label at midpoint of path
+          const midIdx = Math.floor(pathMode.path.length / 2);
+          const midNode = nodes.find(nn => nn.id === pathMode.path[midIdx]);
+          if (midNode) {
+            const mp = w2s(midNode.x, midNode.y, midNode.z);
+            ctx.globalAlpha = 0.85; ctx.font = 'bold 11px SF Mono,monospace';
+            ctx.fillStyle = '#00d4ff'; ctx.shadowBlur = 10;
+            ctx.fillText(`${pathMode.path.length - 1} sauts`, mp.x + 8, mp.y - 18);
+          }
+        } else {
+          ctx.fillStyle = 'rgba(255,68,68,0.7)';
+          ctx.fillText('Aucun chemin trouvé', 24, H - 210);
+        }
+        ctx.shadowBlur = 0; ctx.restore();
+      }
+
+      // ── Orphan mode — floating count label ──
+      if (orphanMode) {
+        ctx.save();
+        ctx.font = '9px SF Mono,monospace'; ctx.fillStyle = 'rgba(255,68,68,0.6)';
+        ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 6;
+        ctx.fillText(`ORPHELINS: ${orphanCount} nœuds (connexions ≤ 1)`, 24, H - 195);
+        ctx.shadowBlur = 0; ctx.restore();
+      }
+
+      // ── Bridge mode — floating count label ──
+      if (bridgeMode) {
+        ctx.save();
+        ctx.font = '9px SF Mono,monospace'; ctx.fillStyle = 'rgba(245,158,11,0.6)';
+        ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 6;
+        ctx.fillText(`PONTS: ${bridgeNodes.size} nœuds articulés`, 24, H - 180);
+        ctx.shadowBlur = 0; ctx.restore();
+      }
+
+      // ── Mettre à jour la position du HUD Cortex ──
+      if (typeof cortexHUDText !== 'undefined' && cortexHUDText && focus) {
+        const hud = $('cortex-hud');
+        if (hud) {
+          const pos = w2s(focus.x, focus.y, focus.z || 0);
+          hud.style.left = pos.x + 'px';
+          hud.style.top = Math.max(10, pos.y - 25) + 'px';
+        }
+      } else {
+        const hud = $('cortex-hud');
+        if (hud) hud.style.display = 'none';
+      }
+
+      // ── Floating topWords tags around selected node ──
+      if (selected) {
+        const sp = w2s(selected.x, selected.y, selected.z);
+        const words = selected.topWords || [];
+        words.forEach((w, i) => {
+          const angle = Math.PI * 2 * i / words.length + t * .3;
+          const dist = 40 + i * 8;
+          const tx = sp.x + dist * Math.cos(angle);
+          const ty = sp.y + dist * Math.sin(angle) * .65;
+          const fa = .5 + .2 * Math.sin(t * 2 + i);
+          ctx.save(); ctx.globalAlpha = fa;
+          ctx.font = '8px SF Mono,monospace';
+          ctx.fillStyle = fc(selected.folder);
+          ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 6;
+          ctx.fillText(w, tx, ty); ctx.shadowBlur = 0; ctx.restore();
+        });
+
+        // ── Summary card anchored to node ──
+        const col = fc(selected.folder);
+        const summary = selected.summary || '';
+        if (summary) {
+          // Card position — offset to the right of the node
+          const cardX = sp.x + 28;
+          const cardY = sp.y - 20;
+          const cardW = 210;
+          const lineH = 13;
+          const font = '9px SF Mono,monospace';
+          const titleFont = 'bold 10px SF Mono,monospace';
+
+          // Word-wrap summary
+          ctx.save(); ctx.font = font;
+          const rawWords = summary.split(' ');
+          const lines = []; let cur = '';
+          rawWords.forEach(w => {
+            const test = cur ? cur + ' ' + w : w;
+            if (ctx.measureText(test).width > cardW - 20) { if (cur) lines.push(cur); cur = w }
+            else cur = test;
+          });
+          if (cur) lines.push(cur);
+          const maxLines = 6;
+          if (lines.length > maxLines) { lines.length = maxLines; lines[maxLines - 1] += '...' }
+
+          const titleH = 22;
+          const padY = 10;
+          const cardH = titleH + lines.length * lineH + padY * 2;
+
+          // Smooth fade-in via node._cardAlpha
+          if (!selected._cardAlpha) selected._cardAlpha = 0;
+          selected._cardAlpha += (1 - selected._cardAlpha) * .12;
+          const ca = selected._cardAlpha;
+
+          // Glass background
+          ctx.globalAlpha = ca * .55;
+          ctx.fillStyle = 'rgba(8,8,18,.75)';
+          const cr = 8;
+          ctx.beginPath();
+          ctx.moveTo(cardX + cr, cardY); ctx.lineTo(cardX + cardW - cr, cardY);
+          ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + cr);
+          ctx.lineTo(cardX + cardW, cardY + cardH - cr);
+          ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - cr, cardY + cardH);
+          ctx.lineTo(cardX + cr, cardY + cardH);
+          ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - cr);
+          ctx.lineTo(cardX, cardY + cr);
+          ctx.quadraticCurveTo(cardX, cardY, cardX + cr, cardY);
+          ctx.closePath(); ctx.fill();
+
+          // Border
+          ctx.globalAlpha = ca * .3;
+          ctx.strokeStyle = col; ctx.lineWidth = .8; ctx.stroke();
+
+          // Connecting line from node to card
+          ctx.globalAlpha = ca * .2; ctx.beginPath();
+          ctx.moveTo(sp.x, sp.y); ctx.lineTo(cardX, cardY + titleH / 2 + padY);
+          ctx.strokeStyle = col; ctx.lineWidth = .6; ctx.stroke();
+
+          // Title bar — colored accent line
+          ctx.globalAlpha = ca * .6;
+          ctx.fillStyle = col;
+          ctx.fillRect(cardX + 1, cardY + 1, cardW - 2, 2);
+
+          // Title text
+          ctx.globalAlpha = ca * .9;
+          ctx.font = titleFont; ctx.fillStyle = col;
+          ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = 4;
+          ctx.fillText(selected.name.length > 24 ? selected.name.slice(0, 24) + '…' : selected.name, cardX + 10, cardY + padY + 11);
+          ctx.shadowBlur = 0;
+
+          // Summary lines
+          ctx.font = font; ctx.fillStyle = 'rgba(255,255,255,.55)';
+          ctx.globalAlpha = ca * .8;
+          lines.forEach((l, i) => {
+            ctx.fillText(l, cardX + 10, cardY + titleH + padY + i * lineH + 2);
+          });
+
+          ctx.restore();
+        }
+      }
+
+      // ── Cluster bubbles — transparent ellipses around folder groups ──
+      if (!focus) {
+        const byF = {}; nodes.forEach(n => { if (!byF[n.folder]) byF[n.folder] = []; byF[n.folder].push(n) });
+        Object.entries(byF).forEach(([folder, fns]) => {
+          if (fns.length < 3) return;
+          const pts = fns.map(n => w2s(n.x, n.y, n.z));
+          const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+          const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
+          const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+          const rx = (Math.max(...xs) - Math.min(...xs)) / 2 + 30;
+          const ry = (Math.max(...ys) - Math.min(...ys)) / 2 + 25;
+          if (cx - rx > W || cx + rx < 0 || cy - ry > H || cy + ry < 0) return;
+          const col = fc(folder);
+          ctx.save(); ctx.globalAlpha = .04;
+          ctx.beginPath(); ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+          ctx.fillStyle = col; ctx.fill();
+          ctx.globalAlpha = .1; ctx.strokeStyle = col; ctx.lineWidth = .6; ctx.stroke();
+          ctx.restore();
+        });
+      }
+
+      // ── Minimap ──
+      drawMinimap();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // CORTEX WebSocket Integration (Real-Time 3D Graph Update)
+    // ═══════════════════════════════════════════════════════════════════
+    function showHUDNotification(text) {
+      let hud = document.getElementById('cortex-hud');
+      if (!hud) {
+        hud = document.createElement('div');
+        hud.id = 'cortex-hud';
+        hud.style.cssText = 'position:fixed;bottom:25px;right:25px;padding:12px 20px;background:rgba(8,8,18,0.85);border:1px solid #00d4ff;border-radius:6px;color:#00d4ff;font-family:"SF Mono",monospace;font-size:11.5px;z-index:9999;box-shadow:0 0 15px rgba(0,212,255,0.3);backdrop-filter:blur(8px);transition:opacity 0.4s, transform 0.4s;pointer-events:none;letter-spacing:1px;text-transform:uppercase;';
+        document.body.appendChild(hud);
+      }
+      hud.textContent = text;
+      hud.style.opacity = '1';
+      hud.style.transform = 'translateY(0)';
+      
+      if (hud._timeout) clearTimeout(hud._timeout);
+      hud._timeout = setTimeout(() => {
+        hud.style.opacity = '0';
+        hud.style.transform = 'translateY(15px)';
+      }, 4000);
+    }
+
+    var globalWs = null;
+
+    function connectCortex() {
+      globalWs = new WebSocket(`ws://${location.host}/ws`);
+      globalWs.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+
+          // ── Réception du ZOOM gestuel depuis le serveur Python ──
+          if (msg.type === 'gesture' && msg.action === 'ZOOM' && typeof msg.value === 'number') {
+            applyRemoteZoom(msg.value);
+            return;
+          }
+          // ── Fin de zoom (le serveur peut envoyer ZOOM_END) ──
+          if (msg.type === 'gesture' && msg.action === 'ZOOM_END') {
+            deactivateRemoteZoom();
+            return;
+          }
+
+          let overrideColor = null;
+          if (msg.tags) {
+            if (msg.tags.includes('#greene') || msg.tags.includes('greene')) overrideColor = '#FFD700'; // Or
+            else if (msg.tags.includes('#taleb') || msg.tags.includes('taleb')) overrideColor = '#FF0000'; // Rouge
+            else if (msg.tags.includes('#insta') || msg.tags.includes('insta')) overrideColor = '#50C878'; // Vert émeraude
+          }
+
+          if (msg.action === 'created' || msg.action === 'modified') {
+            showHUDNotification(`CORTEX : Note [${msg.filename.replace('.md', '')}] synchronisée`);
+          }
+
+          if (msg.action === 'created') {
+            const idToUse = msg.filename; 
+            if (!nodes.find(n => n.id === idToUse || n.name === msg.filename.replace('.md', ''))) {
+              const angle = Math.random() * Math.PI * 2;
+              const dist = 300 + Math.random() * 200;
+              let nx = W/2, ny = H/2;
+              if (typeof hubNode !== 'undefined' && hubNode) { nx = hubNode.x; ny = hubNode.y; }
+              const newNode = {
+                id: idToUse,
+                name: msg.filename.replace('.md',''),
+                folder: 'CORTEX',
+                x: nx + Math.cos(angle) * dist,
+                y: ny + Math.sin(angle) * dist,
+                z: (Math.random() - 0.5) * dist,
+                connections: 1,
+                _cortexColor: overrideColor,
+                _cortexFlash: 60
+              };
+              newNode.fx = newNode.x; newNode.fy = newNode.y;
+              nodes.push(newNode);
+              if (typeof hubNode !== 'undefined' && hubNode && typeof links !== 'undefined') {
+                links.push({ source: hubNode, target: newNode, type: 'explicit', weight: 0.8, _phase: Math.random() });
+              }
+              const p = w2s(newNode.x, newNode.y, newNode.z);
+              pulses.push({ x: p.x, y: p.y, r: 8, a: .8, c: overrideColor || '#00d4ff' });
+            }
+          } else if (msg.action === 'modified') {
+            const existingNode = nodes.find(n => n.name === msg.filename.replace('.md', '') || n.id === msg.filename);
+            if (existingNode) {
+              if (overrideColor) existingNode._cortexColor = overrideColor;
+              existingNode._cortexFlash = 60; // Start pulse/glow animation
+              const p = w2s(existingNode.x, existingNode.y, existingNode.z || 0);
+              pulses.push({ x: p.x, y: p.y, r: 12, a: .9, c: '#00d4ff' });
+            }
+          }
+        } catch(e) { console.error('CORTEX error:', e) }
+      };
+      globalWs.onclose = () => setTimeout(connectCortex, 3000);
+    }
+    connectCortex();
+  </script>
+</body>
+
+</html>

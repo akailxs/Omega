@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORTEX Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --bg-color: #03080f;
+            --neon-blue: #00f3ff;
+            --neon-blue-dim: rgba(0, 243, 255, 0.2);
+            --neon-green: #00ff2a;
+            --neon-red: #ff003c;
+            --text-color: #d1f5ff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%,
+                rgba(0, 0, 0, 0.25) 50%
+            ), linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 0.06),
+                rgba(0, 255, 0, 0.02),
+                rgba(0, 0, 255, 0.06)
+            );
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.8;
+        }
+
+        .dashboard {
+            width: 100%;
+            max-width: 1200px;
+            border: 2px solid var(--neon-blue);
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 0 20px var(--neon-blue-dim), inset 0 0 20px var(--neon-blue-dim);
+            background: linear-gradient(135deg, rgba(0,243,255,0.05) 0%, rgba(3,8,15,1) 100%);
+            position: relative;
+        }
+
+        /* Techy corner accents */
+        .dashboard::before, .dashboard::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--neon-blue);
+        }
+        .dashboard::before {
+            top: -2px; left: -2px;
+            border-right: none; border-bottom: none;
+        }
+        .dashboard::after {
+            bottom: -2px; right: -2px;
+            border-left: none; border-top: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--neon-blue-dim);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .status-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid var(--neon-red);
+            padding: 10px 20px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .status-container.connected {
+            border-color: var(--neon-green);
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--neon-red);
+            box-shadow: 0 0 10px var(--neon-red);
+            transition: all 0.3s ease;
+        }
+
+        .status-container.connected .status-indicator {
+            background-color: var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .status-text {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--neon-red);
+            text-shadow: 0 0 5px var(--neon-red);
+        }
+
+        .status-container.connected .status-text {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .counter-card {
+            border: 1px solid var(--neon-blue-dim);
+            padding: 2rem;
+            text-align: center;
+            background: rgba(0, 243, 255, 0.02);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counter-card:hover {
+            box-shadow: 0 0 15px var(--neon-blue-dim);
+            border-color: var(--neon-blue);
+        }
+
+        .counter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: var(--neon-blue);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .counter-title {
+            font-size: 1.2rem;
+            color: rgba(209, 245, 255, 0.7);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .counter-value {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        .console-container {
+            border: 1px solid var(--neon-blue-dim);
+            background: rgba(3, 8, 15, 0.8);
+            position: relative;
+        }
+
+        .console-header {
+            background: var(--neon-blue-dim);
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .kos-console {
+            height: 250px;
+            overflow-y: auto;
+            padding: 15px;
+            margin: 0;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .kos-console::-webkit-scrollbar {
+            width: 8px;
+        }
+        .kos-console::-webkit-scrollbar-track {
+            background: var(--bg-color);
+            border-left: 1px solid var(--neon-blue-dim);
+        }
+        .kos-console::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .log-time {
+            color: var(--neon-blue);
+            margin-right: 10px;
+        }
+
+        .log-type-added { color: #00ff2a; }
+        .log-type-modified { color: #ffeb3b; }
+        .log-type-deleted { color: #ff003c; }
+
+        .terminal-input {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-top: 1px dashed var(--neon-blue-dim);
+            color: var(--neon-blue);
+        }
+
+        .blinking-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2rem;
+            background-color: var(--neon-blue);
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <header>
+            <h1>CORTEX SYSTEM v1.0</h1>
+            <div class="status-container" id="status-container">
+                <div class="status-indicator"></div>
+                <div class="status-text" id="status-text">OFFLINE</div>
+            </div>
+        </header>
+
+        <div class="grid">
+            <div class="counter-card" id="card-greene">
+                <div class="counter-title">Greene Nodes</div>
+                <div class="counter-value" id="count-greene">0</div>
+            </div>
+            <div class="counter-card" id="card-taleb">
+                <div class="counter-title">Taleb Nodes</div>
+                <div class="counter-value" id="count-taleb">0</div>
+            </div>
+            <div class="counter-card" id="card-instagram">
+                <div class="counter-title">Instagram Nodes</div>
+                <div class="counter-value" id="count-instagram">0</div>
+            </div>
+        </div>
+
+        <div class="console-container">
+            <div class="console-header">
+                <span>[ KOS CONSOLE / LIVE LOGS ]</span>
+                <span>DATA STREAM: ACTIVE</span>
+            </div>
+            <ul class="kos-console" id="kos-console">
+                <!-- Logs will be appended here -->
+            </ul>
+            <div class="terminal-input">
+                [KOS]: > <span class="blinking-cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        const nodeSets = {
+            greene: new Set(),
+            taleb: new Set(),
+            instagram: new Set()
+        };
+
+        // DOM Elements
+        const statusContainer = document.getElementById('status-container');
+        const statusText = document.getElementById('status-text');
+        const consoleEl = document.getElementById('kos-console');
+        const counts = {
+            greene: document.getElementById('count-greene'),
+            taleb: document.getElementById('count-taleb'),
+            instagram: document.getElementById('count-instagram')
+        };
+
+        function addLog(message, type = 'info') {
+            const now = new Date();
+            const timeStr = now.toTimeString().split(' ')[0]; // HH:MM:SS
+            const li = document.createElement('li');
+            li.className = 'log-entry';
+            
+            let typeClass = '';
+            if (type === 'created' || type === 'file_added') typeClass = 'log-type-added';
+            if (type === 'modified' || type === 'file_modified') typeClass = 'log-type-modified';
+            if (type === 'deleted' || type === 'file_deleted') typeClass = 'log-type-deleted';
+
+            li.innerHTML = `<span class="log-time">[${timeStr}]</span> <span class="${typeClass}">>> ${message}</span>`;
+            consoleEl.appendChild(li);
+            // Auto-scroll to bottom
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        function updateCounters() {
+            counts.greene.textContent = nodeSets.greene.size;
+            counts.taleb.textContent = nodeSets.taleb.size;
+            counts.instagram.textContent = nodeSets.instagram.size;
+        }
+
+        function processFileEvent(eventData) {
+            const actionType = eventData.action || eventData.event;
+            const filepath = eventData.path || eventData.filepath;
+            const filename = eventData.filename || (filepath ? filepath.split('/').pop() : 'Unknown Note');
+            const tags = eventData.tags || [];
+            
+            if (!filepath) return;
+            const filepathLower = filepath.toLowerCase();
+
+            // Check categorization
+            let category = null;
+            if (filepathLower.includes("greene")) category = 'greene';
+            if (filepathLower.includes("taleb")) category = 'taleb';
+            if (filepathLower.includes("instagram")) category = 'instagram';
+
+            // Event description logic
+            let actionText = '';
+            if (actionType === 'created' || actionType === 'file_added') {
+                actionText = 'NOUVELLE NOTE :';
+                if (category) nodeSets[category].add(filepath);
+            } else if (actionType === 'modified' || actionType === 'file_modified') {
+                actionText = 'NOTE MODIFIÉE :';
+                // Technically it's already there if modified, but ensure it's in the set
+                if (category) nodeSets[category].add(filepath); 
+            } else if (actionType === 'deleted' || actionType === 'file_deleted') {
+                actionText = 'NOTE SUPPRIMÉE :';
+                if (category) nodeSets[category].delete(filepath);
+            }
+
+            if (actionText) {
+                let tagsDisplay = tags.length > 0 ? ` [${tags.join(', ')}]` : '';
+                addLog(`${actionText} ${filename}${tagsDisplay}`, actionType);
+            }
+
+            updateCounters();
+        }
+
+        function connectWebSocket() {
+            addLog('INITIATING CONNECTION TO CORTEX_NET...', 'info');
+            const ws = new WebSocket('ws://localhost:8000/ws');
+
+            ws.onopen = () => {
+                statusContainer.classList.add('connected');
+                statusText.textContent = 'OPERATIONAL';
+                addLog('PROTOCOL_ALPHA VERIFIED. WEBSOCKET CONNECTED.', 'file_added');
+            };
+
+            ws.onmessage = (message) => {
+                try {
+                    const data = JSON.parse(message.data);
+                    processFileEvent(data);
+                } catch (e) {
+                    addLog(`ERROR PARSING DATA SIGNAL: ${e}`, 'file_deleted');
+                }
+            };
+
+            ws.onerror = (error) => {
+                addLog('CONNECTION INTERFERENCE DETECTED.', 'file_deleted');
+            };
+
+            ws.onclose = () => {
+                statusContainer.classList.remove('connected');
+                statusText.textContent = 'OFFLINE';
+                addLog('CONNECTION LOST. RETRYING IN 3s...', 'file_deleted');
+                // clear sets if connection drops completely? Wait, better to keep them 
+                // until reconnect to avoid flashing, or clear them and recalculate on reconnect.
+                // Since server sends all events on reconnect, clearing is safest:
+                nodeSets.greene.clear();
+                nodeSets.taleb.clear();
+                nodeSets.instagram.clear();
+                updateCounters();
+
+                setTimeout(connectWebSocket, 3000);
+            };
+        }
+
+        // Boot sequence
+        window.addEventListener('DOMContentLoaded', () => {
+            addLog('SYSTEM BOOT...', 'info');
+            connectWebSocket();
+        });
+
+    </script>
+</body>
+</html>
