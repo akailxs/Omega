@@ -23,7 +23,7 @@ The goal of Omega is to explore new ideas, improve my skills, and build useful c
 Clone the repository and explore the project:
 
 ```bash
-git clone 
+git clone https://github.com/akailxs/Omega.git
 ```
 
 Then open the project and start experimenting.
